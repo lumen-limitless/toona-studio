@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-text: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
-  --font-heading: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  --font-text: 'Manrope', -apple-system, system-ui, BlinkMacSystemFont,
+    sans-serif;
+  --font-heading: 'Manrope', -apple-system, system-ui, BlinkMacSystemFont,
+    sans-serif;
 }
 
 *,
@@ -17,7 +19,8 @@ html,
 body {
   font-family: var(--font-text);
   text-rendering: optimizeLegibility;
-  @apply m-0 box-border  touch-manipulation  scroll-smooth  p-0  antialiased;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  @apply m-0 box-border  touch-manipulation overflow-x-hidden scroll-smooth  bg-white p-0 text-dark antialiased;
 }
 
 #__next {
@@ -33,20 +36,32 @@ h6 {
   font-family: var(--font-heading);
 }
 
+h1 {
+  @apply text-4xl font-kindabold md:text-[80px] md:leading-[109px];
+}
+
+h2 {
+  @apply text-2xl font-semibold;
+}
+
+p {
+  @apply text-base font-kindabold md:text-2xl;
+}
+
 /* width */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 14px;
   height: 16px;
-}
+} */
 
 /* Track */
-::-webkit-scrollbar-track {
-}
+/* ::-webkit-scrollbar-track {
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
-}
+/* ::-webkit-scrollbar-thumb {
+} */
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-}
+/* ::-webkit-scrollbar-thumb:hover {
+} */

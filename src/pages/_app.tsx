@@ -1,7 +1,8 @@
+import '@fontsource/manrope'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import Layout from '../layouts'
+import Layout from '../layouts/layout'
 import { DefaultSeo } from 'next-seo'
 function MyApp({ Component, pageProps }: AppProps) {
   return (

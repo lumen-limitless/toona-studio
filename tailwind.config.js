@@ -4,9 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#FFFFFF',
+        light: '#f9f9f9',
+        dark: '#2e3338',
+        indigo: {
+          DEFAULT: '#6978FF',
+          500: '#6978FF',
+          600: '#616FE5',
+        },
+      },
+      fontWeight: {
+        kindabold: '500',
+        kindalight: '300',
       },
     },
   },
-  plugins: [],
+  plugins: ['@tailwindcss/forms'],
 }
