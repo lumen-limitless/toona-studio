@@ -1,19 +1,30 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import Circles from '../components/Circles'
 import Button from '../components/ui/Button'
 import Container from '../components/ui/Container'
 import Section from '../components/ui/Section'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
+import CirclesLeftSVG from 'public/circles-left.svg'
+import CirclesRightSVG from 'public/circles-right.svg'
 
+const items = [
+  'Digital Experience',
+  'Web Design',
+  'Product Design',
+  'Branding',
+  'Software Engineering',
+  'Early Startup Strategy',
+  'Other',
+]
 const ContactPage: NextPage = () => {
   const [work, setWork] = useState('')
   return (
     <>
       <NextSeo />
       <Section col centered id="contact" className="py-40">
-        <Circles />
+        <CirclesLeftSVG className="absolute -top-32 right-0 h-[640px]" />
+        <CirclesRightSVG className="absolute -bottom-32 left-0 h-[640px]" />
         <Container className="flex max-w-5xl flex-col items-center justify-center gap-12">
           {' '}
           <div className="text-center">
@@ -41,26 +52,34 @@ const ContactPage: NextPage = () => {
             <label htmlFor="phone">
               What type of work are you looking for?
             </label>
-            <Menu>
-              {({ open }) => (
+            <Menu as="div" className={'relative w-full'}>
+              {({ open, close }) => (
                 <>
-                  <Menu.Button className="rounded-full border-2 border-dark px-2 py-3 text-dark">
-                    {work || 'Select a work type'}
+                  <Menu.Button className="w-full rounded-full border-2 border-dark px-2 py-3 text-dark">
+                    {work || 'Select your work'}
                   </Menu.Button>
-                  <Menu.Items className=" rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute z-20 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            onClick={() => setWork('Web development')}
-                            className={`${
-                              active
-                                ? 'bg-violet-500 text-white'
-                                : 'text-gray-900'
-                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                          >
-                            Web development
-                          </a>
+                          <>
+                            {items.map((item, i) => (
+                              <a
+                                key={i}
+                                onClick={() => {
+                                  setWork(item)
+                                  close()
+                                }}
+                                className={`${
+                                  active
+                                    ? 'bg-violet-500 text-white'
+                                    : 'text-gray-900'
+                                } group flex w-full items-center rounded-md px-2 py-2`}
+                              >
+                                {item}
+                              </a>
+                            ))}
+                          </>
                         )}
                       </Menu.Item>
                     </div>

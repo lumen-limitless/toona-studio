@@ -16,6 +16,7 @@
   "dependencies": {
     "@fontsource/manrope": "^4.5.13",
     "@headlessui/react": "^1.7.10",
+    "@svgr/webpack": "^6.5.1",
     "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",

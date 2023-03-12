@@ -1,9 +1,9 @@
-import Container from '../ui/Container'
-import Section from '../ui/Section'
-import designImg from '../../../public/design.jpg'
-import brandImg from '../../../public/brand.jpg'
-import engineeringImg from '../../../public/engineering.jpg'
-import contentImg from '../../../public/content.jpg'
+import Container from './ui/Container'
+import Section from './ui/Section'
+import designImg from 'public/design.jpg'
+import brandImg from 'public/brand.jpg'
+import engineeringImg from 'public/engineering.jpg'
+import contentImg from 'public/content.jpg'
 import Image from 'next/image'
 
 const services = [
@@ -53,7 +53,7 @@ const services = [
   },
 ]
 
-export default function Features({}: {}) {
+export default function Features() {
   return (
     <>
       <Section id="features" className="py-32">

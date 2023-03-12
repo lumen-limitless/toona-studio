@@ -1,6 +1,7 @@
 import Button from './ui/Button'
-import Logo from './Logo'
 import Link from 'next/link'
+import LogoDarkSVG from 'public/logo-dark.svg'
+import LogoLightSVG from 'public/logo-light.svg'
 
 export default function Nav() {
   return (
@@ -8,7 +9,7 @@ export default function Nav() {
       <nav className="flex h-[100px] w-full items-center justify-between px-6  md:px-16">
         <div>
           <Link href="/">
-            <Logo.Dark />
+            <LogoDarkSVG className="h-[18px]" />
           </Link>
         </div>
         <div className=" hidden items-center gap-12 md:flex">

@@ -1,16 +1,18 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import Circles from '../components/Circles'
 import Button from '../components/ui/Button'
 import Container from '../components/ui/Container'
 import Section from '../components/ui/Section'
+import CirclesLeftSVG from 'public/circles-left.svg'
+import CirclesRightSVG from 'public/circles-right.svg'
 
 const AboutPage: NextPage = () => {
   return (
     <>
       <NextSeo />
       <Section centered col className="bg-indigo-600 py-56 text-light">
-        <Circles />
+        <CirclesLeftSVG className="absolute -top-1/4 right-0 stroke-current " />
+        <CirclesRightSVG className="absolute -bottom-1/2 left-0" />
         <h1 className="text-center">
           Small teams, <br /> big dreams.
         </h1>

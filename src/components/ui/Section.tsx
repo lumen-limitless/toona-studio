@@ -18,7 +18,7 @@ export default function Section({
       className={[
         'relative flex h-full w-full flex-grow items-center',
         col ? 'flex-col' : 'flex-row',
-        fullscreen && 'min-h-screen',
+        fullscreen && 'min-h-[100dvh]',
         centered ? ' justify-center' : 'justify-start',
         className,
       ]
