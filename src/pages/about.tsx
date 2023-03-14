@@ -3,25 +3,31 @@ import { NextSeo } from 'next-seo'
 import Button from '../components/ui/Button'
 import Container from '../components/ui/Container'
 import Section from '../components/ui/Section'
-import CirclesLeftSVG from 'public/circles-left.svg'
-import CirclesRightSVG from 'public/circles-right.svg'
+import CirclesSVG from 'public/circles.svg'
+import MagicSVG from 'public/magic.svg'
+import Link from 'next/link'
 
 const AboutPage: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section centered col className="bg-indigo-600 py-56 text-light">
-        <CirclesLeftSVG className="absolute -top-1/4 right-0 stroke-current " />
-        <CirclesRightSVG className="absolute -bottom-1/2 left-0" />
+      <Section
+        centered
+        col
+        className="overflow-clip bg-indigo-600 py-56 text-light"
+      >
+        <CirclesSVG className="absolute -top-1/4 right-0 h-[340px] stroke-light lg:-top-16  lg:h-[640px]" />
+        <CirclesSVG className="absolute -bottom-1/4 left-0 h-[340px] rotate-180 stroke-light  lg:-bottom-16 lg:h-[640px]" />
+
         <h1 className="text-center">
           Small teams, <br /> big dreams.
         </h1>
       </Section>
       <Section col centered id="team" className="py-32">
         <Container className="flex flex-col">
-          <div className="pb-20">
+          <div className="space-y-6 pb-20">
             <h1>Christina Ho</h1>
-            <h2>Founder - Lead Designer</h2>
+            <h2 className="text-indigo/50">Founder - Lead Designer</h2>
             <p>
               Christina is a multidisciplinary design consultant specializing in
               UX/UI, Visual, and Interactive design. She has launched over 30+
@@ -33,14 +39,25 @@ const AboutPage: NextPage = () => {
             </p>
             <br />
             <p>
-              In her free time she enjoys watching horror movies, Rupaul’s Drag
-              Race, playing FPS games, building her artisan board game
+              In her free time she enjoys watching horror movies, Rupaul&apos;s
+              Drag Race, playing FPS games, building her artisan board game
               collection and eating chicken.{' '}
             </p>
+            <div className="flex gap-3">
+              <Button variant="tertiary" className=" h-10 w-full lg:h-16">
+                Website
+              </Button>
+              <Button variant="tertiary" className=" h-10 w-full lg:h-16">
+                LinkedIn
+              </Button>
+              <Button variant="tertiary" className=" h-10 w-full lg:h-16">
+                Instagram
+              </Button>
+            </div>
           </div>
-          <div className="pb-20">
+          <div className="space-y-6 pb-20">
             <h1>Zach Lippa</h1>
-            <h2>Lead Developer</h2>
+            <h2 className="text-indigo/50">Lead Developer</h2>
             <p>
               He is a Blockchain Engineer and Full Stack Developer based in
               Rochester, NY. Since he was young, he has always been fascinated
@@ -58,11 +75,24 @@ const AboutPage: NextPage = () => {
               development and creating smart contracts for various projects and
               organizations.{' '}
             </p>
+            <div className="flex gap-3">
+              <Button variant="tertiary" className=" h-10 w-full lg:h-16">
+                Website
+              </Button>
+              <Button variant="tertiary" className=" h-10 w-full lg:h-16">
+                LinkedIn
+              </Button>
+              <Button variant="tertiary" className=" h-10 w-full lg:h-16">
+                Instagram
+              </Button>
+            </div>
           </div>
         </Container>
-        <Button variant="primary" className="max-w-[294px] p-3">
-          Let&apos;s make some magic
-        </Button>
+        <Link href="contact" passHref>
+          <Button variant="primary" className="max-w-[294px] p-3">
+            Let&apos;s make some magic <MagicSVG className="h-5" />
+          </Button>
+        </Link>
       </Section>
     </>
   )

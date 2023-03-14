@@ -1,6 +1,8 @@
 const VARIANTS = {
   primary: 'bg-indigo text-white',
+  mono: 'bg-light text-dark',
   secondary: 'ring-2 ring-dark text-dark',
+  tertiary: 'ring-2 ring-indigo text-indigo',
   footer: 'bg-light text-dark backdrop-blur-xs',
 }
 
@@ -8,7 +10,7 @@ const SIZE = {
   sm: 'py-2 px-3 text-base',
   md: 'py-3 px-4 text-base',
   lg: 'py-5 px-6 text-base',
-  compact: 'w-48 h-16',
+  compact: 'lg:w-48 lg:h-16 h-10 width-[100px]',
   main: 'w-72 h-16',
 }
 interface ButtonProps

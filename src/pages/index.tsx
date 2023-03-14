@@ -70,10 +70,10 @@ const Home: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section fullscreen id="landing">
+      <Section id="landing" fullscreen className="pb-12 lg:pb-0">
         <Container className="flex flex-col-reverse lg:flex-row">
           {' '}
-          <div className=" flex flex-grow flex-col justify-center gap-12  text-dark">
+          <div className=" flex flex-grow flex-col justify-center  gap-12  text-dark">
             <h1 className="whitespace-nowrap">
               Crafting joy through <br /> digital experiences.
             </h1>
@@ -81,7 +81,9 @@ const Home: NextPage = () => {
               We are a digital product studio that designs & develops innovative{' '}
               <br /> and human-centered experiences to enrich your business.{' '}
             </p>
-            <Button size="main">Let&apos;s chat</Button>
+            <Button size="main" className="mx-auto w-full lg:mx-0 lg:w-72">
+              Let&apos;s chat
+            </Button>
           </div>
           <Image src={heroPhoto} alt="" priority />
         </Container>

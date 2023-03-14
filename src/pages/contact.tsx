@@ -23,8 +23,8 @@ const ContactPage: NextPage = () => {
     <>
       <NextSeo />
       <Section col centered id="contact" className="py-40">
-        <CirclesLeftSVG className="absolute -top-32 right-0 h-[640px]" />
-        <CirclesRightSVG className="absolute -bottom-32 left-0 h-[640px]" />
+        <CirclesLeftSVG className="pointer-events-none absolute -top-32 right-0 h-[640px]" />
+        <CirclesRightSVG className="pointer-events-none absolute -bottom-32 left-0 h-[640px]" />
         <Container className="flex max-w-5xl flex-col items-center justify-center gap-12">
           {' '}
           <div className="text-center">
