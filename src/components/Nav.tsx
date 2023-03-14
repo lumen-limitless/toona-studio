@@ -17,9 +17,13 @@ export default function Nav() {
         pathname === '/about' ? 'text-dark lg:text-light' : 'text-dark'
       )}
     >
-      {pathname === '/about' ? <Dark /> : <Light />}
+      {pathname === '/about' ? (
+        <Dark pathname={pathname} />
+      ) : (
+        <Light pathname={pathname} />
+      )}
       <Popover className="md:hidden">
-        {({ open }) => (
+        {({ open, close }) => (
           <>
             <Popover.Button className={''}>
               {open ? (
@@ -32,16 +36,16 @@ export default function Nav() {
               as={'div'}
               className="fixed inset-0 z-30 flex w-full flex-col items-center justify-center gap-6 bg-indigo text-light"
             >
-              <Link href="idea-generator">
+              <Link href="idea-generator" onClick={close}>
                 <h1>Idea Generator ✦</h1>
               </Link>
-              <Link href="services">
+              <Link href="services" onClick={close}>
                 <h1>Services</h1>
               </Link>
-              <Link href="about">
+              <Link href="about" onClick={close}>
                 <h1>About</h1>
               </Link>
-              <Link href="contact" passHref>
+              <Link href="contact" passHref onClick={close}>
                 <Button variant="mono" className="w-full ">
                   Let&apos;s chat
                 </Button>
@@ -54,7 +58,7 @@ export default function Nav() {
   )
 }
 
-const Light = () => {
+const Light = ({ pathname }: { pathname: string }) => {
   return (
     <>
       <div>
@@ -62,10 +66,33 @@ const Light = () => {
           <LogoSVG className="h-[18px] fill-current stroke-current" />
         </Link>
       </div>
-      <div className=" hidden items-center gap-12  md:flex">
-        <Link href="idea-generator">Idea Generator</Link>
-        <Link href="services">Services</Link>
-        <Link href="about">About</Link>
+      <div className="hidden items-center gap-12  md:flex">
+        <Link
+          href="idea-generator"
+          className={
+            pathname === '/idea-generator'
+              ? 'border-b-2 border-indigo pb-1'
+              : ''
+          }
+        >
+          Idea Generator
+        </Link>
+        <Link
+          href="services"
+          className={
+            pathname === '/services' ? 'border-b-2 border-indigo pb-1' : ''
+          }
+        >
+          Services
+        </Link>
+        <Link
+          href="about"
+          className={
+            pathname === '/about' ? 'border-b-2 border-indigo pb-1' : ''
+          }
+        >
+          About
+        </Link>
         <Link href="contact" passHref>
           <Button className="px-9 py-2">Let&apos;s chat</Button>
         </Link>
@@ -74,7 +101,7 @@ const Light = () => {
   )
 }
 
-const Dark = () => {
+const Dark = ({ pathname }: { pathname: string }) => {
   return (
     <>
       <div>
@@ -83,9 +110,30 @@ const Dark = () => {
         </Link>
       </div>
       <div className=" hidden items-center gap-12  md:flex ">
-        <Link href="idea-generator">Idea Generator</Link>
-        <Link href="services">Services</Link>
-        <Link href="about">About</Link>
+        <Link
+          href="idea-generator"
+          className={
+            pathname === '/idea-generator' ? 'border-b-2 border-light pb-1' : ''
+          }
+        >
+          Idea Generator
+        </Link>
+        <Link
+          href="services"
+          className={
+            pathname === '/services' ? 'border-b-2 border-light pb-1' : ''
+          }
+        >
+          Services
+        </Link>
+        <Link
+          href="about"
+          className={
+            pathname === '/about' ? 'border-b-2 border-light pb-1' : ''
+          }
+        >
+          About
+        </Link>
         <Link href="contact" passHref>
           <Button size="md" variant="mono" className="min-w-[141px]">
             Let&apos;s chat

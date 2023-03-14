@@ -10,8 +10,7 @@ import ServicesComponent from '../components/ServicesComponent'
 import MagicSVG from 'public/magic.svg'
 import RepeatSVG from 'public/repeat.svg'
 import CTA from '../components/CTA'
-import CirclesLeftSVG from 'public/circles-left.svg'
-import CirclesRightSVG from 'public/circles-right.svg'
+import CirclesSVG from 'public/circles.svg'
 
 const info = [
   {
@@ -55,8 +54,8 @@ const ServicesPage: NextPage = () => {
         col
         className="gap-12 px-[12%]"
       >
-        <CirclesLeftSVG className="absolute -top-32 right-0 h-[640px]" />
-        <CirclesRightSVG className="absolute -bottom-32 left-0 h-[640px]" />
+        <CirclesSVG className="absolute -top-32 right-0 h-[640px] stroke-dark" />
+        <CirclesSVG className="absolute -bottom-32 left-0 h-[640px] rotate-180 stroke-dark" />
 
         <h1 className="text-center">
           We build catered experiences to grow your business
@@ -71,7 +70,7 @@ const ServicesPage: NextPage = () => {
         </div>
       ))}
       <Section>
-        <RepeatSVG className="inset-0" />
+        <RepeatSVG className="w-full" />
       </Section>
       <ServicesComponent />
       <Section col centered>
