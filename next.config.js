@@ -7,7 +7,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-
+  images: {
+    deviceSizes: [375, 800, 1200, 1800],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

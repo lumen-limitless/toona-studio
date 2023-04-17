@@ -22,11 +22,7 @@ html {
   font-family: var(--font-text);
   text-rendering: optimizeLegibility;
   font-feature-settings: 'pnum' on, 'lnum' on;
-}
-
-/* Body styles */
-body {
-  @apply box-border touch-manipulation overflow-x-hidden scroll-smooth bg-light text-dark antialiased;
+  @apply box-border touch-manipulation scroll-smooth bg-light text-dark antialiased;
 }
 
 /* Next.js root container */
