@@ -27,7 +27,13 @@ export default function Nav() {
           : ' text-dark'
       )}
     >
-      <Link href="/" className="absolute inset-y-auto left-6 z-30">
+      <Link
+        href="/"
+        className="absolute inset-y-auto left-6 z-30"
+        onClick={() => {
+          togglePopoverOpen(false)
+        }}
+      >
         <LogoSVG
           className={clsx(
             'h-[18px]',
@@ -81,7 +87,7 @@ export default function Nav() {
                 href=""
                 onClick={() => {
                   close()
-                  togglePopoverOpen()
+                  togglePopoverOpen(false)
                 }}
                 className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
@@ -92,7 +98,7 @@ export default function Nav() {
                 href="services"
                 onClick={() => {
                   close()
-                  togglePopoverOpen()
+                  togglePopoverOpen(false)
                 }}
                 className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
@@ -102,7 +108,7 @@ export default function Nav() {
                 href="about"
                 onClick={() => {
                   close()
-                  togglePopoverOpen()
+                  togglePopoverOpen(false)
                 }}
                 className="w-full text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
@@ -113,7 +119,7 @@ export default function Nav() {
                 passHref
                 onClick={() => {
                   close()
-                  togglePopoverOpen()
+                  togglePopoverOpen(false)
                 }}
                 className="w-full"
               >
