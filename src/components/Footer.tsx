@@ -1,5 +1,9 @@
 import Link from 'next/link'
 import LogoSVG from 'public/logo.svg'
+import DiscordSVG from 'public/discord.svg'
+import LinkedInSVG from 'public/linkedin.svg'
+import InstaSVG from 'public/insta.svg'
+import BehanceSVG from 'public/behance.svg'
 
 export default function Footer() {
   return (
@@ -21,7 +25,14 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="flex px-12 md:w-full">
+
+      <div className="mx-auto flex gap-[43px]">
+        <DiscordSVG className="h-8 fill-light stroke-light" />
+        <InstaSVG className="h-8 fill-light stroke-light" />
+        <LinkedInSVG className="h-8 fill-light stroke-light" />
+        <BehanceSVG className="h-8 fill-light stroke-light" />
+      </div>
+      <div className="mx-auto flex px-12 md:mx-0 md:w-full">
         <p className=" text-sm/[18px] text-light opacity-75">
           &copy; {new Date().getFullYear()} toona.studio
         </p>
