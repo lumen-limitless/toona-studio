@@ -6,9 +6,17 @@ import CloseSVG from 'public/close.svg'
 import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
+import { useBoolean } from 'react-use'
+
+const links = [
+  { href: '/idea-generator', label: 'Idea Generator' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
+]
 
 export default function Nav() {
   const { pathname } = useRouter()
+  const [popoverOpen, togglePopoverOpen] = useBoolean(false)
 
   return (
     <nav
@@ -19,21 +27,48 @@ export default function Nav() {
           : ' text-dark'
       )}
     >
-      {pathname === '/about' ? (
-        <Dark pathname={pathname} />
-      ) : (
-        <Light pathname={pathname} />
-      )}
+      <Link href="/" className="absolute inset-y-auto left-6 z-30">
+        <LogoSVG
+          className={clsx(
+            'h-[18px]',
+            popoverOpen
+              ? 'fill-light stroke-light'
+              : 'fill-current stroke-current'
+          )}
+        />
+      </Link>
+
+      <div className=" absolute inset-y-auto right-6  hidden items-center gap-12 md:flex ">
+        {links.map(({ href, label }) => (
+          <Link
+            href={href}
+            key={href}
+            className={clsx(pathname === '/about' ? 'text-light' : 'text-dark')}
+          >
+            {label}
+          </Link>
+        ))}
+        <Link
+          href="contact"
+          className={clsx(
+            'inline-flex h-10 min-w-[141px]  items-center justify-center rounded-full text-[15px]/[24px] font-kindabold',
+            pathname === '/about' ? 'bg-light text-dark' : 'bg-dark text-light'
+          )}
+        >
+          Let&apos;s chat
+        </Link>
+      </div>
       <Popover as={Fragment}>
         {({ open, close }) => (
           <>
             <Popover.Button
+              onClick={togglePopoverOpen}
               className={
                 ' absolute inset-y-auto right-6  z-30 rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden'
               }
             >
               {open ? (
-                <CloseSVG className=" h-6 w-6 fill-current stroke-current" />
+                <CloseSVG className=" h-6 w-6 fill-white stroke-white" />
               ) : (
                 <BurgerSVG className="h-6 w-6 fill-current stroke-current" />
               )}
@@ -44,7 +79,10 @@ export default function Nav() {
             >
               <Link
                 href=""
-                onClick={close}
+                onClick={() => {
+                  close()
+                  togglePopoverOpen()
+                }}
                 className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
                 Idea Generator ✦
@@ -52,20 +90,36 @@ export default function Nav() {
 
               <Link
                 href="services"
-                onClick={close}
+                onClick={() => {
+                  close()
+                  togglePopoverOpen()
+                }}
                 className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
                 Services
               </Link>
               <Link
                 href="about"
-                onClick={close}
+                onClick={() => {
+                  close()
+                  togglePopoverOpen()
+                }}
                 className="w-full text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
                 About
               </Link>
-              <Link href="contact" passHref onClick={close} className="w-full">
-                <button className="h-16 w-full rounded-full bg-light text-dark ">
+              <Link
+                href="contact"
+                passHref
+                onClick={() => {
+                  close()
+                  togglePopoverOpen()
+                }}
+                className="w-full"
+              >
+                <button
+                  className={'h-16 w-full rounded-full bg-light text-dark'}
+                >
                   Let&apos;s chat
                 </button>
               </Link>
@@ -74,90 +128,5 @@ export default function Nav() {
         )}
       </Popover>
     </nav>
-  )
-}
-
-const Light = ({ pathname }: { pathname: string }) => {
-  return (
-    <>
-      <Link href="/" className="absolute inset-y-auto left-6 z-30">
-        <LogoSVG className=" h-[18px] fill-current stroke-current" />
-      </Link>
-
-      <div className="absolute inset-y-auto right-6  hidden items-center gap-12 md:flex">
-        <Link
-          href="idea-generator"
-          className={
-            pathname === '/idea-generator'
-              ? 'border-b-2 border-indigo pb-1'
-              : ''
-          }
-        >
-          Idea Generator
-        </Link>
-        <Link
-          href="services"
-          className={
-            pathname === '/services' ? 'border-b-2 border-indigo pb-1' : ''
-          }
-        >
-          Services
-        </Link>
-        <Link
-          href="about"
-          className={
-            pathname === '/about' ? 'border-b-2 border-indigo pb-1' : ''
-          }
-        >
-          About
-        </Link>
-        <Link href="contact" passHref>
-          <button className="rounded-full bg-dark px-9 py-2 text-light">
-            Let&apos;s chat
-          </button>
-        </Link>
-      </div>
-    </>
-  )
-}
-
-const Dark = ({ pathname }: { pathname: string }) => {
-  return (
-    <>
-      <div>
-        <Link href="/" className="absolute inset-y-auto left-6 z-30">
-          <LogoSVG className="h-[18px] fill-current stroke-current" />
-        </Link>
-      </div>
-      <div className=" absolute inset-y-auto right-6  hidden items-center gap-12 md:flex ">
-        <Link
-          href=""
-          className={
-            pathname === '/idea-generator' ? 'border-b-2 border-light pb-1' : ''
-          }
-        >
-          Idea Generator
-        </Link>
-        <Link
-          href="services"
-          className={
-            pathname === '/services' ? 'border-b-2 border-light pb-1' : ''
-          }
-        >
-          Services
-        </Link>
-        <Link
-          href="about"
-          className={
-            pathname === '/about' ? 'border-b-2 border-light pb-1' : ''
-          }
-        >
-          About
-        </Link>
-        <Link href="contact" passHref>
-          <button className="min-w-[141px]">Let&apos;s chat</button>
-        </Link>
-      </div>
-    </>
   )
 }

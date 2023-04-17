@@ -110,7 +110,7 @@ const ContactPage: NextPage = () => {
 
             <button
               type="submit"
-              className="mx-auto h-[64px] w-[203px] bg-indigo text-light"
+              className="mx-auto h-[64px] w-[203px] bg-indigo text-light transition-colors ease-out hover:bg-indigo-600"
             >
               Send message
             </button>

@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         id="landing"
         className="flex-col-reverse px-8 py-24 md:h-screen md:px-[12%] md:pt-0 lg:flex-row"
       >
-        <div className=" flex flex-grow flex-col justify-center  gap-12  text-dark">
+        <div className="flex flex-grow flex-col justify-center  gap-12  text-dark">
           <h1 className="whitespace-nowrap text-4xl/[49px] font-kindabold md:text-7xl/[98px]">
             Crafting joy through <br /> digital experiences.
           </h1>

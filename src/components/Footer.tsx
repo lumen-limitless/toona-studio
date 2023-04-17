@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import LogoSVG from 'public/logo.svg'
 
 export default function Footer() {
@@ -12,9 +13,12 @@ export default function Footer() {
           <a href="">Idea Generator</a>
           <a href="">Services</a>
           <a href="">About</a>
-          <button className="rounded-full bg-light px-9 py-2 text-[15px]/[24px] font-kindabold text-dark">
+          <Link
+            href="/contact"
+            className="rounded-full bg-light px-9 py-2 text-[15px]/[24px] font-kindabold text-dark"
+          >
             Let&apos;s chat
-          </button>
+          </Link>
         </div>
       </div>
       <div className="flex px-12 md:w-full">

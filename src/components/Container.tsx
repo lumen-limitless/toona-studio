@@ -9,10 +9,7 @@ export default function Container({
 }) {
   return (
     <div
-      className={[
-        className,
-        'container z-10 mx-auto px-4 md:px-12 lg:px-36 xl:px-48 2xl:px-56 ',
-      ]
+      className={[className, 'container mx-auto flex px-4 md:px-12 lg:px-36']
         .filter(Boolean)
         .join(' ')}
       id={id}

@@ -1,4 +1,4 @@
-import Container from './Container'
+import Link from 'next/link'
 import Section from './Section'
 
 export default function CTA() {
@@ -14,9 +14,12 @@ export default function CTA() {
         <p className="text-center text-xl font-kindabold md:text-2xl/[33px]">
           Do you have a project idea or want to keep in touch?
         </p>
-        <button className="h-16 w-full max-w-[280px] rounded-full text-xl ring-2 ring-white">
+        <Link
+          href="/contact"
+          className="inline-flex h-16 w-full max-w-[280px] items-center justify-center rounded-full text-xl font-kindabold ring-2 ring-white"
+        >
           Let&apos;s chat
-        </button>
+        </Link>
       </Section>
     </>
   )

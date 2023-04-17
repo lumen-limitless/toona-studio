@@ -12,6 +12,7 @@ import CTA from '../components/CTA'
 import Container from '../components/Container'
 import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import CirclesStarLeftSVG from 'public/circles-star-left.svg'
+import Link from 'next/link'
 
 const info = [
   {
@@ -54,16 +55,19 @@ const ServicesPage: NextPage = () => {
         col
         className="gap-12 px-[12%] py-32 md:h-screen"
       >
-        <CirclesStarRightSVG className="pointer-events-none absolute -top-28 right-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
-        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-28 left-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
+        <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
+        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
 
         <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
           We build catered <br /> experiences to <br /> grow your <br />{' '}
           business.
         </h1>
-        <button className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg/[24px] text-white">
+        <Link
+          href="/contact"
+          className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg/[24px] text-white transition-colors ease-out hover:bg-indigo-600"
+        >
           Let&apos;s make some magic <MagicSVG className="ml-1 h-5 w-5" />
-        </button>
+        </Link>
       </Section>
       {info.map((info) => (
         <div key={info.id}>
@@ -113,8 +117,8 @@ const ServicesPage: NextPage = () => {
       </Section>
       <ServicesComponent />
       <Section>
-        <Container>
-          <h1 className="text-center text-4xl/[49px]">
+        <Container className="flex-col">
+          <h1 className="text-center text-4xl/[49px] md:text-5xl/[66px] lg:text-[64px]/[87px]">
             Where We Can <br className="md:hidden" /> Help
           </h1>
           <div className="mt-12 flex flex-col gap-6 md:flex-row">
