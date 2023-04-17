@@ -21,7 +21,7 @@ export default function Nav() {
   return (
     <nav
       className={clsx(
-        'relative flex h-[114px] w-full items-center justify-between px-6',
+        'relative flex h-[114px] w-full items-center justify-between',
         pathname === '/about'
           ? 'bg-light text-dark md:bg-transparent md:text-light'
           : ' text-dark'
@@ -29,7 +29,7 @@ export default function Nav() {
     >
       <Link
         href="/"
-        className="absolute inset-y-auto left-6 z-30"
+        className="absolute inset-y-auto left-6 z-30 md:left-12"
         onClick={() => {
           togglePopoverOpen(false)
         }}
@@ -44,7 +44,7 @@ export default function Nav() {
         />
       </Link>
 
-      <div className=" absolute inset-y-auto right-6  hidden items-center gap-12 md:flex ">
+      <div className=" absolute inset-y-auto right-6 hidden items-center gap-12 md:right-12 md:flex lg:right-16 ">
         {links.map(({ href, label }) => (
           <Link
             href={href}
@@ -70,7 +70,7 @@ export default function Nav() {
             <Popover.Button
               onClick={togglePopoverOpen}
               className={
-                ' absolute inset-y-auto right-6  z-30 rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden'
+                ' absolute inset-y-auto right-6 z-30  rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden '
               }
             >
               {open ? (
