@@ -4,8 +4,7 @@ import Container from '../components/Container'
 import Section from '../components/Section'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
-import CirclesLeftSVG from 'public/circles-left.svg'
-import CirclesRightSVG from 'public/circles-right.svg'
+import CirclesSVG from 'public/circles.svg'
 
 const items = [
   'Digital Experience',
@@ -22,9 +21,9 @@ const ContactPage: NextPage = () => {
     <>
       <NextSeo />
       <Section col centered id="contact" className="py-[44px]">
-        <CirclesLeftSVG className="pointer-events-none absolute -top-32 right-0 h-[640px]" />
-        <CirclesRightSVG className="pointer-events-none absolute -bottom-32 left-0 h-[640px]" />
-        <Container className="flex max-w-5xl flex-col items-center justify-center gap-12">
+        <CirclesSVG className="pointer-events-none absolute -top-32 right-0 h-[640px] rotate-180" />
+        <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 h-[640px]" />
+        <Container className="z-10 flex max-w-5xl flex-col items-center justify-center gap-12">
           <div className="mt-12 flex flex-col gap-12 text-center">
             <h1 className="text-4xl/[49px]">Let&apos;s chat</h1>
             <p className="text-lg/[25px] font-kindabold">

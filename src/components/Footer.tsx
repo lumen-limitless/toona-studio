@@ -4,6 +4,7 @@ import DiscordSVG from 'public/discord.svg'
 import LinkedInSVG from 'public/linkedin.svg'
 import InstaSVG from 'public/insta.svg'
 import BehanceSVG from 'public/behance.svg'
+import { INSTAGRAM_URL, LINKEDIN_URL } from '../constants'
 
 export default function Footer() {
   return (
@@ -28,8 +29,12 @@ export default function Footer() {
 
       <div className="mx-auto flex gap-[43px]">
         <DiscordSVG className="h-8 fill-light stroke-light" />
-        <InstaSVG className="h-8 fill-light stroke-light" />
-        <LinkedInSVG className="h-8 fill-light stroke-light" />
+        <a href={INSTAGRAM_URL} target="_blank">
+          <InstaSVG className="h-8 fill-light stroke-light" />
+        </a>
+        <a href={LINKEDIN_URL} target="_blank">
+          <LinkedInSVG className="h-8 fill-light stroke-light" />
+        </a>
         <BehanceSVG className="h-8 fill-light stroke-light" />
       </div>
       <div className="mx-auto flex px-12 md:mx-0 md:w-full">

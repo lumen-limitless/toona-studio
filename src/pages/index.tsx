@@ -58,20 +58,21 @@ const Home: NextPage = () => {
       <NextSeo />
       <Section
         id="landing"
-        className="flex-col-reverse px-8 py-24 md:h-screen md:px-[12%]  lg:flex-row"
+        className=" flex-col-reverse px-8 py-24 md:px-[12%] lg:h-screen lg:flex-row"
       >
-        <div className="flex flex-grow flex-col justify-center  gap-12  text-dark">
-          <h1 className="whitespace-nowrap text-4xl/[49px] font-kindabold md:text-7xl/[98px]">
+        <div className="flex flex-grow flex-col  justify-center  gap-12 text-dark">
+          <h1 className="whitespace-nowrap text-4xl/[49px] md:text-[52px]/[71px] lg:text-7xl/[98px]">
             Crafting joy through <br /> digital experiences.
           </h1>
-          <p className="text-xl font-kindabold">
+          <p className="text-xl/[27px] font-kindabold">
             We are a digital product studio that designs & develops innovative{' '}
             <br /> and human-centered experiences to enrich your business.{' '}
           </p>
-          <Link href="/contact">
-            <button className="mx-auto h-16 w-full rounded-full bg-indigo-500 text-light transition-colors ease-out hover:bg-indigo-600 md:mx-0 md:w-72">
-              Let&apos;s chat
-            </button>
+          <Link
+            href="/contact"
+            className="mx-auto inline-flex h-16 w-full max-w-[280px] items-center justify-center rounded-full bg-indigo-500 text-xl font-kindabold text-light transition-colors ease-out hover:bg-indigo-600 md:mx-0"
+          >
+            Let&apos;s chat
           </Link>
         </div>
         <Image src={heroPhoto} alt="" priority />

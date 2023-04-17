@@ -6,7 +6,7 @@ import CloseSVG from 'public/close.svg'
 import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
-import { useBoolean } from 'react-use'
+import { useBoolean, useLockBodyScroll } from 'react-use'
 
 const links = [
   { href: '/idea-generator', label: 'Idea Generator' },
@@ -17,7 +17,7 @@ const links = [
 export default function Nav() {
   const { pathname } = useRouter()
   const [popoverOpen, togglePopoverOpen] = useBoolean(false)
-
+  useLockBodyScroll(popoverOpen)
   return (
     <nav
       className={clsx(

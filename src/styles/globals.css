@@ -15,16 +15,18 @@
   box-sizing: inherit;
 }
 
-html,
-body {
+html {
   font-family: var(--font-text);
   text-rendering: optimizeLegibility;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  @apply m-0 box-border touch-manipulation overflow-x-hidden scroll-smooth  bg-light p-0 text-dark antialiased;
+}
+
+body {
+  @apply box-border touch-manipulation overflow-x-hidden scroll-smooth bg-light text-dark antialiased;
 }
 
 #__next {
-  @apply flex min-h-screen flex-col;
+  @apply flex min-h-screen w-full flex-col;
 }
 
 h1,
@@ -40,6 +42,7 @@ h6 {
 button {
   @apply inline-flex items-center justify-center rounded-full font-kindabold;
 }
+
 /* width */
 /* ::-webkit-scrollbar {
   width: 14px;
