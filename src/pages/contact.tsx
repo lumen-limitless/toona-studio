@@ -127,11 +127,18 @@ const ContactPage: NextPage = () => {
         centered
         className="gap-12 bg-indigo-600 py-32 text-light"
       >
-        <h1 className="text-4xl/[49px]">Get connected</h1>
+        <h1 className="text-center text-4xl/[49px] md:text-6xl/[87px]">
+          Get connected
+        </h1>
 
         <div className="flex flex-col items-center gap-3">
           <span className="text-xl opacity-50">General</span>
-          <a href="mailto:hello@toona.studio">hello@toona.studio</a>
+          <a
+            href="mailto:hello@toona.studio"
+            className="text-4xl/[49px] font-kindabold"
+          >
+            hello@toona.studio
+          </a>
         </div>
       </Section>
     </>

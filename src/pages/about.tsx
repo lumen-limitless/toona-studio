@@ -14,12 +14,12 @@ const AboutPage: NextPage = () => {
       <Section
         centered
         col
-        className="overflow-clip bg-indigo-600 px-[47.5] py-64 text-light mid:h-screen mid:py-0"
+        className="overflow-clip bg-indigo-600 px-[47.5] py-64 text-light md:h-screen md:py-0"
       >
-        <CirclesStarRightLightSVG className=" absolute -top-12 right-0 h-[335px] stroke-light mid:top-0 mid:h-[630.89px]" />
-        <CirclesStarLeftLightSVG className=" absolute -bottom-12 left-0 h-[335px] stroke-light  mid:bottom-0 mid:h-[630.89px]" />
+        <CirclesStarRightLightSVG className=" absolute -top-12 right-0 h-[335px] stroke-light md:top-0 md:h-[630.89px]" />
+        <CirclesStarLeftLightSVG className=" absolute -bottom-12 left-0 h-[335px] stroke-light  md:bottom-0 md:h-[630.89px]" />
 
-        <h1 className="text-center text-4xl/[49px] mid:text-[80px]/[109px] ">
+        <h1 className="text-center text-4xl/[49px] md:text-[80px]/[109px] ">
           Small teams, <br /> big dreams.
         </h1>
       </Section>

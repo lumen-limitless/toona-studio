@@ -24,16 +24,16 @@ export default function InfoSection({
         centered
         className={clsx(
           ' flex flex-col gap-[120px] px-5 py-32',
-          reverse ? 'mid:flex-row-reverse' : 'mid:flex-row'
+          reverse ? 'md:flex-row-reverse' : 'md:flex-row'
         )}
       >
         <div className="flex max-w-[480px] flex-col justify-center gap-12">
-          <h1 className=" text-4xl/[49px] font-kindabold mid:text-[64px]/[87px]">
+          <h1 className=" text-4xl/[49px] font-kindabold md:text-[64px]/[87px]">
             {title}
           </h1>
           {description.map((desc, i) => (
             <p
-              className="text-lg/[25px] font-kindabold mid:text-[20px]/[27px]"
+              className="text-lg/[25px] font-kindabold md:text-[20px]/[27px]"
               key={i}
             >
               {desc}

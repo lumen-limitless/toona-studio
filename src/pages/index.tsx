@@ -58,11 +58,10 @@ const Home: NextPage = () => {
       <NextSeo />
       <Section
         id="landing"
-        fullscreen
-        className="flex-col-reverse px-8 pt-[47.74px] mid:h-screen mid:flex-row mid:px-[12%] mid:pt-0"
+        className="flex-col-reverse px-8 py-24 md:h-screen md:px-[12%] md:pt-0 lg:flex-row"
       >
         <div className=" flex flex-grow flex-col justify-center  gap-12  text-dark">
-          <h1 className="whitespace-nowrap text-4xl/[49px] font-kindabold mid:text-7xl/[98px]">
+          <h1 className="whitespace-nowrap text-4xl/[49px] font-kindabold md:text-7xl/[98px]">
             Crafting joy through <br /> digital experiences.
           </h1>
           <p className="text-xl font-kindabold">
@@ -70,7 +69,7 @@ const Home: NextPage = () => {
             <br /> and human-centered experiences to enrich your business.{' '}
           </p>
           <Link href="/contact">
-            <button className="mx-auto h-16 w-full rounded-full bg-indigo-500 text-light transition-colors ease-out hover:bg-indigo-600 mid:mx-0 mid:w-72">
+            <button className="mx-auto h-16 w-full rounded-full bg-indigo-500 text-light transition-colors ease-out hover:bg-indigo-600 md:mx-0 md:w-72">
               Let&apos;s chat
             </button>
           </Link>

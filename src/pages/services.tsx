@@ -52,12 +52,12 @@ const ServicesPage: NextPage = () => {
         id="services"
         centered
         col
-        className="gap-12 px-[12%] py-32 mid:h-screen"
+        className="gap-12 px-[12%] py-32 md:h-screen"
       >
-        <CirclesStarRightSVG className="pointer-events-none absolute -top-28 right-0 z-0 h-[335px] stroke-dark mid:h-[642px]" />
-        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-28 left-0 z-0 h-[335px] stroke-dark mid:h-[642px]" />
+        <CirclesStarRightSVG className="pointer-events-none absolute -top-28 right-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
+        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-28 left-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
 
-        <h1 className="text-center text-4xl/[49px] font-kindabold mid:text-[72px]/[98px]">
+        <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
           We build catered <br /> experiences to <br /> grow your <br />{' '}
           business.
         </h1>
@@ -71,56 +71,53 @@ const ServicesPage: NextPage = () => {
         </div>
       ))}
       <Section col className="py-4">
-        <h1 className="text-center text-4xl/[49px] font-kindabold mid:text-[72px]/[98px]">
+        <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
           Customize your workflow
         </h1>
-        <div className="relative flex justify-evenly">
-          <div>
+        <div className="relative flex flex-col justify-evenly gap-6 px-4 py-4 md:flex-row md:px-12">
+          <div className="flex w-full flex-col gap-6">
+            <h2 className="text-2xl font-bold">Plan</h2>
+            <p className="text-base/[22px] font-kindalight">
+              We work with you to understand your business goals and objectives.
+              We&apos;ll create a clear roadmap for your project, outlining the
+              scope of work, timeline, and budget.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-6">
+            <h2 className="text-2xl font-bold">Design</h2>
+            <p className="text-lg/[22px] font-kindalight">
+              We&apos;ll create wireframes, mockups, and prototypes to bring
+              your vision to life. We&apos;ll work with you to establish a
+              visual identity and design an intuitive user interface for your
+              audience.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-6">
+            <h2 className="text-2xl font-bold">Develop</h2>
+            <p className="text-lg/[22px] font-kindalight">
+              We will build your product using the latest technologies and best
+              practices. We use agile development methodologies to ensure your
+              project is completed on time and within budget.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-6">
             <h2 className="text-2xl font-bold">Test</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              magnam praesentium pariatur animi sed libero vero doloribus esse
-              eos velit, sequi labore accusantium eveniet, aut excepturi beatae
-              doloremque cum maiores.
+            <p className="text-lg/[22px] font-kindalight">
+              Once the product is developed, we will conduct extensive testing
+              to ensure it meets our high performance, usability, and security
+              standards. Guided by user feedback, analytics, and more.
             </p>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold">test</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              magnam praesentium pariatur animi sed libero vero doloribus esse
-              eos velit, sequi labore accusantium eveniet, aut excepturi beatae
-              doloremque cum maiores.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold">test</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              magnam praesentium pariatur animi sed libero vero doloribus esse
-              eos velit, sequi labore accusantium eveniet, aut excepturi beatae
-              doloremque cum maiores.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold">test</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              magnam praesentium pariatur animi sed libero vero doloribus esse
-              eos velit, sequi labore accusantium eveniet, aut excepturi beatae
-              doloremque cum maiores.
-            </p>
-          </div>
-          <RepeatSVG className=" absolute  w-full" />
+          <RepeatSVG className="absolute mx-4 -mt-6 hidden md:block" />
         </div>
       </Section>
       <ServicesComponent />
       <Section>
         <Container>
           <h1 className="text-center text-4xl/[49px]">
-            Where We Can <br className="mid:hidden" /> Help
+            Where We Can <br className="md:hidden" /> Help
           </h1>
-          <div className="mt-12 flex flex-col gap-6 mid:flex-row">
+          <div className="mt-12 flex flex-col gap-6 md:flex-row">
             <div className="flex w-full flex-col gap-6">
               <h2 className="text-2xl/[33px]">Startups</h2>
               <p className="text-base/[22px] font-normal">

@@ -57,11 +57,11 @@ export default function Features() {
   return (
     <>
       <Section id="features" className="py-32">
-        <Container className="flex flex-col gap-12 mid:items-center">
-          <h1 className="text-center text-4xl/[49px]  mid:text-[64px]/[87px]">
+        <Container className="flex flex-col gap-12 md:items-center">
+          <h1 className="text-center text-4xl/[49px]  md:text-[64px]/[87px]">
             Services
           </h1>
-          <div className="flex flex-col gap-6 mid:flex-row">
+          <div className="flex flex-col gap-6 md:flex-row">
             {services.map((service, i) => (
               <div key={i} className="flex flex-col gap-6">
                 <Image src={service.image} alt={service.name} />

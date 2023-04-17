@@ -5,6 +5,7 @@ import BurgerSVG from 'public/burger.svg'
 import CloseSVG from 'public/close.svg'
 import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
+import { Fragment } from 'react'
 
 export default function Nav() {
   const { pathname } = useRouter()
@@ -12,9 +13,9 @@ export default function Nav() {
   return (
     <nav
       className={clsx(
-        'flex h-[114px] w-full items-center justify-between px-6',
+        'relative flex h-[114px] w-full items-center justify-between px-6',
         pathname === '/about'
-          ? 'bg-light text-dark mid:bg-transparent mid:text-light'
+          ? 'bg-light text-dark md:bg-transparent md:text-light'
           : ' text-dark'
       )}
     >
@@ -23,12 +24,12 @@ export default function Nav() {
       ) : (
         <Light pathname={pathname} />
       )}
-      <Popover className="mid:hidden">
+      <Popover as={Fragment}>
         {({ open, close }) => (
           <>
             <Popover.Button
               className={
-                ' z-30 rounded-lg bg-[#a5a4ff]  bg-opacity-[15%] p-[10px]'
+                ' absolute inset-y-auto right-6  z-30 rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden'
               }
             >
               {open ? (
@@ -79,12 +80,11 @@ export default function Nav() {
 const Light = ({ pathname }: { pathname: string }) => {
   return (
     <>
-      <div>
-        <Link href="/">
-          <LogoSVG className="h-[18px] fill-current stroke-current" />
-        </Link>
-      </div>
-      <div className="hidden items-center gap-12  mid:flex">
+      <Link href="/" className="absolute inset-y-auto left-6 z-30">
+        <LogoSVG className=" h-[18px] fill-current stroke-current" />
+      </Link>
+
+      <div className="absolute inset-y-auto right-6  hidden items-center gap-12 md:flex">
         <Link
           href="idea-generator"
           className={
@@ -112,7 +112,9 @@ const Light = ({ pathname }: { pathname: string }) => {
           About
         </Link>
         <Link href="contact" passHref>
-          <button className="px-9 py-2">Let&apos;s chat</button>
+          <button className="rounded-full bg-dark px-9 py-2 text-light">
+            Let&apos;s chat
+          </button>
         </Link>
       </div>
     </>
@@ -123,11 +125,11 @@ const Dark = ({ pathname }: { pathname: string }) => {
   return (
     <>
       <div>
-        <Link href="/">
+        <Link href="/" className="absolute inset-y-auto left-6 z-30">
           <LogoSVG className="h-[18px] fill-current stroke-current" />
         </Link>
       </div>
-      <div className=" hidden items-center gap-12  mid:flex ">
+      <div className=" absolute inset-y-auto right-6  hidden items-center gap-12 md:flex ">
         <Link
           href=""
           className={
