@@ -5,20 +5,20 @@ interface SectionProps
   col?: boolean
 }
 
-export default function Section({
+const Section: React.FC<SectionProps> = ({
   children,
   className,
   fullscreen,
   centered,
   col,
   ...props
-}: SectionProps) {
+}: SectionProps) => {
   return (
     <section
       className={[
         'relative flex h-full w-full flex-grow items-center',
         col ? 'flex-col' : 'flex-row',
-        fullscreen && 'min-h-[100dvh]',
+        fullscreen && 'min-h-screen',
         centered ? ' justify-center' : 'justify-start',
         className,
       ]
@@ -30,3 +30,7 @@ export default function Section({
     </section>
   )
 }
+
+Section.displayName = 'Section'
+
+export default Section

@@ -7,10 +7,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
       <a href="#main" className="sr-only" aria-label="skip">
         skip to main content
       </a>
-      <header className={'relative block  w-full lg:hidden'}>
-        <Nav />
-      </header>
-      <header className={'top-0 z-20 hidden w-full lg:absolute lg:block'}>
+      <header className={'absolute top-0 z-20 w-full'}>
         <Nav />
       </header>
 

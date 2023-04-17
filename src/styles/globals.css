@@ -20,11 +20,11 @@ body {
   font-family: var(--font-text);
   text-rendering: optimizeLegibility;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  @apply m-0 box-border touch-manipulation overflow-x-hidden scroll-smooth  bg-white p-0 text-dark antialiased;
+  @apply m-0 box-border touch-manipulation overflow-x-hidden scroll-smooth  bg-light p-0 text-dark antialiased;
 }
 
 #__next {
-  @apply flex min-h-[100dvh] flex-col;
+  @apply flex min-h-screen flex-col;
 }
 
 h1,
@@ -34,20 +34,12 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+  @apply font-kindabold;
 }
 
-h1 {
-  @apply text-4xl font-kindabold md:text-[80px] md:leading-[109px];
+button {
+  @apply inline-flex items-center justify-center rounded-full font-kindabold;
 }
-
-h2 {
-  @apply text-2xl font-semibold;
-}
-
-p {
-  @apply text-base font-kindabold md:text-2xl;
-}
-
 /* width */
 /* ::-webkit-scrollbar {
   width: 14px;

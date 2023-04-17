@@ -1,16 +1,16 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import Section from '../components/ui/Section'
+import Section from '../components/Section'
 import heroPhoto from '../../public/hero-photo-w-assets.png'
-import Button from '../components/ui/Button'
-import Container from '../components/ui/Container'
-import Services from '../components/ServicesComponent'
+import Services from '../components/Features'
 import CTA from '../components/CTA'
 import { NextSeo } from 'next-seo'
 import whoImg from '../../public/who.jpg'
 import whatImg from '../../public/what.jpg'
 import whyImg from '../../public/why.jpg'
 import InfoSection from '../components/InfoSection'
+import Carousel from '../components/Carousel'
+import Link from 'next/link'
 
 const info = [
   {
@@ -51,50 +51,33 @@ const info = [
     reverse: false,
   },
 ]
-const headings = [
-  'strategy',
-  '✦',
-  'cx design',
-  '✦',
-  'social media',
-  '✦',
-  'prototyping',
-  '✦',
-  'consulting',
-  '✦',
-  'quality assurance',
-  '✦',
-]
 
 const Home: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section id="landing" fullscreen className="pb-12 lg:pb-0">
-        <Container className="flex flex-col-reverse lg:flex-row">
-          {' '}
-          <div className=" flex flex-grow flex-col justify-center  gap-12  text-dark">
-            <h1 className="whitespace-nowrap">
-              Crafting joy through <br /> digital experiences.
-            </h1>
-            <p>
-              We are a digital product studio that designs & develops innovative{' '}
-              <br /> and human-centered experiences to enrich your business.{' '}
-            </p>
-            <Button size="main" className="mx-auto w-full lg:mx-0 lg:w-72">
+      <Section
+        id="landing"
+        fullscreen
+        className="flex-col-reverse px-8 pt-[47.74px] mid:h-screen mid:flex-row mid:px-[12%] mid:pt-0"
+      >
+        <div className=" flex flex-grow flex-col justify-center  gap-12  text-dark">
+          <h1 className="whitespace-nowrap text-4xl/[49px] font-kindabold mid:text-7xl/[98px]">
+            Crafting joy through <br /> digital experiences.
+          </h1>
+          <p className="text-xl font-kindabold">
+            We are a digital product studio that designs & develops innovative{' '}
+            <br /> and human-centered experiences to enrich your business.{' '}
+          </p>
+          <Link href="/contact">
+            <button className="mx-auto h-16 w-full rounded-full bg-indigo-500 text-light transition-colors ease-out hover:bg-indigo-600 mid:mx-0 mid:w-72">
               Let&apos;s chat
-            </Button>
-          </div>
-          <Image src={heroPhoto} alt="" priority />
-        </Container>
-      </Section>
-      <Section id="banner">
-        <div className=" flex h-[120px] w-full min-w-max items-center justify-evenly gap-12 overflow-x-clip bg-dark py-3 text-xl uppercase text-white lg:text-2xl">
-          {headings.map((heading, i) => (
-            <span key={i}>{heading}</span>
-          ))}
+            </button>
+          </Link>
         </div>
+        <Image src={heroPhoto} alt="" priority />
       </Section>
+      <Carousel />
       {info.map((info) => (
         <div key={info.id}>
           <InfoSection {...info} />

@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import Button from '../components/ui/Button'
-import Container from '../components/ui/Container'
-import Section from '../components/ui/Section'
+import Container from '../components/Container'
+import Section from '../components/Section'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 import CirclesLeftSVG from 'public/circles-left.svg'
@@ -22,19 +21,33 @@ const ContactPage: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section col centered id="contact" className="py-40">
+      <Section col centered id="contact" className="py-[44px]">
         <CirclesLeftSVG className="pointer-events-none absolute -top-32 right-0 h-[640px]" />
         <CirclesRightSVG className="pointer-events-none absolute -bottom-32 left-0 h-[640px]" />
         <Container className="flex max-w-5xl flex-col items-center justify-center gap-12">
-          {' '}
-          <div className="text-center">
-            <h1>Let&apos;s chat</h1>
-            <p>
+          <div className="mt-12 flex flex-col gap-12 text-center">
+            <h1 className="text-4xl/[49px]">Let&apos;s chat</h1>
+            <p className="text-lg/[25px] font-kindabold">
               Let us know what you need and we can <br /> provide a brief cost &
               time estimate.
             </p>
           </div>
-          <form className="flex w-full flex-col    gap-3">
+          <form
+            className="flex w-full flex-col gap-3"
+            onSubmit={(e) => {
+              e.preventDefault()
+              console.log(e)
+              // fetch('/api/sendEmail', {
+              //   method: 'POST',
+              //   body: JSON.stringify({
+              //     name: e.target.name.value,
+              //     email: e.target.email.value,
+              //     work: e.target.work.value,
+              //     details: e.target.details.value,
+              //   }),
+              // })
+            }}
+          >
             <label htmlFor="name">Your name or company</label>
             <input
               className="rounded-full border-2 border-dark px-2 py-3 text-dark"
@@ -95,14 +108,17 @@ const ContactPage: NextPage = () => {
               placeholder="I want to make an app about lemons & machine learning for the elderly"
             />
 
-            <Button
-              variant="primary"
+            <button
               type="submit"
-              className="mx-auto h-[64px] w-[203px]"
+              className="mx-auto h-[64px] w-[203px] bg-indigo text-light"
             >
               Send message
-            </Button>
+            </button>
           </form>
+          <a href="" className="text-lg/[24px] font-kindabold text-indigo ">
+            {' '}
+            {'<-'} Idea Generator
+          </a>
         </Container>
       </Section>
       <Section
@@ -111,7 +127,7 @@ const ContactPage: NextPage = () => {
         centered
         className="gap-12 bg-indigo-600 py-32 text-light"
       >
-        <h1>Get connected</h1>
+        <h1 className="text-4xl/[49px]">Get connected</h1>
 
         <div className="flex flex-col items-center gap-3">
           <span className="text-xl opacity-50">General</span>

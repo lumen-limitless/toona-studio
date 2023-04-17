@@ -1,4 +1,3 @@
-import Button from './ui/Button'
 import Link from 'next/link'
 import LogoSVG from 'public/logo.svg'
 import { useRouter } from 'next/router'
@@ -13,8 +12,10 @@ export default function Nav() {
   return (
     <nav
       className={clsx(
-        'flex h-[100px] w-full items-center justify-between px-6 md:px-16',
-        pathname === '/about' ? 'text-dark lg:text-light' : 'text-dark'
+        'flex h-[114px] w-full items-center justify-between px-6',
+        pathname === '/about'
+          ? 'bg-light text-dark mid:bg-transparent mid:text-light'
+          : ' text-dark'
       )}
     >
       {pathname === '/about' ? (
@@ -22,10 +23,14 @@ export default function Nav() {
       ) : (
         <Light pathname={pathname} />
       )}
-      <Popover className="md:hidden">
+      <Popover className="mid:hidden">
         {({ open, close }) => (
           <>
-            <Popover.Button className={''}>
+            <Popover.Button
+              className={
+                ' z-30 rounded-lg bg-[#a5a4ff]  bg-opacity-[15%] p-[10px]'
+              }
+            >
               {open ? (
                 <CloseSVG className=" h-6 w-6 fill-current stroke-current" />
               ) : (
@@ -34,21 +39,34 @@ export default function Nav() {
             </Popover.Button>
             <Popover.Panel
               as={'div'}
-              className="fixed inset-0 z-30 flex w-full flex-col items-center justify-center gap-6 bg-indigo text-light"
+              className="fixed inset-0 z-20 flex w-full flex-col items-center justify-center gap-6 bg-indigo px-6 text-left text-white"
             >
-              <Link href="idea-generator" onClick={close}>
-                <h1>Idea Generator ✦</h1>
+              <Link
+                href=""
+                onClick={close}
+                className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
+              >
+                Idea Generator ✦
               </Link>
-              <Link href="services" onClick={close}>
-                <h1>Services</h1>
+
+              <Link
+                href="services"
+                onClick={close}
+                className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
+              >
+                Services
               </Link>
-              <Link href="about" onClick={close}>
-                <h1>About</h1>
+              <Link
+                href="about"
+                onClick={close}
+                className="w-full text-[32px]/[44px] font-bold tracking-[0.1em]"
+              >
+                About
               </Link>
-              <Link href="contact" passHref onClick={close}>
-                <Button variant="mono" className="w-full ">
+              <Link href="contact" passHref onClick={close} className="w-full">
+                <button className="h-16 w-full rounded-full bg-light text-dark ">
                   Let&apos;s chat
-                </Button>
+                </button>
               </Link>
             </Popover.Panel>
           </>
@@ -66,7 +84,7 @@ const Light = ({ pathname }: { pathname: string }) => {
           <LogoSVG className="h-[18px] fill-current stroke-current" />
         </Link>
       </div>
-      <div className="hidden items-center gap-12  md:flex">
+      <div className="hidden items-center gap-12  mid:flex">
         <Link
           href="idea-generator"
           className={
@@ -94,7 +112,7 @@ const Light = ({ pathname }: { pathname: string }) => {
           About
         </Link>
         <Link href="contact" passHref>
-          <Button className="px-9 py-2">Let&apos;s chat</Button>
+          <button className="px-9 py-2">Let&apos;s chat</button>
         </Link>
       </div>
     </>
@@ -109,9 +127,9 @@ const Dark = ({ pathname }: { pathname: string }) => {
           <LogoSVG className="h-[18px] fill-current stroke-current" />
         </Link>
       </div>
-      <div className=" hidden items-center gap-12  md:flex ">
+      <div className=" hidden items-center gap-12  mid:flex ">
         <Link
-          href="idea-generator"
+          href=""
           className={
             pathname === '/idea-generator' ? 'border-b-2 border-light pb-1' : ''
           }
@@ -135,9 +153,7 @@ const Dark = ({ pathname }: { pathname: string }) => {
           About
         </Link>
         <Link href="contact" passHref>
-          <Button size="md" variant="mono" className="min-w-[141px]">
-            Let&apos;s chat
-          </Button>
+          <button className="min-w-[141px]">Let&apos;s chat</button>
         </Link>
       </div>
     </>

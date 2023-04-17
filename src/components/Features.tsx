@@ -1,5 +1,5 @@
-import Container from './ui/Container'
-import Section from './ui/Section'
+import Container from './Container'
+import Section from './Section'
 import designImg from 'public/design.jpg'
 import brandImg from 'public/brand.jpg'
 import engineeringImg from 'public/engineering.jpg'
@@ -57,16 +57,18 @@ export default function Features() {
   return (
     <>
       <Section id="features" className="py-32">
-        <Container className="flex flex-col gap-12 ">
-          <h1 className="text-center">Services</h1>
-          <div className="flex flex-col gap-6 md:flex-row">
+        <Container className="flex flex-col gap-12 mid:items-center">
+          <h1 className="text-center text-4xl/[49px]  mid:text-[64px]/[87px]">
+            Services
+          </h1>
+          <div className="flex flex-col gap-6 mid:flex-row">
             {services.map((service, i) => (
               <div key={i} className="flex flex-col gap-6">
                 <Image src={service.image} alt={service.name} />
-                <h2>{service.name}</h2>
+                <h2 className="text-4xl/[49px]">{service.name}</h2>
                 <ul>
                   {service.content.map((content, i) => (
-                    <li className="font-kindalight leading-[200%]" key={i}>
+                    <li className="text-lg/[200%] font-kindalight" key={i}>
                       {content}
                     </li>
                   ))}
