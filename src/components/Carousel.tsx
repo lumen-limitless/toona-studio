@@ -31,7 +31,7 @@ const Carousel = () => {
 
   return (
     <div className=" flex h-[120px] w-full bg-dark">
-      <motion.div className=" flex w-full  items-center justify-evenly gap-12   py-3 text-xl uppercase text-white desktop:text-2xl">
+      <motion.div className=" desktop:text-2xl flex  w-full items-center justify-evenly gap-12   overflow-clip py-3 text-xl uppercase text-white">
         {headings.map((heading, i) => (
           <span className="whitespace-nowrap" key={i}>
             {heading}
