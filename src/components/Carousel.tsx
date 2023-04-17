@@ -29,29 +29,26 @@ const Carousel = () => {
     '✦',
   ]
 
-  const controls = useAnimation()
-  const duration = 5 // Duration of the rotation animation in seconds
+  // const controls = useAnimation()
+  // const duration = 5 // Duration of the rotation animation in seconds
 
-  React.useEffect(() => {
-    const rotateCarousel = async () => {
-      while (true) {
-        for (let i = 0; i < headings.length; i++) {
-          await controls.start({
-            x: -(i * (100 / headings.length)) + '%',
-            transition: { duration: duration, ease: 'linear' },
-          })
-        }
-      }
-    }
-    rotateCarousel()
-  }, [controls, headings.length])
+  // React.useEffect(() => {
+  //   const rotateCarousel = async () => {
+  //     while (true) {
+  //       for (let i = 0; i < headings.length; i++) {
+  //         await controls.start({
+  //           x: -(i * (100 / headings.length)) + '%',
+  //           transition: { duration: duration, ease: 'linear' },
+  //         })
+  //       }
+  //     }
+  //   }
+  //   rotateCarousel()
+  // }, [controls, headings.length])
 
   return (
     <div className=" flex h-[120px] w-full bg-dark">
-      <motion.div
-        className=" flex w-full  items-center justify-evenly gap-12   py-3 text-xl uppercase text-white desktop:text-2xl"
-        animate={controls}
-      >
+      <motion.div className=" flex w-full  items-center justify-evenly gap-12   py-3 text-xl uppercase text-white desktop:text-2xl">
         {headings.map((heading, i) => (
           <span className="whitespace-nowrap" key={i}>
             {heading}
