@@ -5,6 +5,9 @@ import Section from '../components/Section'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 import CirclesSVG from 'public/circles.svg'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { useRouter } from 'next/router'
 
 const items = [
   'Digital Experience',
@@ -15,8 +18,44 @@ const items = [
   'Early Startup Strategy',
   'Other',
 ]
+
+const schema = z.object({
+  name: z.string().min(1),
+  email: z.string().email(),
+  work: z.string().min(1),
+  message: z.string().min(1),
+})
+
+export type ContactForm = z.infer<typeof schema>
+
 const ContactPage: NextPage = () => {
   const [work, setWork] = useState('')
+  const [loading, setLoading] = useState(false)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactForm>()
+
+  const { push } = useRouter()
+
+  const onSubmit: SubmitHandler<ContactForm> = (data) => {
+    console.debug(data)
+    fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.debug(res)
+      if (res.status === 200) {
+        push('/success')
+      } else {
+        alert('Something went wrong. Please try again later.')
+      }
+    })
+  }
   return (
     <>
       <NextSeo />
@@ -32,23 +71,12 @@ const ContactPage: NextPage = () => {
             </p>
           </div>
           <form
+            onSubmit={handleSubmit(onSubmit)}
             className="flex w-full flex-col gap-3"
-            onSubmit={(e) => {
-              e.preventDefault()
-              console.log(e)
-              // fetch('/api/sendEmail', {
-              //   method: 'POST',
-              //   body: JSON.stringify({
-              //     name: e.target.name.value,
-              //     email: e.target.email.value,
-              //     work: e.target.work.value,
-              //     details: e.target.details.value,
-              //   }),
-              // })
-            }}
           >
             <label htmlFor="name">Your name or company</label>
             <input
+              {...register('name')}
               className="rounded-full border-2 border-dark px-2 py-3 text-dark"
               id="name"
               type="text"
@@ -56,18 +84,20 @@ const ContactPage: NextPage = () => {
             />
             <label htmlFor="email">Email address</label>
             <input
+              {...register('email')}
               className="rounded-full border-2 border-dark px-2 py-3 text-dark"
               id="email"
               type="text"
               placeholder="pparker@gmail.com"
             />
-            <label htmlFor="phone">
-              What type of work are you looking for?
-            </label>
+            <label htmlFor="work">What type of work are you looking for?</label>
             <Menu as="div" className={'relative w-full'}>
               {({ open, close }) => (
                 <>
-                  <Menu.Button className="w-full rounded-full border-2 border-dark px-2 py-3 text-dark">
+                  <Menu.Button
+                    id="work"
+                    className="w-full rounded-full border-2 border-dark px-2 py-3 text-dark"
+                  >
                     {work || 'Select your work'}
                   </Menu.Button>
                   <Menu.Items className="absolute z-20 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
@@ -77,10 +107,11 @@ const ContactPage: NextPage = () => {
                           <>
                             {items.map((item, i) => (
                               <a
+                                {...register('work')}
                                 key={i}
                                 onClick={() => {
-                                  setWork(item)
                                   close()
+                                  setWork(item)
                                 }}
                                 className={`${
                                   active
@@ -101,6 +132,7 @@ const ContactPage: NextPage = () => {
             </Menu>
             <label htmlFor="details">Tell us about your project</label>
             <textarea
+              {...register('message')}
               rows={6}
               className="rounded-xl border-2 border-dark px-2 py-3 text-dark"
               id="details"
