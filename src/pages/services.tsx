@@ -50,26 +50,22 @@ const ServicesPage: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section
-        id="services"
-        centered
-        col
-        className="gap-12 px-[12%] py-32 md:h-screen"
-      >
+      <FlexSection id="services" centered className="py-32 md:h-screen">
         <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark  md:-top-24 md:h-[642px]" />
         <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark  md:-bottom-36 md:h-[642px]" />
-
-        <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
-          We build catered <br className="md:hidden" /> experiences to <br />{' '}
-          grow your <br className="md:hidden" /> business.
-        </h1>
-        <Link
-          href="/contact"
-          className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg/[24px] text-white transition-colors ease-out hover:bg-indigo-600"
-        >
-          Let&apos;s make some magic <MagicSVG className="ml-1 h-5 w-5" />
-        </Link>
-      </Section>
+        <FlexSection.Container col className="items-center gap-12">
+          <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
+            We build catered <br className="md:hidden" /> experiences to <br />{' '}
+            grow your <br className="md:hidden" /> business.
+          </h1>
+          <Link
+            href="/contact"
+            className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg/[24px] text-white transition-colors ease-out hover:bg-indigo-600"
+          >
+            Let&apos;s make some magic <MagicSVG className="ml-1 h-5 w-5" />
+          </Link>
+        </FlexSection.Container>
+      </FlexSection>
       {info.map((info) => (
         <div key={info.id}>
           <InfoSection {...info} />
@@ -79,7 +75,10 @@ const ServicesPage: NextPage = () => {
         <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
           Customize your workflow
         </h1>
-        <div className="relative flex flex-col justify-evenly gap-6 px-4 py-4 md:flex-row md:px-12">
+        <FlexSection.Container
+          col
+          className="relative justify-evenly gap-6 px-4 py-4 md:flex-row md:px-12"
+        >
           <div className="flex w-full flex-col gap-6">
             <h2 className="text-2xl font-bold">Plan</h2>
             <p className="text-base/[22px] font-kindalight">
@@ -113,8 +112,9 @@ const ServicesPage: NextPage = () => {
               standards. Guided by user feedback, analytics, and more.
             </p>
           </div>
-          <RepeatSVG className="absolute mx-4 mt-12 hidden md:inline" />
-        </div>
+          <RepeatSVG className="absolute mx-4 mt-24 hidden md:inline" />
+        </FlexSection.Container>
+        <h2 className="text-bold mt-24 text-center text-2xl/[33px]">Repeat</h2>
       </FlexSection>
       <ServicesComponent />
       <FlexSection col>

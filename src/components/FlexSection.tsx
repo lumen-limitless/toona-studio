@@ -43,7 +43,7 @@ const Container: React.FC<ContainerProps> = ({
   ...props
 }) => {
   const containerClasses = [
-    'container mx-auto flex px-4 flex-grow',
+    'container mx-auto flex flex-grow',
     col ? 'flex-col' : 'flex-row',
     className,
   ]

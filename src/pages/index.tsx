@@ -11,6 +11,7 @@ import whyImg from '../../public/why.jpg'
 import InfoSection from '../components/InfoSection'
 import Carousel from '../components/Carousel'
 import Link from 'next/link'
+import FlexSection from '../components/FlexSection'
 
 const info = [
   {
@@ -56,17 +57,17 @@ const Home: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section
+      <FlexSection
         id="landing"
         className=" flex-col-reverse px-8 py-24 md:px-[12%] lg:h-screen lg:flex-row"
       >
-        <div className="flex flex-grow flex-col  justify-center  gap-12 text-dark">
+        <FlexSection.Container col className="justify-center gap-12 text-dark">
           <h1 className="whitespace-nowrap text-4xl/[49px] md:text-[52px]/[71px] lg:text-7xl/[98px]">
             Crafting joy through <br /> digital experiences.
           </h1>
-          <p className="text-xl/[27px] font-kindabold">
+          <p className="text-xl/[27px] font-kindabold lg:text-2xl/[33px]">
             We are a digital product studio that designs & develops innovative{' '}
-            <br /> and human-centered experiences to enrich your business.{' '}
+            and human-centered experiences to enrich your business.{' '}
           </p>
           <Link
             href="/contact"
@@ -74,9 +75,9 @@ const Home: NextPage = () => {
           >
             Let&apos;s chat
           </Link>
-        </div>
+        </FlexSection.Container>
         <Image src={heroPhoto} alt="" priority />
-      </Section>
+      </FlexSection>
       <Carousel />
       {info.map((info) => (
         <div key={info.id}>
