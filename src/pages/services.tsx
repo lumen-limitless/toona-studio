@@ -13,6 +13,7 @@ import Container from '../components/Container'
 import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import CirclesStarLeftSVG from 'public/circles-star-left.svg'
 import Link from 'next/link'
+import FlexSection from '../components/FlexSection'
 
 const info = [
   {
@@ -55,12 +56,12 @@ const ServicesPage: NextPage = () => {
         col
         className="gap-12 px-[12%] py-32 md:h-screen"
       >
-        <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
-        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark md:h-[642px]" />
+        <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark  md:-top-24 md:h-[642px]" />
+        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark  md:-bottom-36 md:h-[642px]" />
 
         <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
-          We build catered <br /> experiences to <br /> grow your <br />{' '}
-          business.
+          We build catered <br className="md:hidden" /> experiences to <br />{' '}
+          grow your <br className="md:hidden" /> business.
         </h1>
         <Link
           href="/contact"
@@ -74,7 +75,7 @@ const ServicesPage: NextPage = () => {
           <InfoSection {...info} />
         </div>
       ))}
-      <Section col className="py-4">
+      <FlexSection col className="py-4">
         <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
           Customize your workflow
         </h1>
@@ -89,7 +90,7 @@ const ServicesPage: NextPage = () => {
           </div>
           <div className="flex w-full flex-col gap-6">
             <h2 className="text-2xl font-bold">Design</h2>
-            <p className="text-lg/[22px] font-kindalight">
+            <p className="text-base/[22px] font-kindalight">
               We&apos;ll create wireframes, mockups, and prototypes to bring
               your vision to life. We&apos;ll work with you to establish a
               visual identity and design an intuitive user interface for your
@@ -98,7 +99,7 @@ const ServicesPage: NextPage = () => {
           </div>
           <div className="flex w-full flex-col gap-6">
             <h2 className="text-2xl font-bold">Develop</h2>
-            <p className="text-lg/[22px] font-kindalight">
+            <p className="text-base/[22px] font-kindalight">
               We will build your product using the latest technologies and best
               practices. We use agile development methodologies to ensure your
               project is completed on time and within budget.
@@ -106,54 +107,54 @@ const ServicesPage: NextPage = () => {
           </div>
           <div className="flex w-full flex-col gap-6">
             <h2 className="text-2xl font-bold">Test</h2>
-            <p className="text-lg/[22px] font-kindalight">
+            <p className="text-base/[22px] font-kindalight">
               Once the product is developed, we will conduct extensive testing
               to ensure it meets our high performance, usability, and security
               standards. Guided by user feedback, analytics, and more.
             </p>
           </div>
-          <RepeatSVG className="absolute mx-4 -mt-6 hidden md:block" />
+          <RepeatSVG className="absolute mx-4 mt-12 hidden md:inline" />
         </div>
-      </Section>
+      </FlexSection>
       <ServicesComponent />
-      <Section>
-        <Container className="flex-col">
-          <h1 className="text-center text-4xl/[49px] md:text-5xl/[66px] lg:text-[64px]/[87px]">
-            Where We Can <br className="md:hidden" /> Help
-          </h1>
-          <div className="mt-12 flex flex-col gap-6 md:flex-row">
-            <div className="flex w-full flex-col gap-6">
-              <h2 className="text-2xl/[33px]">Startups</h2>
-              <p className="text-base/[22px] font-normal">
-                Need help bringing your idea to life? Our data-driven design
-                principles ensure that your product is effective and
-                user-friendly. We can streamline the process by creating your
-                designs and pitch deck simultaneously, and turning around a demo
-                or prototype within weeks.
-              </p>
-            </div>
-            <div className="flex w-full flex-col gap-6">
-              <h2 className="text-2xl/[33px]">Small & Medium Business</h2>
-              <p className="text-base/[22px] font-normal">
-                Looking to address new needs? Our focus on goal-oriented design
-                and engineering helps us revamp existing products to achieve
-                specific objectives such as increasing conversions, daily active
-                users, and visitors.
-              </p>
-            </div>
-            <div className="flex w-full flex-col gap-6">
-              <h2 className="text-2xl/[33px]">Global Brands</h2>
-              <p className="text-base/[22px] font-normal">
-                Launching a new product or campaign? We&apos;ll ensure a smooth
-                and efficient launch while staying within your brand guidelines.
-                With experience working with top global enterprises, we&apos;ll
-                help you convince stakeholders and deliver products that reflect
-                your ecosystem.{' '}
-              </p>
-            </div>
+      <FlexSection col>
+        <h1 className="text-center text-4xl/[49px] md:text-5xl/[66px] lg:text-[64px]/[87px]">
+          Where We Can <br className="md:hidden" /> Help
+        </h1>
+        <div className="mt-12 flex flex-col justify-evenly gap-6 md:flex-row">
+          <div className="flex w-full flex-col gap-6 ">
+            <h2 className="text-2xl/[33px] font-bold">Startups</h2>
+            <p className="text-base/[22px] font-normal">
+              Need help bringing your idea to life? Our data-driven design
+              principles ensure that your product is effective and
+              user-friendly. We can streamline the process by creating your
+              designs and pitch deck simultaneously, and turning around a demo
+              or prototype within weeks.
+            </p>
           </div>
-        </Container>
-      </Section>
+          <div className="flex w-full flex-col gap-6">
+            <h2 className="text-2xl/[33px] font-bold">
+              Small & Medium Business
+            </h2>
+            <p className="text-base/[22px] font-normal">
+              Looking to address new needs? Our focus on goal-oriented design
+              and engineering helps us revamp existing products to achieve
+              specific objectives such as increasing conversions, daily active
+              users, and visitors.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-6">
+            <h2 className="text-2xl/[33px] font-bold">Global Brands</h2>
+            <p className="text-base/[22px] font-normal">
+              Launching a new product or campaign? We&apos;ll ensure a smooth
+              and efficient launch while staying within your brand guidelines.
+              With experience working with top global enterprises, we&apos;ll
+              help you convince stakeholders and deliver products that reflect
+              your ecosystem.{' '}
+            </p>
+          </div>
+        </div>
+      </FlexSection>
       <CTA />
     </>
   )

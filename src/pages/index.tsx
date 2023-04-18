@@ -45,7 +45,7 @@ const info = [
     id: 'why',
     title: 'Spread the joy',
     description: [
-      'We understand that your digital presence is critical to your success, and we&apos;re dedicated to helping you achieve your goals. Our team of experts brings a passion for innovation to every project, delivering creative and practical solutions to enhance joyful experiences.',
+      'We understand that your digital presence is critical to your success, and we are dedicated to helping you achieve your goals. Our team of experts brings a passion for innovation to every project, delivering creative and practical solutions to enhance joyful experiences.',
     ],
     image: whyImg,
     reverse: false,
