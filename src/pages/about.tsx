@@ -1,17 +1,17 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import Container from '../components/Container'
-import Section from '../components/Section'
 import CirclesStarRightLightSVG from 'public/circles-star-right-light.svg'
 import CirclesStarLeftLightSVG from 'public/circles-star-left-light.svg'
 import MagicSVG from 'public/magic.svg'
 import Link from 'next/link'
+import FlexSection from '../components/FlexSection'
+import { INSTAGRAM_URL, LINKEDIN_URL, WEBSITE_URL } from '../constants'
 
 const AboutPage: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section
+      <FlexSection
         centered
         col
         className="overflow-clip bg-indigo-600 px-[47.5] py-64 text-light md:h-screen md:py-0"
@@ -22,9 +22,14 @@ const AboutPage: NextPage = () => {
         <h1 className="text-center text-4xl/[49px] md:text-[80px]/[109px] ">
           Small teams, <br /> big dreams.
         </h1>
-      </Section>
-      <Section col centered id="team" className="py-32">
-        <Container className="flex flex-col">
+      </FlexSection>
+      <FlexSection
+        col
+        centered
+        id="team"
+        className="pt-20 lg:pb-20 lg:pt-[120px]"
+      >
+        <FlexSection.Container col className="px-4 md:px-12 lg:px-16">
           <div className="space-y-6 pb-20">
             <h1 className="text-4xl/[49px] ">Christina Ho</h1>
             <h2 className="text-xl/[33px] text-indigo/50">
@@ -46,15 +51,30 @@ const AboutPage: NextPage = () => {
               collection and eating chicken.{' '}
             </p>
             <div className="flex gap-3">
-              <button className="full h-10 w-full rounded-full text-indigo ring-2 ring-indigo">
+              <a
+                href={WEBSITE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo"
+              >
                 Website
-              </button>
-              <button className="full h-10 w-full rounded-full text-indigo ring-2 ring-indigo">
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo"
+              >
                 LinkedIn
-              </button>
-              <button className="full h-10 w-full rounded-full text-indigo ring-2 ring-indigo">
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo"
+              >
                 Instagram
-              </button>
+              </a>
             </div>
           </div>
           <div className="space-y-6 pb-20">
@@ -78,24 +98,27 @@ const AboutPage: NextPage = () => {
               organizations.{' '}
             </p>
             <div className="flex gap-3">
-              <button className="full h-10 w-full rounded-full text-indigo ring-2 ring-indigo">
+              <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo">
                 Website
               </button>
-              <button className="full h-10 w-full rounded-full text-indigo ring-2 ring-indigo">
+              <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo">
                 LinkedIn
               </button>
-              <button className="full h-10 w-full rounded-full text-indigo ring-2 ring-indigo">
+              <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo">
                 Instagram
               </button>
             </div>
           </div>
-        </Container>
-        <Link href="contact" passHref>
-          <button className=" h-16 w-[306px] gap-1 rounded-full bg-indigo text-lg/[24px] font-kindabold text-light">
-            Let&apos;s make some magic <MagicSVG className="h-[19.94px]" />
-          </button>
+        </FlexSection.Container>
+      </FlexSection>
+      <FlexSection centered className="pb-20 lg:pb-[120px]">
+        <Link
+          href="contact"
+          className=" inline-flex h-16 w-[306px] items-center justify-center gap-1 rounded-full bg-indigo text-lg/[24px] font-kindabold text-light"
+        >
+          Let&apos;s make some magic <MagicSVG className="h-[19.94px]" />
         </Link>
-      </Section>
+      </FlexSection>
     </>
   )
 }

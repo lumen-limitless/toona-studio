@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import Section from '../components/Section'
 import heroPhoto from '../../public/hero-photo-w-assets.png'
-import Services from '../components/Features'
 import CTA from '../components/CTA'
 import { NextSeo } from 'next-seo'
 import whoImg from '../../public/who.jpg'
@@ -12,6 +10,7 @@ import InfoSection from '../components/InfoSection'
 import Carousel from '../components/Carousel'
 import Link from 'next/link'
 import FlexSection from '../components/FlexSection'
+import ServicesSection from '../components/Features'
 
 const info = [
   {
@@ -33,7 +32,7 @@ const info = [
     title: 'What we do',
     description: [
       'We help businesses create exceptional digital experiences that engage and delight their users. Our end-to-end consulting services are tailored to your needs and goals, from strategy and planning to design and development.',
-      'Whether launching a new product, revamping an existing platform, or developing custom software, we&apos;ll help you bring your vision to life with expertise and personalized solutions.',
+      'Whether launching a new product, revamping an existing platform, or developing custom software, we will help you bring your vision to life with expertise and personalized solutions.',
     ],
     image: whatImg,
     button: {
@@ -59,13 +58,15 @@ const Home: NextPage = () => {
       <NextSeo />
       <FlexSection
         id="landing"
-        className=" flex-col-reverse px-8 py-24 md:px-[12%] lg:h-screen lg:flex-row"
+        className=" flex-col-reverse  gap-6 px-4 py-24 md:px-[12%] lg:h-screen lg:flex-row lg:items-center lg:justify-between lg:gap-0"
       >
-        <FlexSection.Container col className="justify-center gap-12 text-dark">
+        <div className="flex flex-col justify-center gap-6">
           <h1 className="whitespace-nowrap text-4xl/[49px] md:text-[52px]/[71px] lg:text-7xl/[98px]">
-            Crafting joy through <br /> digital experiences.
+            Crafting joy <br className="md:hidden" /> through{' '}
+            <br className="hidden md:block" /> digital{' '}
+            <br className="md:hidden" /> experiences.
           </h1>
-          <p className="text-xl/[27px] font-kindabold lg:text-2xl/[33px]">
+          <p className="text-lg/[25px] font-kindabold lg:text-2xl/[33px]">
             We are a digital product studio that designs & develops innovative{' '}
             and human-centered experiences to enrich your business.{' '}
           </p>
@@ -75,16 +76,20 @@ const Home: NextPage = () => {
           >
             Let&apos;s chat
           </Link>
-        </FlexSection.Container>
-        <Image src={heroPhoto} alt="" priority />
+        </div>
+        <Image
+          src={heroPhoto}
+          alt=""
+          priority
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw"
+        />
       </FlexSection>
       <Carousel />
       {info.map((info) => (
-        <div key={info.id}>
-          <InfoSection {...info} />
-        </div>
+        <InfoSection key={info.id} {...info} />
       ))}
-      <Services />
+      <ServicesSection />
       <CTA />
     </>
   )

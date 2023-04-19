@@ -1,12 +1,13 @@
 import Link from 'next/link'
-import Section from './Section'
+import FlexSection from './FlexSection'
 
 export default function CTA() {
   return (
     <>
-      <Section
+      <FlexSection
         id="CTA"
-        className="flex flex-col items-center gap-12 bg-indigo-500 px-5 py-20 text-white md:h-[501px]"
+        col
+        className="items-center gap-12 bg-indigo-500 px-5 py-20 text-white md:h-[501px]"
       >
         <h1 className="text-center text-4xl/[49px] font-kindabold md:text-6xl/[87px]">
           Get Connected
@@ -20,7 +21,7 @@ export default function CTA() {
         >
           Let&apos;s chat
         </Link>
-      </Section>
+      </FlexSection>
     </>
   )
 }
