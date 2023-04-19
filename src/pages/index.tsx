@@ -7,10 +7,47 @@ import whoImg from '../../public/who.jpg'
 import whatImg from '../../public/what.jpg'
 import whyImg from '../../public/why.jpg'
 import InfoSection from '../components/InfoSection'
-import Carousel from '../components/Carousel'
 import Link from 'next/link'
 import FlexSection from '../components/FlexSection'
 import ServicesSection from '../components/ServicesSection'
+import Marquee from 'react-fast-marquee'
+
+const headings = [
+  'strategy',
+  '✦',
+  'cx design',
+  '✦',
+  'social media',
+  '✦',
+  'prototyping',
+  '✦',
+  'consulting',
+  '✦',
+  'quality assurance',
+  '✦',
+  'strategy',
+  '✦',
+  'cx design',
+  '✦',
+  'social media',
+  '✦',
+  'prototyping',
+  '✦',
+  'consulting',
+  '✦',
+  'quality assurance',
+  '✦',
+  'strategy',
+  '✦',
+  'cx design',
+  '✦',
+  'social media',
+  '✦',
+  'prototyping',
+  '✦',
+  'consulting',
+  '✦',
+]
 
 const info = [
   {
@@ -85,7 +122,18 @@ const Home: NextPage = () => {
               (max-width: 1200px) 50vw"
         />
       </FlexSection>
-      <Carousel />
+
+      <Marquee
+        className="desktop:text-2xl flex h-[120px] w-full overflow-hidden bg-dark py-3 text-xl uppercase text-light"
+        gradient={false}
+      >
+        {headings.map((heading, i) => (
+          <span className="mx-3" key={i}>
+            {heading}
+          </span>
+        ))}
+      </Marquee>
+
       {info.map((info) => (
         <InfoSection key={info.id} {...info} />
       ))}
