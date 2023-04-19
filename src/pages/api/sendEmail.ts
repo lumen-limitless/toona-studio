@@ -1,6 +1,6 @@
 // pages/api/sendEmail.ts
 import type { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer'
+import emailjs from '@emailjs/browser'
 import { ContactForm } from '../contact'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -13,28 +13,21 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return
     }
 
-    // Configure the email transport using the SMTP server of your choice
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_SECURE === 'true',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
-      },
-    })
-
     // Configure the email data
-    const mailData = {
-      from: process.env.SMTP_FROM,
-      to: process.env.SMTP_TO,
-      subject: `New message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
     }
 
     try {
       // Send the email
-      await transporter.sendMail(mailData)
+      await emailjs.send(
+        process.env.EMAILJS_SERVICE_ID!,
+        process.env.EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.EMAILJS_USER_ID!
+      )
       res.status(200).json({ message: 'Email sent successfully.' })
     } catch (error) {
       res.status(500).json({

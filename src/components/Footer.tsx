@@ -10,9 +10,9 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative flex w-full flex-col items-center justify-between gap-6 bg-dark pb-8 pt-16 text-light"
+      className="relative flex w-full flex-col items-center justify-between gap-6 bg-dark  py-9 text-light md:gap-[75px] md:py-[68px]"
     >
-      <div className="flex flex-col justify-between gap-6 px-12 md:w-full md:flex-row">
+      <div className="flex w-full flex-col items-center justify-between gap-6 px-12 md:items-start md:gap-[75px] lg:flex-row lg:items-center">
         <LogoSVG className="h-[18px] fill-current stroke-current" />
         <div className="flex flex-col items-center gap-3 md:flex-row md:gap-12 ">
           <a href="">Idea Generator</a>
@@ -27,20 +27,22 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto flex gap-[43px]">
-        <DiscordSVG className="h-8 fill-light stroke-light" />
-        <a href={INSTAGRAM_URL} target="_blank">
-          <InstaSVG className="h-8 fill-light stroke-light" />
-        </a>
-        <a href={LINKEDIN_URL} target="_blank">
-          <LinkedInSVG className="h-8 fill-light stroke-light" />
-        </a>
-        <BehanceSVG className="h-8 fill-light stroke-light" />
-      </div>
-      <div className="mx-auto flex px-12 md:mx-0 md:w-full">
-        <p className=" text-sm/[18px] text-light opacity-75">
-          &copy; {new Date().getFullYear()} toona.studio
-        </p>
+      <div className="relative flex w-full flex-col items-center justify-center gap-6 md:flex-row-reverse md:justify-end">
+        <div className=" flex w-full items-center justify-center gap-[43px] md:absolute">
+          <DiscordSVG className="h-8 fill-light stroke-light" />
+          <a href={INSTAGRAM_URL} target="_blank">
+            <InstaSVG className="h-8 fill-light stroke-light" />
+          </a>
+          <a href={LINKEDIN_URL} target="_blank">
+            <LinkedInSVG className="h-8 fill-light stroke-light" />
+          </a>
+          <BehanceSVG className="h-8 fill-light stroke-light" />
+        </div>
+        <div className="flex px-12 md:mx-0">
+          <p className=" text-sm/[18px] text-light opacity-75">
+            &copy; {new Date().getFullYear()} toona.studio
+          </p>
+        </div>
       </div>
     </footer>
   )

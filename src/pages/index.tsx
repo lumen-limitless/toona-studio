@@ -10,7 +10,7 @@ import InfoSection from '../components/InfoSection'
 import Carousel from '../components/Carousel'
 import Link from 'next/link'
 import FlexSection from '../components/FlexSection'
-import ServicesSection from '../components/Features'
+import ServicesSection from '../components/ServicesSection'
 
 const info = [
   {
