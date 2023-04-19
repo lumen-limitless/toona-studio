@@ -58,11 +58,7 @@ export default function Document() {
           property="og:url"
           content={process.env.NEXT_PUBLIC_APP_URL || ''}
         />
-        <meta
-          key="og:image"
-          property="og:image"
-          content="public/opengraph.jpg"
-        />
+        <meta key="og:image" property="og:image" content="/opengraph.jpg" />
         <meta
           key="og:description"
           property="og:description"
