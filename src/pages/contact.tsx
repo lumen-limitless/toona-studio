@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 import Container from '../components/Container'
-import Section from '../components/Section'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 import CirclesSVG from 'public/circles.svg'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { useRouter } from 'next/router'
+import FlexSection from '../components/FlexSection'
 
 const items = [
   'Digital Experience',
@@ -59,10 +59,10 @@ const ContactPage: NextPage = () => {
   return (
     <>
       <NextSeo />
-      <Section col centered id="contact" className="py-[44px]">
+      <FlexSection col centered id="contact" className="py-[44px]">
         <CirclesSVG className="pointer-events-none absolute -top-32 right-0 h-[640px] rotate-180" />
         <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 h-[640px]" />
-        <Container className="z-10 flex max-w-5xl flex-col items-center justify-center gap-12">
+        <FlexSection.Container className="z-10 flex max-w-5xl flex-col items-center justify-center gap-12">
           <div className="mt-12 flex flex-col gap-12 text-center">
             <h1 className="text-4xl/[49px]">Let&apos;s chat</h1>
             <p className="text-lg/[25px] font-kindabold">
@@ -76,7 +76,9 @@ const ContactPage: NextPage = () => {
           >
             <label htmlFor="name">Your name or company</label>
             <input
-              {...register('name')}
+              {...register('name', {
+                required: 'This field is required',
+              })}
               className="rounded-full border-2 border-dark px-2 py-3 text-dark"
               id="name"
               type="text"
@@ -150,9 +152,9 @@ const ContactPage: NextPage = () => {
             {' '}
             {'<-'} Idea Generator
           </a>
-        </Container>
-      </Section>
-      <Section
+        </FlexSection.Container>
+      </FlexSection>
+      <FlexSection
         id="connect"
         col
         centered
@@ -171,7 +173,7 @@ const ContactPage: NextPage = () => {
             hello@toona.studio
           </a>
         </div>
-      </Section>
+      </FlexSection>
     </>
   )
 }

@@ -114,7 +114,7 @@ const ServicesPage: NextPage = () => {
             Repeat
           </h2>
         </FlexSection.Container>
-        <RepeatSVG className="absolute inset-x-16 bottom-32 hidden lg:inline" />
+        <RepeatSVG className="absolute inset-x-16 bottom-32 hidden lg:block xl:inset-x-12 xl:bottom-24" />
       </FlexSection>
 
       <ServicesSection />
