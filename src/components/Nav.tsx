@@ -70,7 +70,10 @@ export default function Nav() {
         {({ open, close }) => (
           <>
             <Popover.Button
-              onClick={togglePopoverOpen}
+              onClick={() => {
+                window.scrollTo({ top: 0 })
+                togglePopoverOpen()
+              }}
               className={
                 ' absolute inset-y-auto right-6 z-30  rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden '
               }
