@@ -52,7 +52,7 @@ const ServicesPage: NextPage = () => {
         id="services"
         col
         centered
-        className="items-center gap-12 py-32 md:h-screen"
+        className="items-center gap-12 px-5 py-32 md:h-[calc(100vh-100px)]"
       >
         <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark  md:-top-24 md:h-[642px]" />
         <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark  md:-bottom-36 md:h-[642px]" />

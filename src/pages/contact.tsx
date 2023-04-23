@@ -61,19 +61,22 @@ const ContactPage: NextPage = () => {
       <NextSeo />
       <FlexSection
         col
-        centered
         id="contact"
-        className="px-5 py-[44px] md:px-20 xl:px-[269px]"
+        className="px-5 pb-[44px] pt-12 md:px-20 md:pb-[140px] md:pt-[100px] xl:px-[269px]"
       >
-        <CirclesSVG className="pointer-events-none absolute -top-32 right-0 h-[640px] rotate-180" />
-        <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 h-[640px]" />
-        <div className="z-10 mt-12 flex flex-col gap-12 text-center">
-          <h1 className="text-4xl/[49px]">Let&apos;s chat</h1>
-          <p className="text-lg/[25px] font-kindabold">
+        <CirclesSVG className="pointer-events-none absolute -top-32 right-0 hidden h-[640px] rotate-180 md:block" />
+        <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 hidden h-[640px] md:block" />
+
+        <div className="z-10 mb-12 space-y-12 text-center">
+          <h1 className="text-4xl/[49px] md:text-[52px]/[71px] lg:text-[80px]/[109px]">
+            Let&apos;s chat
+          </h1>
+          <p className="text-lg/[25px] font-kindabold lg:text-2xl/[33px]">
             Let us know what you need and we can <br /> provide a brief cost &
             time estimate.
           </p>
         </div>
+
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="z-10 flex w-full max-w-[538px] flex-col gap-3"
@@ -152,7 +155,8 @@ const ContactPage: NextPage = () => {
             Send message
           </button>
         </form>
-        <a href="" className="text-lg/[24px] font-kindabold text-indigo ">
+
+        <a href="" className="mt-10 text-lg/[24px] font-kindabold text-indigo ">
           {' '}
           {'<-'} Idea Generator
         </a>

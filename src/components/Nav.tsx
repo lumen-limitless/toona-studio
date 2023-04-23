@@ -23,7 +23,7 @@ export default function Nav() {
       className={clsx(
         'relative flex h-[100px] w-full items-center justify-between',
         pathname === '/about'
-          ? 'bg-light text-dark md:bg-transparent md:text-light'
+          ? 'bg-light text-dark md:bg-indigo-600 md:text-light'
           : ' text-dark'
       )}
     >
