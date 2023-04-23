@@ -34,6 +34,7 @@ export default function Nav() {
           togglePopoverOpen(false)
         }}
       >
+        <span className="sr-only">Home</span>
         <LogoSVG
           className={clsx(
             'h-[18px]',
@@ -71,7 +72,7 @@ export default function Nav() {
           <>
             <Popover.Button
               onClick={() => {
-                window.scrollTo({ top: 0 })
+                window.scrollTo({ top: 0, behavior: 'auto' })
                 togglePopoverOpen()
               }}
               className={

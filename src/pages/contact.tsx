@@ -67,7 +67,7 @@ const ContactPage: NextPage = () => {
       >
         <CirclesSVG className="pointer-events-none absolute -top-32 right-0 h-[640px] rotate-180" />
         <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 h-[640px]" />
-        <div className="mt-12 flex flex-col gap-12 text-center">
+        <div className="z-10 mt-12 flex flex-col gap-12 text-center">
           <h1 className="text-4xl/[49px]">Let&apos;s chat</h1>
           <p className="text-lg/[25px] font-kindabold">
             Let us know what you need and we can <br /> provide a brief cost &
@@ -76,7 +76,7 @@ const ContactPage: NextPage = () => {
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex w-full max-w-[538px] flex-col gap-3"
+          className="z-10 flex w-full max-w-[538px] flex-col gap-3"
         >
           <label htmlFor="name">Your name or company</label>
           <input
