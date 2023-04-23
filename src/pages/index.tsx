@@ -95,7 +95,7 @@ const Home: NextPage = () => {
       <NextSeo />
       <FlexSection
         id="landing"
-        className=" flex-col-reverse gap-6 px-4 pb-12 md:px-[12%] lg:h-[calc(100vh-100px)] lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:pb-0"
+        className=" flex-col-reverse gap-6 px-4 pb-12 md:px-[12%] lg:h-[calc(100vh-100px)] lg:flex-row lg:items-center lg:justify-between lg:gap-0"
       >
         <div className="flex flex-col justify-center gap-6 xl:ml-24">
           <h1 className="whitespace-nowrap text-4xl/[49px] md:text-[52px]/[71px] lg:text-7xl/[98px]">

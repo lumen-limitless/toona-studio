@@ -62,7 +62,7 @@ const ContactPage: NextPage = () => {
       <FlexSection
         col
         id="contact"
-        className="px-5 pb-[44px] pt-12 md:px-20 md:pb-[140px] md:pt-[100px] xl:px-[269px]"
+        className="px-5 pb-[44px]  md:px-20 md:pb-[140px] xl:px-[269px]"
       >
         <CirclesSVG className="pointer-events-none absolute -top-32 right-0 hidden h-[640px] rotate-180 md:block" />
         <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 hidden h-[640px] md:block" />
@@ -79,74 +79,82 @@ const ContactPage: NextPage = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="z-10 flex w-full max-w-[538px] flex-col gap-3"
+          className="z-10 flex w-full max-w-[538px] flex-col gap-10"
         >
-          <label htmlFor="name">Your name or company</label>
-          <input
-            {...register('name', {
-              required: 'This field is required',
-            })}
-            className="rounded-full border-2 border-dark px-2 py-3 text-dark"
-            id="name"
-            type="text"
-            placeholder="Peter Parker at Amazon"
-          />
-          <label htmlFor="email">Email address</label>
-          <input
-            {...register('email')}
-            className="rounded-full border-2 border-dark px-2 py-3 text-dark"
-            id="email"
-            type="text"
-            placeholder="pparker@gmail.com"
-          />
-          <label htmlFor="work">What type of work are you looking for?</label>
-          <Menu as="div" className={'relative w-full'}>
-            {({ open, close }) => (
-              <>
-                <Menu.Button
-                  id="work"
-                  className="w-full rounded-full border-2 border-dark px-2 py-3 text-dark"
-                >
-                  {work || 'Select your work'}
-                </Menu.Button>
-                <Menu.Items className="absolute z-20 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
-                  <div className="py-1">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <>
-                          {items.map((item, i) => (
-                            <a
-                              {...register('work')}
-                              key={i}
-                              onClick={() => {
-                                close()
-                                setWork(item)
-                              }}
-                              className={`${
-                                active
-                                  ? 'bg-violet-500 text-white'
-                                  : 'text-gray-900'
-                              } group flex w-full items-center rounded-md px-2 py-2`}
-                            >
-                              {item}
-                            </a>
-                          ))}
-                        </>
-                      )}
-                    </Menu.Item>
-                  </div>
-                </Menu.Items>
-              </>
-            )}
-          </Menu>
-          <label htmlFor="details">Tell us about your project</label>
-          <textarea
-            {...register('message')}
-            rows={6}
-            className="rounded-xl border-2 border-dark px-2 py-3 text-dark"
-            id="details"
-            placeholder="I want to make an app about lemons & machine learning for the elderly"
-          />
+          <label htmlFor="name" className="flex flex-col gap-3">
+            Your name or company
+            <input
+              {...register('name', {
+                required: 'This field is required',
+              })}
+              className="rounded-full border-2 border-dark px-2 py-3 text-dark"
+              id="name"
+              type="text"
+              placeholder="Peter Parker at Amazon"
+            />
+          </label>
+          <label htmlFor="email" className="flex flex-col gap-3">
+            Email address
+            <input
+              {...register('email')}
+              className="rounded-full border-2 border-dark px-2 py-3 text-dark"
+              id="email"
+              type="text"
+              placeholder="pparker@gmail.com"
+            />{' '}
+          </label>
+          <label htmlFor="work" className="flex flex-col gap-3">
+            What type of work are you looking for?
+            <Menu as="div" className={'relative w-full'}>
+              {({ open, close }) => (
+                <>
+                  <Menu.Button
+                    id="work"
+                    className="w-full rounded-full border-2 border-dark px-2 py-3 text-dark"
+                  >
+                    {work || 'Select your work'}
+                  </Menu.Button>
+                  <Menu.Items className="absolute z-20 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <>
+                            {items.map((item, i) => (
+                              <a
+                                {...register('work')}
+                                key={i}
+                                onClick={() => {
+                                  close()
+                                  setWork(item)
+                                }}
+                                className={`${
+                                  active
+                                    ? 'bg-violet-500 text-white'
+                                    : 'text-gray-900'
+                                } group flex w-full items-center rounded-md px-2 py-2`}
+                              >
+                                {item}
+                              </a>
+                            ))}
+                          </>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </>
+              )}
+            </Menu>
+          </label>
+          <label htmlFor="details" className="flex flex-col gap-3">
+            Tell us about your project
+            <textarea
+              {...register('message')}
+              rows={5}
+              className="rounded-xl border-2 border-dark px-2 py-3 text-dark"
+              id="details"
+              placeholder="I want to make an app about lemons & machine learning for the elderly"
+            />
+          </label>
 
           <button
             type="submit"
