@@ -22,7 +22,7 @@ export default function InfoSection({
     <FlexSection
       id={id}
       className={clsx(
-        'flex-col justify-between gap-12 px-5 py-20 md:px-20 xl:px-[269px]',
+        'flex-col justify-center gap-12 px-5 py-20 md:px-20 lg:gap-[120px] xl:px-[269px]',
         reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
       )}
     >

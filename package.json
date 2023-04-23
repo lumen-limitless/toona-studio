@@ -5,11 +5,11 @@
   "author": "lumen-limitless",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --hostname 0.0.0.0",
     "analyze": "ANALYZE=true next build",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "start": "next start",
+    "start": "next start --hostname 0.0.0.0",
     "lint": "next lint",
     "export": "next export"
   },

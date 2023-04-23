@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 const Page404: NextPage = () => {
   return (
     <>
-      <div className="h-full flex-grow bg-white px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+      <div className="h-full flex-grow  px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
         <div className="mx-auto max-w-max">
           <main className="sm:flex">
             <p className="text-4xl font-extrabold text-indigo-600 sm:text-5xl">
