@@ -104,8 +104,9 @@ const Home: NextPage = () => {
             <br className="md:hidden" /> experiences.
           </h1>
           <p className="text-lg/[25px] font-kindabold lg:text-2xl/[33px]">
-            We are a digital product studio that designs & develops innovative{' '}
-            and human-centered experiences to enrich your business.{' '}
+            We are a digital product studio based in Rochester, NY that designs
+            & develops innovative and human-centered experiences to enrichen
+            your business.
           </p>
           <Link
             href="/contact"

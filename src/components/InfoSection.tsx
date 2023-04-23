@@ -22,7 +22,7 @@ export default function InfoSection({
     <FlexSection
       id={id}
       className={clsx(
-        'flex-col justify-evenly gap-12 px-4 py-20 md:px-[12%] lg:gap-20',
+        'flex-col justify-between px-5 py-20 md:px-20 xl:px-[269px]',
         reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
       )}
     >
@@ -50,7 +50,8 @@ export default function InfoSection({
           </Link>
         )}
       </div>
-      <div className="relative h-[400px] w-full md:h-[525px] lg:max-w-[480px] xl:h-[719px] xl:max-w-[631px]">
+
+      <div className="relative h-[400px] w-full shrink-0 md:h-[525px] lg:max-w-[480px] xl:h-[719px] xl:max-w-[631px]">
         <Image
           src={image}
           alt=""

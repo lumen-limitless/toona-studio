@@ -21,7 +21,7 @@ export default function Nav() {
   return (
     <nav
       className={clsx(
-        'relative flex h-[70px] w-full items-center justify-between md:h-[100px]',
+        'relative flex h-[100px] w-full items-center justify-between',
         pathname === '/about'
           ? 'bg-light text-dark md:bg-transparent md:text-light'
           : ' text-dark'
