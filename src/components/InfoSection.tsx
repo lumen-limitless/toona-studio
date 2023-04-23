@@ -33,15 +33,12 @@ export default function InfoSection({
 
         <div>
           {description.map((desc, i) => (
-            <>
-              <p
-                className="text-lg/[25px] font-kindabold md:text-[20px]/[27px]"
-                key={i}
-              >
+            <div key={i}>
+              <p className="text-lg/[25px] font-kindabold md:text-[20px]/[27px]">
                 {desc}
               </p>
               <br />
-            </>
+            </div>
           ))}
         </div>
 
