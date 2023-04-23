@@ -58,14 +58,14 @@ export default function ServicesSection() {
       <FlexSection
         id="services"
         col
-        className="items-center gap-12 px-4 py-32 md:px-12 lg:px-16"
+        className="items-center gap-12 px-4 py-32 md:px-[12%]"
       >
         <h1 className="text-center text-4xl/[49px]  md:text-[64px]/[87px]">
           Services
         </h1>
-        <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row ">
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
           {services.map((service, i) => (
-            <div key={i} className="flex flex-col gap-6">
+            <div key={i} className="flex flex-1 flex-col gap-6">
               <div className="relative h-72 w-full xl:h-96 xl:w-96">
                 <Image
                   src={service.image}

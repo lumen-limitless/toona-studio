@@ -135,7 +135,9 @@ const Home: NextPage = () => {
       </Marquee>
 
       {info.map((info) => (
-        <InfoSection key={info.id} {...info} />
+        <div key={info.id}>
+          <InfoSection {...info} />
+        </div>
       ))}
 
       <ServicesSection />

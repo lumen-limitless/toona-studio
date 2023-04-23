@@ -20,7 +20,6 @@ export default function InfoSection({
 }) {
   return (
     <FlexSection
-      key={id}
       id={id}
       className={clsx(
         'flex-col justify-evenly gap-12 px-4 py-20 md:px-[12%] lg:gap-20',

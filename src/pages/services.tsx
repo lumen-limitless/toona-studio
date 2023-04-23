@@ -66,7 +66,9 @@ const ServicesPage: NextPage = () => {
       </FlexSection>
 
       {info.map((info) => (
-        <InfoSection {...info} key={info.id} />
+        <div className="" key={info.id}>
+          <InfoSection {...info} />
+        </div>
       ))}
 
       <FlexSection col className="py-4">
