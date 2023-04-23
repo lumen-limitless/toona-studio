@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 import InfoSection from '../components/InfoSection'
-import creativityImg from 'public//creativity.jpeg'
-import collaborationImg from 'public/collaboration.jpeg'
-import growthImg from '../../public/growth.jpeg'
+import creativityImg from 'public/creativity.jpg'
+import collaborationImg from 'public/collaboration.jpg'
+import growthImg from 'public/growth.jpg'
 import ServicesSection from '../components/ServicesSection'
 import MagicSVG from 'public/magic.svg'
 import RepeatSVG from 'public/repeat.svg'
@@ -64,16 +64,19 @@ const ServicesPage: NextPage = () => {
           </Link>
         </FlexSection.Container>
       </FlexSection>
+
       {info.map((info) => (
-        <div key={info.id}>
-          <InfoSection {...info} />
-        </div>
+        <InfoSection {...info} key={info.id} />
       ))}
+
       <FlexSection col className="py-4">
-        <h1 className="mb-12 text-center text-4xl/[49px] font-kindabold md:mb-20 md:text-[72px]/[98px]">
+        <h1 className=" text-center text-4xl/[49px] font-kindabold  md:text-[72px]/[98px]">
           Customize your workflow
         </h1>
-        <FlexSection.Container col className="gap-6 px-4 md:px-12 lg:px-16">
+        <FlexSection.Container
+          col
+          className="gap-6 px-4 md:px-12 lg:px-32 lg:py-20"
+        >
           <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
             <div className="flex w-full flex-col gap-6">
               <h2 className="text-2xl font-bold">Plan</h2>
@@ -109,12 +112,12 @@ const ServicesPage: NextPage = () => {
               </p>
             </div>
           </div>
-
-          <h2 className="mt-24 text-center text-2xl/[33px] font-bold">
-            Repeat
-          </h2>
         </FlexSection.Container>
-        <RepeatSVG className="absolute inset-x-16 bottom-32 hidden lg:block xl:inset-x-12 xl:bottom-24" />
+
+        <h2 className="absolute bottom-0 text-center text-2xl/[33px] font-bold">
+          Repeat
+        </h2>
+        <RepeatSVG className="absolute inset-x-16 bottom-0 hidden lg:block xl:inset-x-12 " />
       </FlexSection>
 
       <ServicesSection />

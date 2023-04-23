@@ -55,30 +55,39 @@ const services = [
 export default function ServicesSection() {
   return (
     <>
-      <FlexSection id="services" className="py-32">
-        <FlexSection.Container
-          col
-          className="items-center  gap-12 px-4 md:px-12 lg:px-16"
-        >
-          <h1 className="text-center text-4xl/[49px]  md:text-[64px]/[87px]">
-            Services
-          </h1>
-          <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row ">
-            {services.map((service, i) => (
-              <div key={i} className="flex flex-col gap-6">
-                <Image src={service.image} alt={service.name} />
-                <h2 className="text-4xl/[49px]">{service.name}</h2>
-                <ul>
-                  {service.content.map((content, i) => (
-                    <li className="text-lg/[200%] font-kindalight" key={i}>
-                      {content}
-                    </li>
-                  ))}
-                </ul>
+      <FlexSection
+        id="services"
+        col
+        className="items-center gap-12 px-4 py-32 md:px-12 lg:px-16"
+      >
+        <h1 className="text-center text-4xl/[49px]  md:text-[64px]/[87px]">
+          Services
+        </h1>
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row ">
+          {services.map((service, i) => (
+            <div key={i} className="flex flex-col gap-6">
+              <div className="relative h-72 w-full xl:h-96 xl:w-96">
+                <Image
+                  src={service.image}
+                  alt={service.name}
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                  }}
+                />
               </div>
-            ))}
-          </div>
-        </FlexSection.Container>
+              <h2 className="text-4xl/[49px]">{service.name}</h2>
+              <ul>
+                {service.content.map((content, i) => (
+                  <li className="text-lg/[200%] font-kindalight" key={i}>
+                    {content}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </FlexSection>
     </>
   )

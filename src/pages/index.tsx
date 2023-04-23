@@ -118,8 +118,8 @@ const Home: NextPage = () => {
           src={heroPhoto}
           alt=""
           priority
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw"
+          quality={100}
+          sizes="(max-width: 800px) 100vw, (max-width: 1200px) 50vw, 60vw"
         />
       </FlexSection>
 
@@ -137,7 +137,9 @@ const Home: NextPage = () => {
       {info.map((info) => (
         <InfoSection key={info.id} {...info} />
       ))}
+
       <ServicesSection />
+
       <CTA />
     </>
   )
