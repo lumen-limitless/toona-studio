@@ -4,8 +4,8 @@ import CirclesStarRightLightSVG from 'public/circles-star-right-light.svg'
 import CirclesStarLeftLightSVG from 'public/circles-star-left-light.svg'
 import MagicSVG from 'public/magic.svg'
 import Link from 'next/link'
-import FlexSection from '../components/FlexSection'
-import { INSTAGRAM_URL, LINKEDIN_URL, WEBSITE_URL } from '../constants'
+import FlexSection from '@/components/FlexSection'
+import { INSTAGRAM_URL, LINKEDIN_URL, WEBSITE_URL } from '@/constants'
 
 const AboutPage: NextPage = () => {
   return (

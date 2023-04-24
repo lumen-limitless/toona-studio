@@ -1,13 +1,12 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import Container from '../components/Container'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 import CirclesSVG from 'public/circles.svg'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { useRouter } from 'next/router'
-import FlexSection from '../components/FlexSection'
+import FlexSection from '@/components/FlexSection'
 
 const items = [
   'Digital Experience',
