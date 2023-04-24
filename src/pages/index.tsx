@@ -95,9 +95,9 @@ const Home: NextPage = () => {
       <NextSeo />
       <FlexSection
         id="landing"
-        className=" min-h-[calc(100vh-100px)] flex-col-reverse gap-6 px-4 pb-12 md:px-[12%] lg:flex-row lg:items-center lg:justify-between lg:gap-0"
+        className=" min-h-[calc(100vh-100px)] flex-col-reverse gap-6 px-5 pb-12 md:px-20 lg:flex-row lg:items-center lg:justify-between lg:gap-0 xl:px-[269px]"
       >
-        <div className="flex flex-col justify-center gap-6 lg:ml-12 xl:ml-24">
+        <div className="flex flex-col justify-center gap-6 ">
           <h1 className="whitespace-nowrap text-4xl/[49px] md:text-[52px]/[71px] lg:text-7xl/[98px]">
             Crafting joy <br className="md:hidden" /> through{' '}
             <br className="hidden md:block" /> digital{' '}
