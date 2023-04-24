@@ -9,7 +9,7 @@ import { Manrope } from 'next/font/google'
 const manrope = Manrope({
   variable: '--font-manrope',
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['300', '400', '500', '600'],
 })
 
 function MyApp({ Component, pageProps }: AppProps) {

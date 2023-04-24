@@ -20,15 +20,21 @@ module.exports = {
           600: '#616FE5',
         },
       },
+
+      fontFamily: {
+        sans: ['var(--font-manrope)', ...fontFamily.sans],
+      },
+
       fontWeight: {
         kindabold: '500',
         kindalight: '300',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+
+      // backgroundImage: {
+      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      //   'gradient-conic':
+      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      // },
     },
   },
   plugins: ['@tailwindcss/forms'],

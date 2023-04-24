@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 /* Custom fonts */
-:root {
+/* :root {
   --font-text: 'Manrope', -apple-system, system-ui, BlinkMacSystemFont,
     sans-serif;
   --font-heading: 'Manrope', -apple-system, system-ui, BlinkMacSystemFont,
     sans-serif;
-}
+} */
 
 /* Box sizing */
 *,
@@ -19,10 +19,9 @@
 
 /* HTML styles */
 html {
-  font-family: var(--font-text);
   text-rendering: optimizeLegibility;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  @apply box-border touch-manipulation scroll-smooth bg-light text-dark antialiased;
+  @apply box-border touch-manipulation scroll-smooth bg-light font-sans text-dark antialiased;
 }
 
 /* Next.js root container */
