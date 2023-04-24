@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 import { Menu } from '@headlessui/react'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import CirclesSVG from 'public/circles.svg'
+import ChevronDownSVG from 'public/chevron-down.svg'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { useRouter } from 'next/router'
@@ -21,14 +22,13 @@ const items = [
 const schema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
-  work: z.string().min(1),
   message: z.string().min(1),
 })
 
 export type ContactForm = z.infer<typeof schema>
 
 const ContactPage: NextPage = () => {
-  const [work, setWork] = useState('')
+  const [work, setWork] = useState('Digital Experience')
   const [loading, setLoading] = useState(false)
   const {
     register,
@@ -40,12 +40,12 @@ const ContactPage: NextPage = () => {
 
   const onSubmit: SubmitHandler<ContactForm> = (data) => {
     console.debug(data)
-    fetch('/api/sendEmail', {
+    fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, work }),
     }).then((res) => {
       console.debug(res)
       if (res.status === 200) {
@@ -78,7 +78,7 @@ const ContactPage: NextPage = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="z-10 flex w-full max-w-[538px] flex-col gap-10"
+          className=" relative z-10 flex w-full max-w-[538px] flex-col gap-10"
         >
           <label htmlFor="name" className="flex flex-col gap-3">
             Your name or company
@@ -104,44 +104,31 @@ const ContactPage: NextPage = () => {
           </label>
           <label htmlFor="work" className="flex flex-col gap-3">
             What type of work are you looking for?
-            <Menu as="div" className={'relative w-full'}>
-              {({ open, close }) => (
-                <>
-                  <Menu.Button
-                    id="work"
-                    className="w-full rounded-full border-2 border-dark px-2 py-3 text-dark"
-                  >
-                    {work || 'Select your work'}
-                  </Menu.Button>
-                  <Menu.Items className="absolute z-20 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <>
-                            {items.map((item, i) => (
-                              <a
-                                {...register('work')}
-                                key={i}
-                                onClick={() => {
-                                  close()
-                                  setWork(item)
-                                }}
-                                className={`${
-                                  active
-                                    ? 'bg-violet-500 text-white'
-                                    : 'text-gray-900'
-                                } group flex w-full items-center rounded-md px-2 py-2`}
-                              >
-                                {item}
-                              </a>
-                            ))}
-                          </>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  </Menu.Items>
-                </>
-              )}
+            <Menu as="div">
+              <Menu.Button
+                id="work"
+                className="w-full items-center justify-start rounded-full border-2 border-dark px-5 py-3 text-dark"
+              >
+                {work} <ChevronDownSVG className="ml-auto h-[7px] w-3" />
+              </Menu.Button>
+              <Menu.Items className="absolute z-40 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
+                {items.map((item, i) => (
+                  <Menu.Item key={i}>
+                    {({ close }) => (
+                      <button
+                        onClick={() => {
+                          setWork(item)
+                          close()
+                        }}
+                        disabled={item === work}
+                        className={`group inline-flex w-full items-center justify-start rounded-md px-2 py-2 text-gray-900`}
+                      >
+                        {item}
+                      </button>
+                    )}
+                  </Menu.Item>
+                ))}
+              </Menu.Items>
             </Menu>
           </label>
           <label htmlFor="details" className="flex flex-col gap-3">

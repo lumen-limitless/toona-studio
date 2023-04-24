@@ -1,14 +1,15 @@
 // pages/api/sendEmail.ts
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
-import { ContactForm } from '../contact'
+import { ContactForm } from '@/pages/contact'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const { name, email, message }: ContactForm = req.body
+    const { name, email, message, work }: ContactForm & { work: string } =
+      req.body
 
     // Validate the form data
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !work) {
       res.status(422).json({ message: 'One or more fields are missing.' })
       return
     }
@@ -28,7 +29,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const mailData = {
       from: process.env.SMTP_FROM,
       to: process.env.SMTP_TO,
-      subject: `New message from ${name}`,
+      subject: `${work} request from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     }
 
