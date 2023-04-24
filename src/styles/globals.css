@@ -13,12 +13,13 @@
 html {
   text-rendering: optimizeLegibility;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  @apply box-border touch-manipulation scroll-smooth bg-light font-sans text-dark antialiased;
+  @apply box-border touch-manipulation scroll-smooth bg-light text-dark antialiased;
 }
 
 /* Next.js root container */
-#__next {
-  @apply flex min-h-screen flex-col;
+#__next,
+#font-wrapper {
+  @apply flex min-h-screen flex-col font-sans;
 }
 
 /* Heading styles */

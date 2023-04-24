@@ -14,7 +14,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
         skip to main content
       </a>
 
-      <div className={`${manrope.variable} font-sans`}>
+      <div id="font-wrapper" className={`${manrope.variable}`}>
         <header className={`top-0 z-20 block w-full`}>
           <Nav />
         </header>

@@ -14,7 +14,7 @@ const AboutPage: NextPage = () => {
       <FlexSection
         centered
         col
-        className="overflow-clip bg-indigo-600 px-[47.5] py-64 text-light md:h-[calc(60vh-100px)] md:py-0"
+        className="min-h-[calc(60vh-100px)] overflow-clip bg-indigo-600 px-[47.5] py-64 text-light md:py-0"
       >
         <CirclesStarRightLightSVG className="pointer-events-none absolute -top-12 right-0 h-[335px] stroke-light md:top-0 md:h-[630px]" />
         <CirclesStarLeftLightSVG className="pointer-events-none absolute -bottom-12 left-0 h-[335px] stroke-light  md:bottom-0 md:h-[630px]" />
