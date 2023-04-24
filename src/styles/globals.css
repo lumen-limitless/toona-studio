@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom fonts */
-/* :root {
-  --font-text: 'Manrope', -apple-system, system-ui, BlinkMacSystemFont,
-    sans-serif;
-  --font-heading: 'Manrope', -apple-system, system-ui, BlinkMacSystemFont,
-    sans-serif;
-} */
-
 /* Box sizing */
 *,
 *:before,
