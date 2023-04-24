@@ -5,6 +5,12 @@ import Layout from '@/layouts/layout'
 import { DefaultSeo } from 'next-seo'
 import { Analytics } from '@vercel/analytics/react'
 
+import { Manrope } from 'next/font/google'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+})
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -19,6 +25,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
       </Head>
+
+      <style jsx global>{`
+        html {
+          font-family: ${manrope.style.fontFamily};
+        }
+      `}</style>
 
       <Layout>
         <Component {...pageProps} />

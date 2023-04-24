@@ -17,8 +17,7 @@ html {
 }
 
 /* Next.js root container */
-#__next,
-#font-wrapper {
+#__next {
   @apply flex min-h-screen flex-col font-sans;
 }
 
