@@ -3,7 +3,6 @@ import React from 'react'
 
 interface FlexSectionProps {
   children: React.ReactNode
-  fullscreen?: boolean
   centered?: boolean
   col?: boolean
   id?: string
@@ -18,11 +17,10 @@ interface ContainerProps {
 
 const FlexSection: React.FC<FlexSectionProps> & {
   Container: React.FC<ContainerProps>
-} = ({ children, className, fullscreen, centered, col, id, ...props }) => {
+} = ({ children, className, centered, col, id, ...props }) => {
   const sectionClasses = [
     'relative flex h-full w-full flex-grow items-center',
     col ? 'flex-col' : 'flex-row',
-    fullscreen && 'min-h-screen',
     centered && 'justify-center',
     className,
   ]
