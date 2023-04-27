@@ -17,7 +17,7 @@ export default function CTA() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex h-16 w-full max-w-[280px] items-center justify-center rounded-full text-xl font-kindabold ring-2 ring-white"
+          className="inline-flex h-16 w-full max-w-[280px] items-center justify-center rounded-full text-xl font-kindabold ring-2 ring-white duration-300 ease-in-out hover:bg-light/30"
         >
           Let&apos;s chat
         </Link>

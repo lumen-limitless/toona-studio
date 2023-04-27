@@ -73,7 +73,7 @@ const Home: NextPage = () => {
           </p>
           <Link
             href="/contact"
-            className="mx-auto inline-flex h-16 w-full items-center justify-center rounded-full bg-indigo-500 text-xl font-kindabold text-light transition-colors ease-out hover:bg-indigo-600 md:mx-0 md:max-w-[280px]"
+            className="mx-auto inline-flex h-16 w-full items-center justify-center rounded-full bg-indigo-500 text-xl font-kindabold text-light transition-colors duration-300 ease-in-out hover:bg-indigo-600 md:mx-0 md:max-w-[280px]"
           >
             Let&apos;s chat
           </Link>

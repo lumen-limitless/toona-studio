@@ -1,17 +1,17 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import { NextSeo } from 'next-seo'
-import InfoSection from '../components/InfoSection'
 import creativityImg from 'public/creativity.jpg'
 import collaborationImg from 'public/collaboration.jpg'
 import growthImg from 'public/growth.jpg'
-import ServicesSection from '../components/ServicesSection'
 import MagicSVG from 'public/magic.svg'
 import RepeatSVG from 'public/repeat.svg'
-import CTA from '../components/CTA'
+import ServicesSection from '@/components/ServicesSection'
+import InfoSection from '@/components/InfoSection'
+import CTA from '@/components/CTA'
+import FlexSection from '@/components/FlexSection'
 import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import CirclesStarLeftSVG from 'public/circles-star-left.svg'
-import Link from 'next/link'
-import FlexSection from '../components/FlexSection'
 
 const info = [
   {
@@ -52,7 +52,7 @@ const ServicesPage: NextPage = () => {
         id="services"
         col
         centered
-        className="min-h-[calc(100lvh-100px)] items-center gap-12 px-5 py-32"
+        className="min-h-[calc(100lvh-100px)] gap-12 px-5 py-32"
       >
         <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark  md:-top-24 md:h-[642px]" />
         <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark  md:-bottom-36 md:h-[642px]" />
