@@ -44,7 +44,7 @@ export default function InfoSection({
 
         {button && (
           <Link href={button.link} passHref>
-            <button className="full h-16 w-full rounded-full text-black ring-2 ring-black md:max-w-[280px]">
+            <button className="full hover: h-16 w-full rounded-full text-dark ring-2 ring-dark duration-300 ease-in-out hover:bg-dark hover:text-light md:max-w-[280px]">
               {button.name}
             </button>
           </Link>

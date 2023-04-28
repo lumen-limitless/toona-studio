@@ -58,9 +58,9 @@ export default function Nav() {
         <Link
           href="contact"
           className={clsx(
-            'inline-flex h-10 min-w-[141px] items-center justify-center  rounded-full text-[15px]/[24px] font-kindabold transition-colors ease-out',
+            'inline-flex h-10 min-w-[141px] items-center justify-center rounded-full  text-[15px]/[24px] font-kindabold transition-colors duration-300 ease-in-out',
             pathname === '/about'
-              ? 'bg-light text-dark'
+              ? 'bg-light text-dark hover:bg-opacity-60'
               : 'bg-indigo text-light hover:bg-indigo-600'
           )}
         >

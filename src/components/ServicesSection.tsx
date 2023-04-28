@@ -77,7 +77,7 @@ export default function ServicesSection() {
                   }}
                 />
               </div>
-              <h2 className="text-4xl/[49px]">{service.name}</h2>
+              <h2 className="text-2xl/[49px]">{service.name}</h2>
               <ul>
                 {service.content.map((content, i) => (
                   <li className="text-lg/[200%] font-kindalight" key={i}>

@@ -75,11 +75,8 @@ const ServicesPage: NextPage = () => {
         </div>
       ))}
 
-      <FlexSection
-        col
-        className="gap-6 px-5 py-4 md:px-20 lg:py-20 xl:px-[269px]"
-      >
-        <h1 className=" text-center text-4xl/[49px] font-kindabold  md:text-[72px]/[98px]">
+      <FlexSection col className="px-5 py-4 md:px-20 lg:py-20 xl:px-[269px]">
+        <h1 className="mb-20 text-center text-4xl/[49px] font-kindabold  md:text-[72px]/[98px]">
           Customize your workflow
         </h1>
 

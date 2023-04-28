@@ -20,7 +20,7 @@ export default function Footer() {
           <a href="">About</a>
           <Link
             href="/contact"
-            className="rounded-full bg-light px-9 py-2 text-[15px]/[24px] font-kindabold text-dark"
+            className="rounded-full bg-light px-9 py-2 text-[15px]/[24px] font-kindabold text-dark duration-300 ease-in-out hover:bg-opacity-60 "
           >
             Let&apos;s chat
           </Link>
@@ -29,14 +29,18 @@ export default function Footer() {
 
       <div className="relative flex w-full flex-col items-center justify-center gap-6 md:flex-row-reverse md:justify-end">
         <div className=" flex w-full items-center justify-center gap-[43px] md:absolute">
-          <DiscordSVG className="h-8 fill-light stroke-light" />
+          <a href={INSTAGRAM_URL} target="_blank">
+            <DiscordSVG className="h-8 fill-light stroke-light" />
+          </a>
           <a href={INSTAGRAM_URL} target="_blank">
             <InstaSVG className="h-8 fill-light stroke-light" />
           </a>
           <a href={LINKEDIN_URL} target="_blank">
             <LinkedInSVG className="h-8 fill-light stroke-light" />
           </a>
-          <BehanceSVG className="h-8 fill-light stroke-light" />
+          <a href={INSTAGRAM_URL} target="_blank">
+            <BehanceSVG className="h-8 fill-light stroke-light" />
+          </a>
         </div>
         <div className="flex px-12 md:mx-0">
           <p className=" text-sm/[18px] text-light opacity-75">

@@ -54,7 +54,7 @@ const AboutPage: NextPage = () => {
               href={WEBSITE_URL}
               target="_blank"
               rel="noreferrer"
-              className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo"
+              className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo duration-300 ease-in-out hover:bg-indigo-500/30"
             >
               Website
             </a>
@@ -62,7 +62,7 @@ const AboutPage: NextPage = () => {
               href={LINKEDIN_URL}
               target="_blank"
               rel="noreferrer"
-              className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo"
+              className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo duration-300 ease-in-out hover:bg-indigo-500/30"
             >
               LinkedIn
             </a>
@@ -70,7 +70,7 @@ const AboutPage: NextPage = () => {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer"
-              className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo"
+              className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo duration-300 ease-in-out hover:bg-indigo-500/30"
             >
               Instagram
             </a>
@@ -89,20 +89,19 @@ const AboutPage: NextPage = () => {
           </p>
           <br />
           <p className="text-base/[22px]">
-            {' '}
             Today, he uses his skills in Typescript, Solidity, NextJS, EthersJS,
             and much more to create thrilling products with the cutting-edge
             technology. His background is in frontend and backend development
             and creating smart contracts for various projects and organizations.{' '}
           </p>
           <div className="flex gap-3">
-            <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo">
+            <button className="full inline-flex h-10 w-full items-center justify-center rounded-full font-kindabold text-indigo ring-2 ring-indigo duration-300 ease-in-out hover:bg-indigo-500/30">
               Website
             </button>
-            <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo">
+            <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo duration-300 ease-in-out hover:bg-indigo-500/30">
               LinkedIn
             </button>
-            <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo">
+            <button className="full inline-flex h-10 w-full items-center justify-center rounded-full text-indigo ring-2 ring-indigo duration-300 ease-in-out hover:bg-indigo-500/30">
               Instagram
             </button>
           </div>
@@ -111,7 +110,7 @@ const AboutPage: NextPage = () => {
       <FlexSection centered className="pb-20 lg:pb-[120px]">
         <Link
           href="contact"
-          className=" inline-flex h-16 w-[306px] items-center justify-center gap-1 rounded-full bg-indigo text-lg/[24px] font-kindabold text-light"
+          className=" inline-flex h-16 w-[306px] items-center justify-center gap-1 rounded-full bg-indigo text-lg/[24px] font-kindabold text-light duration-300 ease-in-out hover:bg-indigo-600"
         >
           Let&apos;s make some magic <MagicSVG className="h-[19.94px]" />
         </Link>
