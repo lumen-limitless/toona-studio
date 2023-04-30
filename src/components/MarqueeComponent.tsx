@@ -41,11 +41,11 @@ const MarqueeComponent: React.FC = () => {
   return (
     <>
       <Marquee
-        className="desktop:text-2xl flex h-[120px] w-full overflow-hidden bg-dark py-3 text-xl uppercase text-light"
+        className="flex h-[120px] w-full overflow-hidden bg-dark py-3 text-xl uppercase text-light lg:text-2xl"
         gradient={false}
       >
         {headings.map((heading, i) => (
-          <span className="mx-3" key={i}>
+          <span className="mx-3 font-kindabold" key={i}>
             {heading}
           </span>
         ))}
