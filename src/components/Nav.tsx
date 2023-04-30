@@ -87,7 +87,7 @@ export default function Nav() {
             </Popover.Button>
             <Popover.Panel
               as={'div'}
-              className="fixed inset-0 z-20 flex w-full flex-col items-center justify-center gap-6 bg-[url('/nav.png')] bg-cover bg-center px-6 text-left text-white"
+              className="fixed inset-0 z-20 flex w-full flex-col items-center justify-center gap-6 bg-indigo-500 bg-[url('/nav.png')] bg-cover bg-center px-6 text-left text-white"
             >
               <Link
                 href=""
