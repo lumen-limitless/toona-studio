@@ -107,7 +107,7 @@ export const metadata: Metadata = {
   },
 
   appleWebApp: {
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: 'default',
     title: APP_NAME,
     capable: true,
   },
@@ -134,7 +134,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="m-0 box-border touch-manipulation scroll-smooth bg-gray-50 p-0 text-zinc-900 antialiased"
+      className="m-0 box-border touch-manipulation scroll-smooth bg-light p-0 text-dark antialiased"
     >
       <head>
         <meta charSet="utf-8" />

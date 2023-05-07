@@ -56,7 +56,6 @@ const info = [
 export default function HomePage() {
   return (
     <>
-      <NextSeo />
       <FlexSection
         id="landing"
         className="min-h-[calc(100lvh-100px)] flex-col-reverse justify-center gap-6 px-5 pb-12 md:px-20 lg:flex-row  lg:items-center lg:gap-0 lg:gap-20 xl:px-[269px]"
