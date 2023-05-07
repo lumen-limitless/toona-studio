@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { NextSeo } from 'next-seo'
 import heroPhoto from 'public/hero-photo-w-assets.png'
 import whoImg from 'public/who.jpg'
 import whatImg from 'public/what.jpg'
@@ -58,7 +57,7 @@ export default function HomePage() {
     <>
       <FlexSection
         id="landing"
-        className="min-h-[calc(100lvh-100px)] flex-col-reverse justify-center gap-6 px-5 pb-12 md:px-20 lg:flex-row  lg:items-center lg:gap-0 lg:gap-20 xl:px-[269px]"
+        className="min-h-[calc(100lvh-100px)] flex-col-reverse justify-center gap-6 px-5 pb-12 md:px-20 lg:flex-row  lg:items-center lg:gap-20 xl:px-[269px]"
       >
         <div className="flex flex-col justify-center gap-12">
           <h1 className="whitespace-nowrap text-4xl md:text-[52px]/[71px] lg:text-7xl">
