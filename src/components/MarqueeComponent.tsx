@@ -39,17 +39,16 @@ const headings = [
 
 export default function MarqueeComponent() {
   return (
-    <>
-      <Marquee
-        className="flex h-[120px] w-full overflow-hidden bg-dark py-3 text-xl uppercase text-light lg:text-2xl"
-        gradient={false}
-      >
-        {headings.map((heading, i) => (
-          <span className="mx-3 font-kindabold" key={i}>
-            {heading}
-          </span>
-        ))}
-      </Marquee>
-    </>
+    <Marquee
+      speed={10}
+      className="flex h-[120px] w-full overflow-hidden bg-dark py-3 text-xl uppercase text-light lg:text-2xl"
+      gradient={false}
+    >
+      {headings.map((heading, i) => (
+        <span className="mx-3 font-kindabold" key={i}>
+          {heading}
+        </span>
+      ))}
+    </Marquee>
   )
 }
