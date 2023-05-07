@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://toona.studio
+Host: 
 
 # Sitemaps
-Sitemap: https://toona.studio/sitemap.xml
+Sitemap: /sitemap.xml

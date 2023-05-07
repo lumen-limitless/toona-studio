@@ -1,23 +1,26 @@
+'use client'
 import Link from 'next/link'
 import LogoSVG from 'public/logo.svg'
-import { useRouter } from 'next/router'
 import BurgerSVG from 'public/burger.svg'
 import CloseSVG from 'public/close.svg'
 import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
+import { usePathname } from 'next/navigation'
 
 const links = [
-  { href: '/idea-generator', label: 'Idea Generator' },
+  // TODO: implement idea generator
+  // { href: '/idea-generator', label: 'Idea Generator' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
 ]
 
 export default function Nav() {
-  const { pathname } = useRouter()
+  const pathname = usePathname()
   const [popoverOpen, togglePopoverOpen] = useBoolean(false)
   useLockBodyScroll(popoverOpen)
+
   return (
     <nav
       className={clsx(

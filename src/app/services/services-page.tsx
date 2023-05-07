@@ -1,3 +1,4 @@
+'use client'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
@@ -57,13 +58,14 @@ const ServicesPage: NextPage = () => {
         <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark  md:-top-24 md:h-[642px]" />
         <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark  md:-bottom-36 md:h-[642px]" />
 
-        <h1 className="text-center text-4xl/[49px] font-kindabold md:text-[72px]/[98px]">
+        <h1 className="text-center text-4xl font-kindabold md:text-7xl">
           We build catered <br className="md:hidden" /> experiences to <br />{' '}
           grow your <br className="md:hidden" /> business.
         </h1>
+
         <Link
           href="/contact"
-          className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg/[24px] text-white transition-colors ease-out hover:bg-indigo-600"
+          className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg text-white transition-colors ease-out hover:bg-indigo-600"
         >
           Let&apos;s make some magic <MagicSVG className="ml-1 h-5 w-5" />
         </Link>
@@ -76,22 +78,22 @@ const ServicesPage: NextPage = () => {
       ))}
 
       <FlexSection col className="px-5 py-4 md:px-20 lg:py-20 xl:px-[269px]">
-        <h1 className="mb-20 text-center text-4xl/[49px] font-kindabold  md:text-[72px]/[98px]">
+        <h1 className="mb-20 text-center text-4xl font-kindabold  md:text-7xl">
           Customize your workflow
         </h1>
 
         <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
           <div className="flex w-full flex-col gap-6">
-            <h2 className="text-2xl font-bold">Plan</h2>
-            <p className="text-base/[22px] font-kindalight">
+            <h2 className="text-2xl/[49px] font-bold">Plan</h2>
+            <p className="text-base font-kindalight">
               We work with you to understand your business goals and objectives.
               We&apos;ll create a clear roadmap for your project, outlining the
               scope of work, timeline, and budget.
             </p>
           </div>
           <div className="flex w-full flex-col gap-6">
-            <h2 className="text-2xl font-bold">Design</h2>
-            <p className="text-base/[22px] font-kindalight">
+            <h2 className="text-2xl/[49px] font-bold">Design</h2>
+            <p className="text-base font-kindalight">
               We&apos;ll create wireframes, mockups, and prototypes to bring
               your vision to life. We&apos;ll work with you to establish a
               visual identity and design an intuitive user interface for your
@@ -99,16 +101,16 @@ const ServicesPage: NextPage = () => {
             </p>
           </div>
           <div className="flex w-full flex-col gap-6">
-            <h2 className="text-2xl font-bold">Develop</h2>
-            <p className="text-base/[22px] font-kindalight">
+            <h2 className="text-2xl/[49px] font-bold">Develop</h2>
+            <p className="text-base font-kindalight">
               We will build your product using the latest technologies and best
               practices. We use agile development methodologies to ensure your
               project is completed on time and within budget.
             </p>
           </div>
           <div className="flex w-full flex-col gap-6">
-            <h2 className="text-2xl font-bold">Test</h2>
-            <p className="text-base/[22px] font-kindalight">
+            <h2 className="text-2xl/[49px] font-bold">Test</h2>
+            <p className="text-base font-kindalight">
               Once the product is developed, we will conduct extensive testing
               to ensure it meets our high performance, usability, and security
               standards. Guided by user feedback, analytics, and more.
@@ -116,22 +118,22 @@ const ServicesPage: NextPage = () => {
           </div>
         </div>
 
-        <h2 className="absolute -bottom-12 text-center text-2xl/[33px] font-bold">
+        <h2 className="absolute -bottom-12 text-center text-2xl font-bold">
           Repeat
         </h2>
-        <RepeatSVG className="absolute inset-x-32 -bottom-12 hidden xl:block  " />
+        <RepeatSVG className="absolute inset-x-32 -bottom-12 hidden xl:block" />
       </FlexSection>
 
       <ServicesSection />
 
       <FlexSection col className="px-5 pb-20 md:px-20 xl:px-[269px]">
-        <h1 className="text-center text-4xl/[49px] md:text-5xl/[66px] lg:text-[64px]/[87px]">
+        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl">
           Where We Can <br className="md:hidden" /> Help
         </h1>
         <div className="mt-12 flex flex-col justify-evenly gap-6 md:mt-16 lg:flex-row ">
           <div className="flex w-full flex-col gap-6 ">
-            <h2 className="text-2xl/[33px] font-bold">Startups</h2>
-            <p className="text-base/[22px] font-normal">
+            <h2 className="text-2xl font-bold">Startups</h2>
+            <p className="text-base font-normal">
               Need help bringing your idea to life? Our data-driven design
               principles ensure that your product is effective and
               user-friendly. We can streamline the process by creating your
@@ -140,10 +142,8 @@ const ServicesPage: NextPage = () => {
             </p>
           </div>
           <div className="flex w-full flex-col gap-6">
-            <h2 className="text-2xl/[33px] font-bold">
-              Small & Medium Business
-            </h2>
-            <p className="text-base/[22px] font-normal">
+            <h2 className="text-2xl font-bold">Small & Medium Business</h2>
+            <p className="text-base font-normal">
               Looking to address new needs? Our focus on goal-oriented design
               and engineering helps us revamp existing products to achieve
               specific objectives such as increasing conversions, daily active
@@ -151,8 +151,8 @@ const ServicesPage: NextPage = () => {
             </p>
           </div>
           <div className="flex w-full flex-col gap-6">
-            <h2 className="text-2xl/[33px] font-bold">Global Brands</h2>
-            <p className="text-base/[22px] font-normal">
+            <h2 className="text-2xl font-bold">Global Brands</h2>
+            <p className="text-base font-normal">
               Launching a new product or campaign? We&apos;ll ensure a smooth
               and efficient launch while staying within your brand guidelines.
               With experience working with top global enterprises, we&apos;ll

@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import LogoSVG from 'public/logo.svg'
 import DiscordSVG from 'public/discord.svg'
@@ -8,10 +9,7 @@ import { DISCORD_URL, INSTAGRAM_URL, LINKEDIN_URL } from '../constants'
 
 export default function Footer() {
   return (
-    <footer
-      id="footer"
-      className="relative flex w-full flex-col items-center justify-between gap-6 bg-dark  py-9 text-light md:gap-[75px] md:py-[68px]"
-    >
+    <nav className="relative flex w-full flex-col items-center justify-between gap-6 bg-dark  py-9 text-light md:gap-[75px] md:py-[68px]">
       <div className="flex w-full flex-col items-center justify-between gap-6 px-12 md:items-start md:gap-[75px] lg:flex-row lg:items-center">
         <LogoSVG className="h-[18px] fill-current stroke-current" />
         <div className="flex flex-col items-center gap-3 md:flex-row md:gap-12 ">
@@ -48,6 +46,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+    </nav>
   )
 }

@@ -9,16 +9,9 @@
   box-sizing: inherit;
 }
 
-/* HTML styles */
-html {
+body {
   text-rendering: optimizeLegibility;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  @apply box-border touch-manipulation scroll-smooth bg-light text-dark antialiased;
-}
-
-/* Next.js root container */
-#__next {
-  @apply flex min-h-screen flex-col;
 }
 
 /* Heading styles */

@@ -9,10 +9,10 @@ export default function CTA() {
         col
         className="items-center gap-12 bg-indigo-500 px-5 py-20 text-white md:h-[501px]"
       >
-        <h1 className="text-center text-4xl/[49px] font-kindabold md:text-6xl/[87px]">
+        <h1 className="text-center text-4xl font-kindabold md:text-6xl">
           Get Connected
         </h1>
-        <p className="text-center text-xl font-kindabold md:text-2xl/[33px]">
+        <p className="text-center text-xl font-kindabold md:text-2xl">
           Do you have a project idea or want to keep in touch?
         </p>
         <Link

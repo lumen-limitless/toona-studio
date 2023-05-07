@@ -27,16 +27,14 @@ export default function InfoSection({
       )}
     >
       <div className="flex flex-col justify-center gap-6 lg:gap-12 ">
-        <h1 className=" text-4xl/[49px] font-kindabold md:text-[64px]/[87px]">
+        <h1 className="text-4xl font-kindabold md:text-[64px]/[87px]">
           {title}
         </h1>
 
         <div>
           {description.map((desc, i) => (
             <div key={i}>
-              <p className="text-lg/[25px] font-kindabold md:text-[20px]/[27px]">
-                {desc}
-              </p>
+              <p className="text-lg font-kindabold md:text-xl">{desc}</p>
               <br />
             </div>
           ))}

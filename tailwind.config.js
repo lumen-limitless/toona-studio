@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
+
   theme: {
     screens: {
       sm: '375px',
@@ -8,6 +9,7 @@ module.exports = {
       lg: '1200px',
       xl: '1800px',
     },
+
     extend: {
       colors: {
         light: '#f9f9f9',
@@ -24,12 +26,18 @@ module.exports = {
         kindalight: '300',
       },
 
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
+      fontSize: {
+        base: ['1rem', '22px'],
+        lg: ['1.125rem', '24px'],
+        '2xl': ['1.5rem', '33px'],
+        '4xl': ['2.5rem', '49px'],
+        '5xl': ['3rem', '66px'],
+        '6xl': ['3.75rem', '87px'],
+        '7xl': ['4.5rem', '98px'],
+        '8xl': ['5rem', '109px'],
+      },
     },
   },
-  plugins: ['@tailwindcss/forms'],
+
+  plugins: [require('@tailwindcss/forms')],
 }

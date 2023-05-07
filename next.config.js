@@ -7,6 +7,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
+  output: undefined,
   images: {
     deviceSizes: [375, 800, 1200, 1800],
   },

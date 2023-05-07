@@ -1,12 +1,13 @@
+'use client'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 import { Menu } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import CirclesSVG from 'public/circles.svg'
 import ChevronDownSVG from 'public/chevron-down.svg'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import FlexSection from '@/components/FlexSection'
 
 const items = [
@@ -40,7 +41,7 @@ const ContactPage: NextPage = () => {
 
   const onSubmit: SubmitHandler<ContactForm> = (data) => {
     console.debug(data)
-    fetch('/api/send-email', {
+    fetch('/api/email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -67,10 +68,10 @@ const ContactPage: NextPage = () => {
         <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 hidden h-[640px] md:block" />
 
         <div className="z-10 mb-12 space-y-12 text-center">
-          <h1 className="text-4xl/[49px] md:text-[52px]/[71px] lg:text-[80px]/[109px]">
+          <h1 className="text-4xl md:text-[52px]/[71px] lg:text-7xl">
             Let&apos;s chat
           </h1>
-          <p className="text-lg/[25px] font-kindabold lg:text-2xl/[33px]">
+          <p className="text-lg font-kindabold lg:text-2xl">
             Let us know what you need and we can <br /> provide a brief cost &
             time estimate.
           </p>
@@ -86,7 +87,7 @@ const ContactPage: NextPage = () => {
               {...register('name', {
                 required: 'This field is required',
               })}
-              className="rounded-full border-2 border-dark px-2 py-3 text-dark"
+              className="rounded-full border-2 border-dark bg-transparent px-2 py-3 text-dark"
               id="name"
               type="text"
               placeholder="Peter Parker at Amazon"
@@ -96,7 +97,7 @@ const ContactPage: NextPage = () => {
             Email address
             <input
               {...register('email')}
-              className="rounded-full border-2 border-dark px-2 py-3 text-dark"
+              className="rounded-full border-2 border-dark bg-transparent px-2 py-3 text-dark"
               id="email"
               type="text"
               placeholder="pparker@gmail.com"
@@ -136,7 +137,7 @@ const ContactPage: NextPage = () => {
             <textarea
               {...register('message')}
               rows={5}
-              className="rounded-xl border-2 border-dark px-2 py-3 text-dark"
+              className="rounded-xl border-2 border-dark bg-transparent px-2 py-3 text-dark"
               id="details"
               placeholder="I want to make an app about lemons & machine learning for the elderly"
             />
@@ -150,7 +151,7 @@ const ContactPage: NextPage = () => {
           </button>
         </form>
 
-        <a href="" className="mt-10 text-lg/[24px] font-kindabold text-indigo ">
+        <a href="" className="mt-10 text-lg font-kindabold text-indigo ">
           {' '}
           {'<-'} Idea Generator
         </a>
@@ -161,15 +162,13 @@ const ContactPage: NextPage = () => {
         centered
         className="gap-12 bg-indigo-600 py-32 text-light"
       >
-        <h1 className="text-center text-4xl/[49px] md:text-6xl/[87px]">
-          Get connected
-        </h1>
+        <h1 className="text-center text-4xl md:text-6xl">Get connected</h1>
 
         <div className="flex flex-col items-center gap-3">
           <span className="text-xl opacity-50">General</span>
           <a
             href="mailto:hello@toona.studio"
-            className="text-4xl/[49px] font-kindabold"
+            className="text-4xl font-kindabold"
           >
             hello@toona.studio
           </a>

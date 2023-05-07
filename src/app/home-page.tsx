@@ -1,13 +1,14 @@
-import type { NextPage } from 'next'
+'use client'
+
 import Image from 'next/image'
-import heroPhoto from 'public/hero-photo-w-assets.png'
-import CTA from '@/components/CTA'
+import Link from 'next/link'
 import { NextSeo } from 'next-seo'
+import heroPhoto from 'public/hero-photo-w-assets.png'
 import whoImg from 'public/who.jpg'
 import whatImg from 'public/what.jpg'
 import whyImg from 'public/why.jpg'
+import CTA from '@/components/CTA'
 import InfoSection from '@/components/InfoSection'
-import Link from 'next/link'
 import FlexSection from '@/components/FlexSection'
 import ServicesSection from '@/components/ServicesSection'
 import MarqueeComponent from '@/components/MarqueeComponent'
@@ -52,7 +53,7 @@ const info = [
   },
 ]
 
-const Home: NextPage = () => {
+export default function HomePage() {
   return (
     <>
       <NextSeo />
@@ -60,13 +61,13 @@ const Home: NextPage = () => {
         id="landing"
         className="min-h-[calc(100lvh-100px)] flex-col-reverse gap-6 px-5 pb-12 md:px-20 lg:flex-row lg:items-center lg:justify-between lg:gap-0 xl:px-[269px]"
       >
-        <div className="flex flex-col justify-center gap-12 ">
-          <h1 className="whitespace-nowrap text-4xl/[49px] md:text-[52px]/[71px] lg:text-7xl/[98px]">
+        <div className="flex flex-col justify-center gap-12">
+          <h1 className="whitespace-nowrap text-4xl md:text-[52px]/[71px] lg:text-7xl">
             Crafting joy <br className="md:hidden" /> through{' '}
             <br className="hidden md:block" /> digital{' '}
             <br className="md:hidden" /> experiences.
           </h1>
-          <p className="text-lg/[25px] font-kindabold lg:text-2xl/[33px]">
+          <p className="text-lg font-kindabold lg:text-2xl">
             We are a digital product studio based in Rochester, NY{' '}
             <br className="hidden lg:inline-block" /> that designs & develops
             innovative and human-centered experiences to enrichen your business.
@@ -101,5 +102,3 @@ const Home: NextPage = () => {
     </>
   )
 }
-
-export default Home
