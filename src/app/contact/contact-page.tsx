@@ -160,7 +160,7 @@ const ContactPage: NextPage = () => {
         id="connect"
         col
         centered
-        className="gap-12 bg-indigo-600 py-32 text-light"
+        className="gap-12 bg-indigo-600 px-5 py-32 text-light"
       >
         <h1 className="text-center text-4xl md:text-6xl">Get connected</h1>
 

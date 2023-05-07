@@ -37,7 +37,7 @@ const headings = [
   '✦',
 ]
 
-const MarqueeComponent: React.FC = () => {
+export default function MarqueeComponent() {
   return (
     <>
       <Marquee
@@ -53,5 +53,3 @@ const MarqueeComponent: React.FC = () => {
     </>
   )
 }
-
-export default MarqueeComponent

@@ -83,7 +83,7 @@ const AboutPage: NextPage = () => {
         col
         centered
         id="team"
-        className=" gap-20 px-5 pt-20 md:px-20 lg:px-16 lg:pb-20 lg:pt-[120px] xl:px-[269px]"
+        className=" mt-20 gap-20 px-5 md:px-20 lg:mt-[120px] lg:px-16 xl:px-[269px]"
       >
         {aboutInfo.map((info, i) => (
           <div className="max-w-[538px]" key={i}>
@@ -116,7 +116,7 @@ const AboutPage: NextPage = () => {
           </div>
         ))}
       </FlexSection>
-      <FlexSection centered className="pb-20 lg:pb-[120px]">
+      <FlexSection centered className="my-20">
         <Link
           href="contact"
           className=" inline-flex h-16 w-[306px] items-center justify-center gap-1 rounded-full bg-indigo text-lg/[24px] font-kindabold text-light duration-300 ease-in-out hover:bg-indigo-600"

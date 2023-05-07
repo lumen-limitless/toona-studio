@@ -21,17 +21,18 @@ export default function InfoSection({
   return (
     <FlexSection
       id={id}
+      centered
       className={clsx(
-        'flex-col justify-between gap-12 px-5 py-20 md:px-20 lg:gap-[120px] xl:px-[269px]',
+        'flex-col gap-12 px-5 py-20 md:px-20 lg:gap-[120px] xl:px-[269px]',
         reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
       )}
     >
-      <div className="flex flex-col justify-center gap-6 lg:gap-12 ">
+      <div>
         <h1 className="text-4xl font-kindabold md:text-[64px]/[87px]">
           {title}
         </h1>
 
-        <div>
+        <div className="lg:max-w-[639px]">
           {description.map((desc, i) => (
             <div key={i}>
               <p className="text-lg font-kindabold md:text-xl">{desc}</p>
