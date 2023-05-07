@@ -27,7 +27,7 @@ export default function InfoSection({
         reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
       )}
     >
-      <div>
+      <div className="flex flex-col justify-center gap-6 md:gap-12">
         <h1 className="text-4xl font-kindabold md:text-[64px]/[87px]">
           {title}
         </h1>
