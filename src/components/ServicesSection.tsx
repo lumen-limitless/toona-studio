@@ -63,7 +63,7 @@ export default function ServicesSection() {
         <h1 className="text-center text-4xl/[49px]  md:text-[64px]/[87px]">
           Services
         </h1>
-        <div className="flex w-full max-w-[1600px] flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
+        <div className="flex w-full max-w-container flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
           {services.map((service, i) => (
             <div key={i} className="flex flex-1 flex-col gap-6">
               <div className="relative h-72 w-full ">

@@ -22,7 +22,7 @@ export default function InfoSection({
     <FlexSection id={id} className="px-5 py-20 md:px-20 xl:px-[269px]">
       <div
         className={clsx(
-          'mx-auto flex w-full max-w-[1600px] flex-col justify-between gap-12',
+          'mx-auto flex w-full max-w-container flex-col justify-between gap-12',
           reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
         )}
       >
@@ -31,7 +31,7 @@ export default function InfoSection({
             {title}
           </h1>
 
-          <div className="xl:max-w-[700px]">
+          <div className="max-w-[700px]">
             {description.map((desc, i) => (
               <div key={i}>
                 <p className="text-lg font-kindabold md:text-xl">{desc}</p>

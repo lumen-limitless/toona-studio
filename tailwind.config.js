@@ -36,6 +36,10 @@ module.exports = {
         '7xl': ['4.5rem', '98px'],
         '8xl': ['5rem', '109px'],
       },
+
+      maxWidth: {
+        container: '1382px',
+      },
     },
   },
 
