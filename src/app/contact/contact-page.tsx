@@ -1,6 +1,5 @@
 'use client'
 import type { NextPage } from 'next'
-import { NextSeo } from 'next-seo'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 import CirclesSVG from 'public/circles.svg'
@@ -66,7 +65,7 @@ const ContactPage: NextPage = () => {
         <CirclesSVG className="pointer-events-none absolute -top-32 right-0 hidden h-[640px] rotate-180 md:block" />
         <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 hidden h-[640px] md:block" />
 
-        <div className="z-10 mb-12 mt-[100px] space-y-12 text-center">
+        <div className="z-10 mb-12 space-y-12 pt-[100px] text-center">
           <h1 className="text-4xl md:text-[52px]/[71px] lg:text-7xl">
             Let&apos;s chat
           </h1>

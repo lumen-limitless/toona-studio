@@ -1,7 +1,6 @@
 'use client'
 
 import type { NextPage } from 'next'
-import { NextSeo } from 'next-seo'
 import CirclesStarRightLightSVG from 'public/circles-star-right-light.svg'
 import CirclesStarLeftLightSVG from 'public/circles-star-left-light.svg'
 import MagicSVG from 'public/magic.svg'
@@ -66,7 +65,6 @@ collection and eating chicken.`,
 const AboutPage: NextPage = () => {
   return (
     <>
-      <NextSeo />
       <FlexSection
         centered
         col

@@ -1,7 +1,6 @@
 'use client'
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import { NextSeo } from 'next-seo'
 import creativityImg from 'public/creativity.jpg'
 import collaborationImg from 'public/collaboration.jpg'
 import growthImg from 'public/growth.jpg'
@@ -48,7 +47,6 @@ const info = [
 const ServicesPage: NextPage = () => {
   return (
     <>
-      <NextSeo />
       <FlexSection
         id="services"
         col

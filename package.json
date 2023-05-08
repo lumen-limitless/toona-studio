@@ -23,7 +23,6 @@
     "datamuse": "^1.0.5",
     "framer-motion": "^10.12.8",
     "next": "^13.4.1",
-    "next-seo": "^6.0.0",
     "next-sitemap": "^4.0.9",
     "next-themes": "^0.2.1",
     "nextjs-google-analytics": "^2.3.3",
