@@ -80,7 +80,7 @@ const ServicesPage: NextPage = () => {
           Customize your workflow
         </h1>
 
-        <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
+        <div className="mx-auto flex max-w-[1600px] flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
           <div className="flex w-full flex-col gap-6">
             <h2 className="text-2xl/[49px] font-bold">Plan</h2>
             <p className="text-base font-kindalight">
@@ -128,7 +128,7 @@ const ServicesPage: NextPage = () => {
         <h1 className="text-center text-4xl md:text-5xl lg:text-6xl">
           Where We Can <br className="md:hidden" /> Help
         </h1>
-        <div className="mt-12 flex flex-col justify-evenly gap-6 md:mt-16 lg:flex-row ">
+        <div className="mx-auto mt-12 flex max-w-[1600px] flex-col justify-evenly gap-6 md:mt-16 lg:flex-row">
           <div className="flex w-full flex-col gap-6 ">
             <h2 className="text-2xl font-bold">Startups</h2>
             <p className="text-base font-normal">
