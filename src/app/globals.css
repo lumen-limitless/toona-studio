@@ -2,47 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Box sizing */
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+@layer base {
+  body {
+    @apply m-0 box-border flex min-h-screen touch-manipulation flex-col scroll-smooth bg-light p-0 text-dark antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+  }
+
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-kindabold;
+  }
+
+  /* Button styles */
+  button {
+    @apply inline-flex items-center justify-center rounded-full font-kindabold;
+  }
 }
-
-body {
-  text-rendering: optimizeLegibility;
-  font-feature-settings: 'pnum' on, 'lnum' on;
-}
-
-/* Heading styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-kindabold;
-}
-
-/* Button styles */
-button {
-  @apply inline-flex items-center justify-center rounded-full font-kindabold;
-}
-
-/* width */
-/* ::-webkit-scrollbar {
-  width: 14px;
-  height: 16px;
-} */
-
-/* Track */
-/* ::-webkit-scrollbar-track {
-} */
-
-/* Handle */
-/* ::-webkit-scrollbar-thumb {
-} */
-
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-} */
