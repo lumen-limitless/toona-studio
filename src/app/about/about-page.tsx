@@ -1,8 +1,11 @@
 'use client'
 
 import type { NextPage } from 'next'
-import CirclesStarRightLightSVG from 'public/circles-star-right-light.svg'
-import CirclesStarLeftLightSVG from 'public/circles-star-left-light.svg'
+import CirclesLeftSVG from 'public/about-circles-left.svg'
+import CirclesRightSVG from 'public/about-circles-right.svg'
+import Star23SVG from 'public/star-23.svg'
+import Star24SVG from 'public/star-24.svg'
+import Star25SVG from 'public/star-25.svg'
 import MagicSVG from 'public/magic.svg'
 import Link from 'next/link'
 import FlexSection from '@/components/FlexSection'
@@ -70,12 +73,16 @@ const AboutPage: NextPage = () => {
         col
         className="min-h-[calc(60vh-100px)] overflow-clip bg-indigo-600 px-[47.5] py-64 text-light md:py-0"
       >
-        <CirclesStarRightLightSVG className="pointer-events-none absolute -top-12 right-0 h-[335px] stroke-light md:top-0 md:h-[630px]" />
-        <CirclesStarLeftLightSVG className="pointer-events-none absolute -bottom-12 left-0 h-[335px] stroke-light  md:bottom-0 md:h-[630px]" />
-
-        <h1 className="text-center text-4xl md:text-7xl ">
-          Small teams, <br /> big dreams.
-        </h1>
+        <CirclesRightSVG className="pointer-events-none absolute -right-12 -top-12 h-[335px] stroke-light md:top-0 md:h-[630px]" />
+        <CirclesLeftSVG className="pointer-events-none absolute -bottom-0 -left-44 h-[335px] stroke-light md:-left-12  md:h-[630px]" />
+        <div id="star-container" className="relative">
+          <Star23SVG className="absolute -left-16 -top-8 h-10 w-10 md:-left-24" />
+          <Star24SVG className="absolute -bottom-0 -right-16 h-10 w-10 md:-right-24" />
+          <Star25SVG className="absolute -bottom-16 -right-6 h-[28px] md:-right-12" />
+          <h1 className="text-center text-4xl md:text-7xl ">
+            Small teams, <br /> big dreams.
+          </h1>
+        </div>
       </FlexSection>
       <FlexSection
         col

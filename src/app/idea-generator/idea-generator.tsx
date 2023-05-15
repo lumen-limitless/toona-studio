@@ -3,6 +3,7 @@ import FlexSection from '@/components/FlexSection'
 import type { NextPage } from 'next'
 
 const IdeaGeneratorPage: NextPage = () => {
+  const handleGenerate = async () => {}
   return (
     <FlexSection centered col className="px-6 md:px-12 lg:px-[269px]">
       <div>

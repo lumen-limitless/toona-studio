@@ -10,8 +10,7 @@ import { useBoolean, useLockBodyScroll } from 'react-use'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  // TODO: implement idea generator
-  // { href: '/idea-generator', label: 'Idea Generator' },
+  { href: '/idea-generator', label: 'Idea Generator' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
 ]
@@ -53,9 +52,18 @@ export default function Nav() {
           <Link
             href={href}
             key={href}
-            className={clsx(pathname === '/about' ? 'text-light' : 'text-dark')}
+            className={clsx(
+              'nav-link relative',
+              pathname === '/about' ? 'text-light' : 'text-dark'
+            )}
           >
             {label}
+            <span
+              className={clsx(
+                'nav-underline absolute -bottom-1 left-1/2 block -translate-x-1/2 transform',
+                pathname === '/about' ? 'bg-light' : 'bg-indigo-500'
+              )}
+            ></span>
           </Link>
         ))}
         <Link

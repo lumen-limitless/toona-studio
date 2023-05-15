@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply m-0 box-border flex min-h-screen touch-manipulation flex-col scroll-smooth bg-light p-0 text-dark antialiased;
+    @apply m-0 box-border flex min-h-screen touch-manipulation flex-col bg-light p-0 text-dark antialiased;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'pnum' on, 'lnum' on;
   }
@@ -22,5 +22,20 @@
   /* Button styles */
   button {
     @apply inline-flex items-center justify-center rounded-full font-kindabold;
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link:hover .nav-underline {
+    width: 100%;
+  }
+
+  .nav-underline {
+    width: 0;
+    height: 3px;
+    background: currentColor;
+    transition: width 0.2s ease-in-out;
   }
 }
