@@ -70,7 +70,7 @@ const AboutPage: NextPage = () => {
       <FlexSection
         centered
         col
-        className="h-[560px] overflow-clip bg-indigo-600 px-[47.5]  text-light md:py-0"
+        className="min-h-[660px] overflow-clip bg-indigo-600 px-[47.5]  text-light md:py-0"
       >
         <CirclesRightSVG className="pointer-events-none absolute -right-[15%] -top-[20%] h-[335px] stroke-light md:h-[640px] md:w-[630px]" />
         <CirclesLeftSVG className="pointer-events-none absolute -left-[15%] top-[50%] h-[335px]  stroke-light md:top-[20%]  md:h-[640px] md:w-[630px]" />
