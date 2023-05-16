@@ -29,13 +29,11 @@ export default function RootLayout({
           skip to main content
         </a>
 
-        <header className={' top-0 z-20 block w-full '}>
+        <header id="header">
           <Nav />
         </header>
 
-        <main id="main" className="flex h-full w-full flex-grow flex-col">
-          {children}
-        </main>
+        <main id="main">{children}</main>
         <footer id="footer">
           <Footer />
         </footer>

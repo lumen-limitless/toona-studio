@@ -53,8 +53,8 @@ const ServicesPage: NextPage = () => {
         centered
         className="min-h-[calc(100lvh-100px)] gap-12 px-5 py-32"
       >
-        <CirclesStarRightSVG className="pointer-events-none absolute -top-0 right-0 z-0 h-[335px] stroke-dark  md:-top-24 md:h-[642px]" />
-        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-0 left-0 z-0 h-[335px] stroke-dark  md:-bottom-36 md:h-[642px]" />
+        <CirclesStarRightSVG className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
+        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
 
         <h1 className="text-center text-4xl font-kindabold md:text-7xl">
           We build catered <br className="md:hidden" /> experiences to <br />{' '}

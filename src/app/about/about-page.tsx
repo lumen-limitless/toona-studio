@@ -1,5 +1,4 @@
 'use client'
-
 import type { NextPage } from 'next'
 import CirclesLeftSVG from 'public/about-circles-left.svg'
 import CirclesRightSVG from 'public/about-circles-right.svg'
@@ -71,10 +70,10 @@ const AboutPage: NextPage = () => {
       <FlexSection
         centered
         col
-        className="min-h-[calc(60vh-100px)] overflow-clip bg-indigo-600 px-[47.5] py-64 text-light md:py-0"
+        className="h-[560px] overflow-clip bg-indigo-600 px-[47.5]  text-light md:py-0"
       >
-        <CirclesRightSVG className="pointer-events-none absolute -right-12 -top-12 h-[335px] stroke-light md:top-0 md:h-[630px]" />
-        <CirclesLeftSVG className="pointer-events-none absolute -bottom-0 -left-44 h-[335px] stroke-light md:-left-12  md:h-[630px]" />
+        <CirclesRightSVG className="pointer-events-none absolute -right-[15%] -top-[20%] h-[335px] stroke-light md:h-[640px] md:w-[630px]" />
+        <CirclesLeftSVG className="pointer-events-none absolute -left-[15%] top-[50%] h-[335px]  stroke-light md:top-[20%]  md:h-[640px] md:w-[630px]" />
         <div id="star-container" className="relative">
           <Star23SVG className="absolute -left-16 -top-8 h-10 w-10 md:-left-24" />
           <Star24SVG className="absolute -bottom-0 -right-16 h-10 w-10 md:-right-24" />

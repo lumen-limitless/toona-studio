@@ -57,7 +57,7 @@ export default function HomePage() {
     <>
       <FlexSection
         id="landing"
-        className="min-h-[calc(100lvh-100px)] px-5 pb-12 md:px-20 xl:px-[269px]"
+        className="min-h-[calc(100vh-100px)] px-5 pb-12 md:px-20 xl:px-[269px]"
       >
         <div className="mx-auto flex max-w-container flex-col-reverse justify-center gap-6 lg:flex-row lg:items-center lg:gap-20">
           <div className="flex flex-col justify-center gap-12">
