@@ -60,7 +60,7 @@ export default function Nav() {
             {label}
             <span
               className={clsx(
-                'nav-underline absolute -bottom-1 left-1/2 block -translate-x-1/2 transform',
+                'nav-underline absolute -bottom-2 left-1/2 block -translate-x-1/2 transform',
                 pathname === '/about' ? 'bg-light' : 'bg-indigo-500'
               )}
             ></span>
