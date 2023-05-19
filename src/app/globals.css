@@ -44,6 +44,6 @@
   }
 
   .nav-underline {
-    @apply h-1 w-0 rounded-full bg-current transition-all duration-200 ease-in-out;
+    @apply h-px w-0 rounded-full bg-current transition-all duration-200 ease-in-out;
   }
 }
