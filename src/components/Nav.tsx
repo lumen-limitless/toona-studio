@@ -101,7 +101,7 @@ export default function Nav() {
               className="fixed inset-0 z-20 flex w-full flex-col items-center justify-center gap-6 bg-indigo-500 bg-[url('/nav.png')] bg-cover bg-center px-6 text-left text-white"
             >
               <Link
-                href=""
+                href="idea-generator"
                 onClick={() => {
                   close()
                   togglePopoverOpen(false)
