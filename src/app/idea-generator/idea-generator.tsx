@@ -16,7 +16,8 @@ const IdeaGeneratorPage: NextPage = () => {
   const handleGenerate = async () => {
     const res = await fetch('/api/idea', {
       method: 'GET',
-      cache: 'no-cache',
+      cache: 'no-store',
+      next: {},
     })
 
     const data = await res.json()
@@ -28,33 +29,29 @@ const IdeaGeneratorPage: NextPage = () => {
   }
   return (
     <FlexSection centered col className="px-6 ">
-      <div className="max-w-container space-y-6">
-        <div>
+      <div className="space-y-6">
+        <div className="w-full">
           <span className="text-3xl lg:text-7xl/relaxed">I Want to make </span>
-          <input
-            className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl"
-            value={tech}
-          ></input>
+          <button className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl">
+            {tech}
+          </button>
         </div>
 
-        <div>
+        <div className="w-full">
           <span className="text-3xl lg:text-7xl/relaxed">about </span>
-          <input
-            className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl"
-            value={topic1}
-          ></input>{' '}
+          <button className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl">
+            {topic1}
+          </button>{' '}
           <span className="text-3xl lg:text-7xl/relaxed">&</span>{' '}
-          <input
-            className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl"
-            value={topic2}
-          ></input>
+          <button className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl">
+            {topic2}
+          </button>
         </div>
         <div>
           <span className="text-3xl lg:text-7xl/relaxed">for </span>
-          <input
-            className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl"
-            value={demographic}
-          ></input>
+          <button className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl">
+            {demographic}
+          </button>
         </div>
       </div>
 
