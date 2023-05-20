@@ -95,12 +95,10 @@ const AboutPage: NextPage = () => {
             <h2 className="pb-6 text-xl text-indigo/50">{info.role}</h2>
             <div className="pb-9">
               {info.description.map((desc, i) => (
-                <>
-                  <p key={i} className="text-base/[22px]">
-                    {desc}
-                  </p>
+                <div key={i}>
+                  <p className="text-base/[22px]">{desc}</p>
                   <br />
-                </>
+                </div>
               ))}
             </div>
 

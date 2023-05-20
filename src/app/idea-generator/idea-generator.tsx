@@ -2,7 +2,6 @@
 import FlexSection from '@/components/FlexSection'
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import { Fragment } from 'react'
 import { useSessionStorage } from 'react-use'
 
 const IdeaGeneratorPage: NextPage = () => {
