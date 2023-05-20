@@ -1,21 +1,21 @@
 'use client'
 import Image from 'next/image'
-import heroPhoto from 'public/hero.jpg'
+import heroPhoto from 'public/hero.png'
 
 export const HeroImage: React.FC = () => {
   return (
-    <div className="relative  mx-auto  flex h-[399.57px] w-[209px] items-center justify-center rounded-b-[400px] rounded-t-[400px] md:h-[558.5px] md:w-[292.13px]  lg:h-[759px] lg:w-[397px]">
-      <Image
-        src={heroPhoto}
-        alt=""
-        priority
-        quality={100}
-        fill
-        className=" object-contain object-center"
-      />
-      <>
+    <div className="mx-auto flex w-full max-w-[567px] items-center justify-center lg:mx-0">
+      <div className="relative flex h-[399.57px] w-[209px] items-center justify-center rounded-b-[400px] rounded-t-[400px] md:h-[558.5px] md:w-[292.13px]   lg:h-[759px] lg:w-[397px]">
+        <Image
+          src={heroPhoto}
+          alt=""
+          priority
+          quality={100}
+          fill
+          className=" object-contain object-center"
+        />
         <svg
-          className="absolute top-10 -mr-1 w-[380px]  md:-mr-2 md:w-[540px] lg:top-20 lg:-mr-3 lg:w-[760px]"
+          className="absolute top-10 -mr-1 w-[380px]  md:-mr-2 md:w-[540px] lg:top-20 lg:-mr-3 lg:w-[750px]"
           id="ei6PGQMjhyu1"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -95,7 +95,7 @@ export const HeroImage: React.FC = () => {
             fill="#2e3338"
           />
         </svg>
-      </>
+      </div>
     </div>
   )
 }

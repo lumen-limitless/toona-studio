@@ -59,9 +59,9 @@ export default function HomePage() {
         id="landing"
         className="min-h-[calc(100vh-100px)] px-5 pb-12 md:px-20 xl:px-[269px]"
       >
-        <div className="mx-auto flex max-w-container flex-col-reverse justify-center gap-6 lg:flex-row lg:items-center lg:gap-48">
+        <div className="mx-auto flex w-full max-w-container flex-col-reverse justify-between  lg:flex-row lg:items-center">
           <div className="flex flex-col justify-center gap-12">
-            <h1 className="whitespace-nowrap text-4xl md:text-[52px]/[71px] lg:text-7xl">
+            <h1 className="text-4xl md:text-[52px]/[71px] lg:text-7xl">
               Crafting joy <br className="md:hidden" /> through{' '}
               <br className="hidden md:block" /> digital{' '}
               <br className="md:hidden" /> experiences.
