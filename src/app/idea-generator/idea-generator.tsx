@@ -3,6 +3,14 @@ import FlexSection from '@/components/FlexSection'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useSessionStorage } from 'react-use'
+import technologies from './technology.json'
+import nouns from './nouns.json'
+import demographics from './demographics.json'
+
+function generateWordFromList(list: string[]) {
+  const randomIndex = Math.floor(Math.random() * list.length)
+  return list[randomIndex]
+}
 
 const IdeaGeneratorPage: NextPage = () => {
   const [tech, setTech] = useSessionStorage('tech', 'app')
@@ -13,31 +21,23 @@ const IdeaGeneratorPage: NextPage = () => {
     'the elderly'
   )
 
-  const handleGenerate = async () => {
-    const res = await fetch('/api/idea', {
-      method: 'GET',
-      cache: 'no-store',
-      next: {},
-    })
-
-    const data = await res.json()
-    console.debug(data)
-    setTech(data.message[0])
-    setTopic1(data.message[1])
-    setTopic2(data.message[2])
-    setDemographic(data.message[3])
+  const handleGenerate = () => {
+    setTech(generateWordFromList(technologies))
+    setTopic1(generateWordFromList(nouns))
+    setTopic2(generateWordFromList(nouns))
+    setDemographic(generateWordFromList(demographics))
   }
   return (
-    <FlexSection centered col className="px-6 ">
-      <div className="space-y-6">
-        <div className="w-full">
+    <FlexSection centered col>
+      <div className="mx-auto  max-w-container space-y-6 px-6">
+        <div>
           <span className="text-3xl lg:text-7xl/relaxed">I Want to make </span>
           <button className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl">
             {tech}
           </button>
         </div>
 
-        <div className="w-full">
+        <div>
           <span className="text-3xl lg:text-7xl/relaxed">about </span>
           <button className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl">
             {topic1}
