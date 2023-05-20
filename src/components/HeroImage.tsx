@@ -12,7 +12,7 @@ export const HeroImage: React.FC = () => {
           priority
           quality={100}
           fill
-          className=" object-contain object-center"
+          className="object-contain object-center"
         />
         <svg
           className="absolute top-10 -mr-1 w-[380px]  md:-mr-2 md:w-[540px] lg:top-20 lg:-mr-3 lg:w-[750px]"

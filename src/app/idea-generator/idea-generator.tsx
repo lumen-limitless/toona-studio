@@ -16,7 +16,9 @@ const IdeaGeneratorPage: NextPage = () => {
   const handleGenerate = async () => {
     const res = await fetch('/api/idea', {
       method: 'GET',
+      cache: 'no-cache',
     })
+
     const data = await res.json()
     console.debug(data)
     setTech(data.message[0])
