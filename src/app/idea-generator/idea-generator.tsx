@@ -13,7 +13,7 @@ function generateWordFromList(list: string[]) {
 }
 
 const IdeaGeneratorPage: NextPage = () => {
-  const [tech, setTech] = useSessionStorage('tech', 'app')
+  const [tech, setTech] = useSessionStorage('tech', 'an app')
   const [topic1, setTopic1] = useSessionStorage('topic-1', 'lemons')
   const [topic2, setTopic2] = useSessionStorage('topic-2', 'machine-learning')
   const [demographic, setDemographic] = useSessionStorage(
