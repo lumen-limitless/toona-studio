@@ -28,8 +28,8 @@ const IdeaGeneratorPage: NextPage = () => {
     setDemographic(generateWordFromList(demographics))
   }
   return (
-    <FlexSection centered col>
-      <div className="mx-auto  max-w-container space-y-6 px-6">
+    <FlexSection centered col className="px-6">
+      <div className="mx-auto  max-w-container space-y-6">
         <div>
           <span className="text-3xl lg:text-7xl/relaxed">I Want to make </span>
           <button className="rounded-full border-4 border-indigo bg-light p-3 text-center text-2xl text-indigo lg:p-6 lg:text-4xl">
