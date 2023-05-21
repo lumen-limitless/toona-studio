@@ -8,6 +8,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { useRouter } from 'next/navigation'
 import FlexSection from '@/components/FlexSection'
+import Link from 'next/link'
 
 const items = [
   'Digital Experience',
@@ -149,10 +150,13 @@ const ContactPage: NextPage = () => {
           </button>
         </form>
 
-        <a href="" className="mt-10 text-lg font-kindabold text-indigo ">
+        <Link
+          href="/idea-generator"
+          className="mt-10 text-lg font-kindabold text-indigo "
+        >
           {' '}
           {'<-'} Idea Generator
-        </a>
+        </Link>
       </FlexSection>
       <FlexSection
         id="connect"

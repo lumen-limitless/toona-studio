@@ -15,7 +15,7 @@ export const HeroImage: React.FC = () => {
           className="object-contain object-center"
         />
         <svg
-          className="absolute top-10 -mr-1 w-[380px]  md:-mr-2 md:w-[540px] lg:top-20 lg:-mr-3 lg:w-[750px]"
+          className="absolute top-10 -mr-1 w-[380px]  md:-mr-2 md:w-[540px] xl:top-20 xl:-mr-3 xl:w-[750px]"
           id="ei6PGQMjhyu1"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
