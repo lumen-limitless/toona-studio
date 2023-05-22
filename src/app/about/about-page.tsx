@@ -1,5 +1,11 @@
 'use client'
 import type { NextPage } from 'next'
+import CirclesLeftSVG from 'public/about-circles-left.svg'
+import CirclesRightSVG from 'public/about-circles-right.svg'
+import Star23SVG from 'public/star-23.svg'
+import Star24SVG from 'public/star-24.svg'
+import Star25SVG from 'public/star-25.svg'
+import MagicSVG from 'public/magic.svg'
 import Link from 'next/link'
 import FlexSection from '@/components/FlexSection'
 import { INSTAGRAM_URL, LINKEDIN_URL, WEBSITE_URL } from '@/constants'
@@ -66,27 +72,12 @@ const AboutPage: NextPage = () => {
         col
         className="min-h-[660px] overflow-clip bg-indigo-600 px-[47.5]  text-light md:py-0"
       >
-        <object
-          data="/about-circles-right.svg"
-          className="pointer-events-none absolute -right-[15%] -top-[20%] h-[335px] stroke-light md:h-[640px] md:w-[630px]"
-        />
-        <object
-          data="/about-circles-left.svg"
-          className="pointer-events-none absolute -left-[15%] top-[50%] h-[335px]  stroke-light md:top-[20%]  md:h-[640px] md:w-[630px]"
-        />
+        <CirclesRightSVG className="pointer-events-none absolute -right-[15%] -top-[20%] h-[335px] stroke-light md:h-[640px] md:w-[630px]" />
+        <CirclesLeftSVG className="pointer-events-none absolute -left-[15%] top-[50%] h-[335px]  stroke-light md:top-[20%]  md:h-[640px] md:w-[630px]" />
         <div id="star-container" className="relative">
-          <object
-            data="/star-23.svg"
-            className="absolute -left-16 -top-8 h-10 w-10 md:-left-24"
-          />
-          <object
-            data="/star-24.svg"
-            className="absolute -bottom-0 -right-16 h-10 w-10 md:-right-24"
-          />
-          <object
-            data="star-25.svg"
-            className="absolute -bottom-16 -right-6 h-[28px] md:-right-12"
-          />
+          <Star23SVG className="absolute -left-16 -top-8 h-10 w-10 md:-left-24" />
+          <Star24SVG className="absolute -bottom-0 -right-16 h-10 w-10 md:-right-24" />
+          <Star25SVG className="absolute -bottom-16 -right-6 h-[28px] md:-right-12" />
           <h1 className="text-center text-4xl md:text-7xl ">
             Small teams, <br /> big dreams.
           </h1>
@@ -132,8 +123,7 @@ const AboutPage: NextPage = () => {
           href="contact"
           className=" inline-flex h-16 w-[306px] items-center justify-center gap-1 rounded-full bg-indigo text-lg/[24px] font-kindabold text-light duration-300 ease-in-out hover:bg-indigo-600"
         >
-          Let&apos;s make some magic{' '}
-          <object data="magic.svg" className="h-[19.94px]" />
+          Let&apos;s make some magic <MagicSVG className="h-[19.94px]" />
         </Link>
       </FlexSection>
     </>
