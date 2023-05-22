@@ -1,5 +1,5 @@
 import IdeaGeneratorPage from './idea-generator'
 
-export default function IdeaGenerator() {
+export default function Page() {
   return <IdeaGeneratorPage />
 }

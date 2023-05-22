@@ -5,6 +5,6 @@ export const metadata: Metadata = {
   title: 'Services',
 }
 
-export default function Services() {
+export default function Page() {
   return <ServicesPage />
 }
