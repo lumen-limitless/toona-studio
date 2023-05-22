@@ -4,14 +4,10 @@ import Link from 'next/link'
 import creativityImg from 'public/creativity.jpg'
 import collaborationImg from 'public/collaboration.jpg'
 import growthImg from 'public/growth.jpg'
-import MagicSVG from 'public/magic.svg'
-import RepeatSVG from 'public/repeat.svg'
 import ServicesSection from '@/components/ServicesSection'
 import InfoSection from '@/components/InfoSection'
 import CTA from '@/components/CTA'
 import FlexSection from '@/components/FlexSection'
-import CirclesStarRightSVG from 'public/circles-star-right.svg'
-import CirclesStarLeftSVG from 'public/circles-star-left.svg'
 
 const info = [
   {
@@ -53,8 +49,14 @@ const ServicesPage: NextPage = () => {
         centered
         className="min-h-[calc(100lvh-100px)] gap-12 px-5 py-32"
       >
-        <CirclesStarRightSVG className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
-        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
+        <object
+          data="/circles-star-right.svg"
+          className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px]  stroke-dark md:h-[642px]"
+        />
+        <object
+          data="/circles-star-left.svg"
+          className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px]  stroke-dark md:h-[642px]"
+        />
 
         <h1 className="text-center text-4xl font-kindabold md:text-7xl">
           We build catered <br className="md:hidden" /> experiences to <br />{' '}
@@ -65,7 +67,8 @@ const ServicesPage: NextPage = () => {
           href="/contact"
           className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg text-white transition-colors ease-out hover:bg-indigo-600"
         >
-          Let&apos;s make some magic <MagicSVG className="ml-1 h-5 w-5" />
+          Let&apos;s make some magic{' '}
+          <object data="/magic.svg" className="ml-1 h-5 w-5" />
         </Link>
       </FlexSection>
 
@@ -122,7 +125,10 @@ const ServicesPage: NextPage = () => {
         <h2 className="absolute -bottom-12 text-center text-2xl font-bold">
           Repeat
         </h2>
-        <RepeatSVG className="absolute inset-x-32 -bottom-12 mx-auto hidden max-w-[1800px] xl:block" />
+        <object
+          data="/repeat.svg"
+          className="absolute inset-x-32 -bottom-12 mx-auto hidden max-w-[1800px] xl:block"
+        />
       </FlexSection>
 
       <ServicesSection />
