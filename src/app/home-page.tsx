@@ -68,7 +68,7 @@ export default function HomePage() {
               We are a digital product studio based in Rochester, NY{' '}
               <br className="hidden lg:inline-block" /> that designs & develops
               innovative and human-centered <br className="hidden md:block" />{' '}
-              experiences to enrichen your business.
+              experiences to enrich your business.
             </p>
             <Link
               href="/contact"
