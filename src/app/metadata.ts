@@ -1,5 +1,8 @@
-import { APP_NAME, APP_URL, APP_DESCRIPTION } from '@/constants'
 import { Metadata } from 'next'
+
+const APP_NAME = process.env.APP_NAME || ''
+const APP_DESCRIPTION = process.env.APP_DESCRIPTION || ''
+const APP_URL = process.env.APP_URL || ''
 
 export const defaultMetadata: Metadata = {
   title: {
