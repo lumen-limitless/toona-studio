@@ -6,7 +6,7 @@ import { ImageResponse } from 'next/server'
 export const runtime = 'edge'
 
 // Image metadata
-export const alt = 'About Acme'
+export const alt = 'Toona Studio'
 export const size = {
   width: 1200,
   height: 630,
