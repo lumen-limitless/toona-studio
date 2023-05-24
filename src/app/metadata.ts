@@ -12,9 +12,20 @@ export const defaultMetadata: Metadata = {
   themeColor: '#f9f9f9',
   metadataBase: new URL(APP_URL),
   generator: 'Next.js',
-  keywords: [],
+  keywords: [
+    'studio',
+    'web development',
+    'web design',
+    'web developer',
+    'UX design',
+    'UI design',
+    'web development company',
+    'web design company',
+    'web developer company',
+    'UX design company',
+    'UI design company',
+  ],
   icons: [
-    { rel: 'icon', url: '/favicon.ico', sizes: 'any', type: undefined },
     {
       rel: 'apple-touch-icon',
       url: '/apple-icon-57x57.png',
@@ -82,17 +93,12 @@ export const defaultMetadata: Metadata = {
     url: APP_URL,
     title: APP_NAME,
     description: APP_DESCRIPTION,
-    images: [
-      {
-        url: '',
-      },
-    ],
+    locale: 'en_US',
   },
 
   twitter: {
     title: APP_NAME,
     site: APP_URL,
-    images: '',
     creator: '@lumenlimitless',
     description: APP_DESCRIPTION,
     card: 'summary_large_image',
@@ -104,9 +110,26 @@ export const defaultMetadata: Metadata = {
     capable: true,
   },
 
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
   formatDetection: {
     telephone: false,
+    email: false,
+    address: false,
   },
+
   manifest: '/manifest.json',
 
   other: {

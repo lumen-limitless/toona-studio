@@ -2,15 +2,14 @@ import './globals.css'
 import { Manrope } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import Analytics from './Analytics'
-import { Metadata } from 'next'
-import { defaultMetadata } from './DefaultMetadata'
+import Analytics from './analytics'
+import { defaultMetadata } from './metadata'
 
 const manrope = Manrope({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = defaultMetadata
+export const metadata = defaultMetadata
 
 export default function RootLayout({
   children,

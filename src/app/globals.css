@@ -4,13 +4,13 @@
 
 @layer base {
   body {
-    @apply m-0 box-border flex min-h-screen touch-manipulation flex-col bg-light p-0 text-dark antialiased;
+    @apply box-border flex min-h-screen touch-manipulation flex-col bg-light p-0 text-dark antialiased;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'pnum' on, 'lnum' on;
   }
 
   header {
-    @apply block w-full;
+    @apply w-full;
   }
 
   main {
