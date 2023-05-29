@@ -2,10 +2,10 @@
 import Image from 'next/image'
 import heroPhoto from 'public/hero.png'
 
-export const HeroImage = () => {
+export const HeroImage: React.FC = () => {
   return (
     <div className="mx-auto flex w-full max-w-[567px] items-center justify-center lg:mx-0">
-      <div className="relative flex h-[400px] w-[209px] items-center justify-center rounded-b-[400px] rounded-t-[400px] md:h-[559px] md:w-[292px] xl:h-[759px] xl:w-[388px]">
+      <div className="relative flex h-[399.57px] w-[209px] items-center justify-center rounded-b-[400px] rounded-t-[400px] md:h-[558.5px] md:w-[292.13px] xl:h-[759px] xl:w-[397px]">
         <Image
           src={heroPhoto}
           alt=""
@@ -17,7 +17,7 @@ export const HeroImage = () => {
         <object
           type="image/svg+xml"
           data="/orbit.svg"
-          className="absolute -inset-x-[88px] top-[50px] -mr-2 md:-inset-x-[123px] md:top-[66px] xl:-inset-x-[165px] xl:top-[100px] xl:-mr-3"
+          className="absolute top-10 -mr-1 w-[380px] md:top-14 md:w-[540px] xl:top-[113.5px] xl:-mr-3 xl:w-[750px]"
         />
       </div>
     </div>
