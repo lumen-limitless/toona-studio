@@ -8,7 +8,7 @@ import Star25SVG from 'public/star-25.svg'
 import MagicSVG from 'public/magic.svg'
 import Link from 'next/link'
 import FlexSection from '@/components/FlexSection'
-import { INSTAGRAM_URL, LINKEDIN_URL, WEBSITE_URL } from '@/constants'
+import { INSTAGRAM_URL, LINKEDIN_URL, WEBSITE_URL } from '@/lib/constants'
 
 const aboutInfo = [
   {
@@ -45,7 +45,8 @@ collection and eating chicken.`,
     name: 'Zach Lippa',
     role: 'Lead Developer',
     description: [
-      'Zach is a full-stack developer who loves to build and design websites. He is passionate about helping small businesses and startups grow their online presence.',
+      'An impassioned Full-Stack Developer, Zach specializes in utilizing JavaScript, TypeScript, and Solidity to architect, build, and enhance dynamic, user-focused websites and applications. With a particular interest in fostering the growth of small businesses and startups, Zach applies his expertise in blockchain technologies and modern web development to optimize their online presence.',
+      'Through innovative solutions and keen understanding of industry trends, Zach enables businesses to streamline operations, increase engagement, and expand their digital footprint. As a technophile, Zach strives to be at the cutting edge, exploring new programming paradigms and tools to offer unique, transformative digital experiences to his clients.',
     ],
     socials: [
       {

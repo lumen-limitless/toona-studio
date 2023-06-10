@@ -5,7 +5,7 @@ import DiscordSVG from 'public/discord.svg'
 import LinkedInSVG from 'public/linkedin.svg'
 import InstaSVG from 'public/insta.svg'
 import BehanceSVG from 'public/behance.svg'
-import { DISCORD_URL, INSTAGRAM_URL, LINKEDIN_URL } from '../constants'
+import { DISCORD_URL, INSTAGRAM_URL, LINKEDIN_URL } from '@/lib/constants'
 
 export default function Footer() {
   return (
