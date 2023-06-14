@@ -118,7 +118,7 @@ export default function Nav() {
                   close()
                   togglePopoverOpen(false)
                 }}
-                className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
+                className="mt-3 w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
                 Services
               </Link>
@@ -128,7 +128,7 @@ export default function Nav() {
                   close()
                   togglePopoverOpen(false)
                 }}
-                className="w-full text-[32px]/[44px] font-bold tracking-[0.1em]"
+                className="mt-3 w-full text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
                 About
               </Link>
@@ -139,7 +139,7 @@ export default function Nav() {
                   close()
                   togglePopoverOpen(false)
                 }}
-                className="w-full"
+                className="mt-3 w-full"
               >
                 <button
                   className={'h-16 w-full rounded-full bg-light text-dark'}
