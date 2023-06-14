@@ -102,7 +102,7 @@ export default function Nav() {
               as={'div'}
               className="fixed inset-0 z-20 flex w-full flex-col items-center justify-center gap-6 bg-indigo-500 bg-[url('/nav.png')] bg-cover bg-center px-6 text-left text-white"
             >
-              <Link
+              {/* <Link
                 href="idea-generator"
                 onClick={() => {
                   close()
@@ -111,7 +111,7 @@ export default function Nav() {
                 className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
               >
                 Idea Generator ✦
-              </Link>
+              </Link> */}
 
               <Link
                 href="services"
