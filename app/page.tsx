@@ -58,7 +58,7 @@ export default function Page() {
       >
         <div className="mx-auto flex w-full max-w-container flex-col-reverse justify-between gap-6 lg:flex-row lg:items-center lg:gap-0">
           <div className="flex flex-col justify-center gap-12">
-            <h1 className="text-4xl md:text-[52px]/[71px] lg:text-7xl">
+            <h1 className="text-4xl font-kindabold md:text-[52px]/[71px] lg:text-7xl">
               Crafting joy <br className="md:hidden" /> through{' '}
               <br className="hidden md:block" /> digital{' '}
               <br className="md:hidden" /> experiences.
@@ -83,11 +83,13 @@ export default function Page() {
 
       <MarqueeComponent />
 
-      {info.map((info) => (
-        <div key={info.id}>
-          <InfoSection {...info} />
-        </div>
-      ))}
+      <div className="flex flex-col gap-20 pt-40">
+        {info.map((info) => (
+          <div key={info.id}>
+            <InfoSection {...info} />
+          </div>
+        ))}
+      </div>
 
       <ServicesSection />
 

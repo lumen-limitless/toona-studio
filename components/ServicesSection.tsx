@@ -58,9 +58,9 @@ export default function ServicesSection() {
       <FlexSection
         id="services"
         col
-        className="items-center gap-12 px-5 py-32 md:px-20 xl:px-[269px]"
+        className="items-center gap-12 px-5 pb-60 pt-[120px] md:px-20 xl:px-[269px]"
       >
-        <h1 className="text-center text-4xl/[49px]  md:text-[64px]/[87px]">
+        <h1 className="text-center text-4xl/[49px]  font-kindabold md:text-[64px]/[87px]">
           Services
         </h1>
         <div className="flex w-full max-w-container flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">

@@ -8,9 +8,10 @@ import clsx from 'clsx'
 import { Fragment } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
 import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
 const links = [
-  { href: '/idea-generator', label: 'Idea Generator' },
+  // { href: '/idea-generator', label: 'Idea Generator' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
 ]
@@ -22,7 +23,7 @@ export default function Nav() {
 
   return (
     <nav
-      className={clsx(
+      className={cn(
         'relative flex h-[100px] w-full items-center justify-between',
         pathname === '/about'
           ? 'bg-light text-dark md:bg-indigo-600 md:text-light'
@@ -38,7 +39,7 @@ export default function Nav() {
       >
         <span className="sr-only">Home</span>
         <LogoSVG
-          className={clsx(
+          className={cn(
             'h-[18px]',
             popoverOpen
               ? 'fill-light stroke-light'
@@ -52,23 +53,24 @@ export default function Nav() {
           <Link
             href={href}
             key={href}
-            className={clsx(
+            className={cn(
               'nav-link relative',
               pathname === '/about' ? 'text-light' : 'text-dark'
             )}
           >
             {label}
             <span
-              className={clsx(
+              className={cn(
                 'nav-underline absolute -bottom-2 left-1/2 block -translate-x-1/2 transform',
-                pathname === '/about' ? 'bg-light' : 'bg-indigo-500'
+                pathname === '/about' ? 'bg-light' : 'bg-indigo-500',
+                pathname === href ? 'w-full' : ''
               )}
             ></span>
           </Link>
         ))}
         <Link
           href="contact"
-          className={clsx(
+          className={cn(
             'inline-flex h-10 min-w-[141px] items-center justify-center rounded-full  text-[15px]/[24px] font-kindabold transition-colors duration-300 ease-in-out',
             pathname === '/about'
               ? 'bg-light text-dark hover:bg-opacity-60'

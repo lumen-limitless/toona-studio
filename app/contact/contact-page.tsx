@@ -8,7 +8,6 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { useRouter } from 'next/navigation'
 import FlexSection from '@/components/FlexSection'
-import Link from 'next/link'
 
 const items = [
   'Digital Experience',
@@ -58,16 +57,17 @@ const ContactPage: NextPage = () => {
   }
   return (
     <>
+      <div className="pointer-events-none absolute inset-0 hidden md:block lg:inset-y-0">
+        <CirclesSVG className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px] rotate-180  stroke-dark md:h-[642px]" />
+        <CirclesSVG className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px] stroke-dark md:block md:h-[642px]" />
+      </div>
       <FlexSection
         col
         id="contact"
-        className="px-5 pb-[44px] md:px-20 md:pb-[140px] xl:px-[269px]"
+        className="z-20 px-5 pb-[44px] md:px-20 md:pb-[140px] xl:px-[269px]"
       >
-        <CirclesSVG className="pointer-events-none absolute -top-32 right-0 hidden h-[640px] rotate-180 md:block" />
-        <CirclesSVG className="pointer-events-none absolute -bottom-32 left-0 hidden h-[640px] md:block" />
-
-        <div className="z-10 mb-12 space-y-12 pt-[100px] text-center">
-          <h1 className="text-4xl md:text-[52px]/[71px] lg:text-7xl">
+        <div className=" mb-12 space-y-12 pt-[100px] text-center">
+          <h1 className="text-4xl font-kindabold md:text-[52px]/[71px] lg:text-7xl">
             Let&apos;s chat
           </h1>
           <p className="text-lg font-kindabold lg:text-2xl">
@@ -86,7 +86,7 @@ const ContactPage: NextPage = () => {
               {...register('name', {
                 required: 'This field is required',
               })}
-              className="rounded-full border-2 border-dark bg-transparent px-2 py-3 text-dark"
+              className="rounded-full border-2 border-dark bg-transparent px-5 py-3 text-dark"
               id="name"
               type="text"
               placeholder="Peter Parker at Amazon"
@@ -96,7 +96,7 @@ const ContactPage: NextPage = () => {
             Email address
             <input
               {...register('email')}
-              className="rounded-full border-2 border-dark bg-transparent px-2 py-3 text-dark"
+              className="rounded-full border-2 border-dark bg-transparent px-5 py-3 text-dark"
               id="email"
               type="text"
               placeholder="pparker@gmail.com"
@@ -136,7 +136,7 @@ const ContactPage: NextPage = () => {
             <textarea
               {...register('message')}
               rows={5}
-              className="rounded-xl border-2 border-dark bg-transparent px-2 py-3 text-dark"
+              className="rounded-xl border-2 border-dark bg-transparent px-5 py-3 text-dark"
               id="details"
               placeholder="I want to make an app about lemons & machine learning for the elderly"
             />
@@ -149,14 +149,14 @@ const ContactPage: NextPage = () => {
             Send message
           </button>
         </form>
-
+        {/*
         <Link
           href="/idea-generator"
           className="mt-10 text-lg font-kindabold text-indigo "
         >
           {' '}
           {'<-'} Idea Generator
-        </Link>
+        </Link> */}
       </FlexSection>
       <FlexSection
         id="connect"

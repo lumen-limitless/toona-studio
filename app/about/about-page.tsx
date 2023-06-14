@@ -48,20 +48,7 @@ collection and eating chicken.`,
       'An impassioned Full-Stack Developer, Zach specializes in utilizing JavaScript, TypeScript, and Solidity to architect, build, and enhance dynamic, user-focused websites and applications. With a particular interest in fostering the growth of small businesses and startups, Zach applies his expertise in blockchain technologies and modern web development to optimize their online presence.',
       'Through innovative solutions and keen understanding of industry trends, Zach enables businesses to streamline operations, increase engagement, and expand their digital footprint. As a technophile, Zach strives to be at the cutting edge, exploring new programming paradigms and tools to offer unique, transformative digital experiences to his clients.',
     ],
-    socials: [
-      {
-        name: 'Instagram',
-        url: INSTAGRAM_URL,
-      },
-      {
-        name: 'LinkedIn',
-        url: LINKEDIN_URL,
-      },
-      {
-        name: 'Website',
-        url: WEBSITE_URL,
-      },
-    ],
+    socials: [],
   },
 ]
 
@@ -94,7 +81,7 @@ const AboutPage: NextPage = () => {
           <div className="max-w-[538px]" key={i}>
             <h1 className="pb-6 text-4xl">{info.name}</h1>
             <h2 className="pb-6 text-xl text-indigo/50">{info.role}</h2>
-            <div className="pb-9">
+            <div className="mb-3">
               {info.description.map((desc, i) => (
                 <div key={i}>
                   <p className="text-base/[22px]">{desc}</p>

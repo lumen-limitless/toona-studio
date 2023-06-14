@@ -40,7 +40,7 @@ const headings = [
 export default function MarqueeComponent() {
   return (
     <Marquee
-      speed={10}
+      speed={20}
       className="flex h-[120px] w-full overflow-hidden bg-dark py-3 text-xl uppercase text-light lg:text-2xl"
       gradient={false}
     >

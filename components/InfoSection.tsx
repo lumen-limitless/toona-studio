@@ -19,7 +19,7 @@ export default function InfoSection({
   reverse?: boolean
 }) {
   return (
-    <FlexSection id={id} className="px-5 py-20 md:px-20 xl:px-[269px]">
+    <FlexSection id={id} className="px-5 md:px-20 xl:px-[269px]">
       <div
         className={clsx(
           'mx-auto flex w-full max-w-container flex-col justify-between gap-12',
