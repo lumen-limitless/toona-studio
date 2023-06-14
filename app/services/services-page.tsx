@@ -122,7 +122,7 @@ const ServicesPage: NextPage = () => {
           </div>
         </div>
 
-        <h2 className="absolute -bottom-12 text-center text-2xl font-kindabold">
+        <h2 className="absolute -bottom-12 hidden text-center text-2xl font-kindabold xl:block">
           Repeat
         </h2>
         <RepeatSVG className="absolute inset-x-32 -bottom-12 mx-auto hidden max-w-[1800px] xl:block" />
