@@ -58,7 +58,7 @@ export default function ServicesSection() {
       <FlexSection
         id="services"
         col
-        className="items-center gap-12 px-5 pb-60 pt-[120px] md:px-20 xl:px-[269px]"
+        className="items-center gap-12 px-5 pb-44 pt-[120px] md:px-20 lg:pb-60 xl:px-[269px]"
       >
         <h1 className="text-center text-4xl/[49px]  font-kindabold md:text-[64px]/[87px]">
           Services
@@ -78,11 +78,11 @@ export default function ServicesSection() {
                 />
               </div>
 
-              <h2 className="text-2xl/[49px]">{service.name}</h2>
+              <h2 className="text-2xl/[49px] font-kindabold">{service.name}</h2>
 
               <ul>
                 {service.content.map((content, i) => (
-                  <li className="text-lg/[200%] font-kindalight" key={i}>
+                  <li className="text-lg/[200%]" key={i}>
                     {content}
                   </li>
                 ))}
