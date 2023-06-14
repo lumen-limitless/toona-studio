@@ -66,7 +66,7 @@ const AboutPage: NextPage = () => {
           <Star23SVG className="absolute -left-16 -top-8 h-10 w-10 md:-left-24" />
           <Star24SVG className="absolute -bottom-0 -right-16 h-10 w-10 md:-right-24" />
           <Star25SVG className="absolute -bottom-16 -right-6 h-[28px] md:-right-12" />
-          <h1 className="text-center text-4xl md:text-7xl ">
+          <h1 className="text-center text-4xl font-kindabold md:text-7xl">
             Small teams, <br /> big dreams.
           </h1>
         </div>
@@ -79,8 +79,10 @@ const AboutPage: NextPage = () => {
       >
         {aboutInfo.map((info, i) => (
           <div className="max-w-[538px]" key={i}>
-            <h1 className="pb-6 text-4xl">{info.name}</h1>
-            <h2 className="pb-6 text-xl text-indigo/50">{info.role}</h2>
+            <h1 className="pb-6 text-4xl font-kindabold">{info.name}</h1>
+            <h2 className="pb-6 text-xl font-kindabold text-indigo/50">
+              {info.role}
+            </h2>
             <div className="mb-3">
               {info.description.map((desc, i) => (
                 <div key={i}>
