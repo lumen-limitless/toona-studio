@@ -4,7 +4,6 @@ import LogoSVG from 'public/logo.svg'
 import BurgerSVG from 'public/burger.svg'
 import CloseSVG from 'public/close.svg'
 import { Popover } from '@headlessui/react'
-import clsx from 'clsx'
 import { Fragment } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
 import { usePathname } from 'next/navigation'
@@ -89,7 +88,7 @@ export default function Nav() {
                 togglePopoverOpen()
               }}
               className={
-                ' absolute inset-y-auto right-6 z-30  rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden '
+                ' absolute inset-y-auto right-6 z-50  rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden '
               }
             >
               {open ? (
@@ -100,7 +99,7 @@ export default function Nav() {
             </Popover.Button>
             <Popover.Panel
               as={'div'}
-              className="fixed inset-0 z-20 flex w-full flex-col items-center justify-center gap-6 bg-indigo-500 bg-[url('/nav.png')] bg-cover bg-center px-6 text-left text-white"
+              className="fixed inset-0 z-40 flex w-full flex-col items-center justify-center gap-6 bg-indigo-500 bg-[url('/nav.png')] bg-cover bg-center px-6 text-left text-white"
             >
               {/* <Link
                 href="idea-generator"
