@@ -58,7 +58,7 @@ const ContactPage: NextPage = () => {
   }
   return (
     <>
-      <div className="pointer-events-none absolute inset-x-0 inset-y-20 lg:inset-y-0">
+      <div className="pointer-events-none absolute inset-x-0 inset-y-20 hidden lg:inset-y-0 lg:block">
         <CirclesStarRightSVG className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
         <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
       </div>
