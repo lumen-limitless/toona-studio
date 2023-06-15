@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 import FlexSection from './FlexSection'
+import { cn } from '@/lib/utils'
 
 export default function InfoSection({
   id,
@@ -21,8 +21,8 @@ export default function InfoSection({
   return (
     <FlexSection id={id} className="px-5 md:px-20 xl:px-[269px]">
       <div
-        className={clsx(
-          'mx-auto flex w-full max-w-container flex-col justify-between gap-12',
+        className={cn(
+          'mx-auto flex w-full max-w-container flex-col justify-between gap-[120px]',
           reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
         )}
       >
