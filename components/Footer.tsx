@@ -10,7 +10,9 @@ export default function Footer() {
   return (
     <nav className="relative flex w-full flex-col items-center justify-between gap-6 bg-dark  py-9 text-light md:gap-[75px] md:py-[68px]">
       <div className="flex w-full flex-col items-center justify-between gap-6 px-12 md:items-start md:gap-[75px] lg:flex-row lg:items-center">
-        <LogoSVG className="h-[18px] fill-current stroke-current" />
+        <Link href={'/'}>
+          <LogoSVG className="h-[18px] fill-current stroke-current" />
+        </Link>
         <div className="flex flex-col items-center gap-3 md:flex-row md:gap-12 ">
           {/* <Link href="">Idea Generator</Link> */}
           <Link href="/services" className="nav-link relative font-kindabold">
