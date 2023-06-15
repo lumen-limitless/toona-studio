@@ -5,10 +5,11 @@ import { useState } from 'react'
 import ChevronDownSVG from 'public/chevron-down.svg'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { useRouter } from 'next/navigation'
 import FlexSection from '@/components/FlexSection'
 import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import CirclesStarLeftSVG from 'public/circles-star-left.svg'
+import { useBoolean } from 'react-use'
+import { Loader2 } from 'lucide-react'
 
 const items = [
   'Digital Experience',
@@ -30,7 +31,7 @@ export type ContactForm = z.infer<typeof schema>
 
 const ContactPage: NextPage = () => {
   const [work, setWork] = useState('Digital Experience')
-  const [loading, setLoading] = useState(false)
+  const [loading, toggleLoading] = useBoolean(false)
   const {
     register,
     handleSubmit,
@@ -39,6 +40,7 @@ const ContactPage: NextPage = () => {
 
   const onSubmit: SubmitHandler<ContactForm> = (data) => {
     console.debug(data)
+    toggleLoading(true)
     fetch('/api/email', {
       method: 'POST',
       headers: {
@@ -47,8 +49,10 @@ const ContactPage: NextPage = () => {
       body: JSON.stringify({ ...data, work }),
     }).then((res) => {
       console.debug(res)
+      toggleLoading(false)
+
       if (res.status === 200) {
-        console.log('success')
+        alert('Message sent!')
       } else {
         alert('Something went wrong. Please try again later.')
       }
@@ -145,9 +149,16 @@ const ContactPage: NextPage = () => {
           </label>
           <button
             type="submit"
-            className="mx-auto h-[64px] w-[203px] bg-indigo text-light transition-colors ease-out hover:bg-indigo-600"
+            disabled={loading}
+            className="mx-auto h-[64px] w-[203px] bg-indigo text-light transition-colors ease-out hover:bg-indigo-600 disabled:bg-opacity-50"
           >
-            Send message
+            {loading ? (
+              <>
+                <Loader2 className="animate-spin" />
+              </>
+            ) : (
+              'Send message'
+            )}
           </button>
         </form>
         {/*
