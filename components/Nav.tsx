@@ -53,7 +53,7 @@ export default function Nav() {
             href={href}
             key={href}
             className={cn(
-              'nav-link relative',
+              'nav-link relative font-kindabold',
               pathname === '/about' ? 'text-light' : 'text-dark'
             )}
           >
@@ -88,7 +88,7 @@ export default function Nav() {
                 togglePopoverOpen()
               }}
               className={
-                ' absolute inset-y-auto right-6 z-50  rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden '
+                'absolute inset-y-auto right-6 z-50 rounded-lg bg-[#a5a4ff] bg-opacity-[15%] p-[10px] md:hidden'
               }
             >
               {open ? (

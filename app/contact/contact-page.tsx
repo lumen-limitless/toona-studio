@@ -2,12 +2,13 @@
 import type { NextPage } from 'next'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
-import CirclesSVG from 'public/circles.svg'
 import ChevronDownSVG from 'public/chevron-down.svg'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { useRouter } from 'next/navigation'
 import FlexSection from '@/components/FlexSection'
+import CirclesStarRightSVG from 'public/circles-star-right.svg'
+import CirclesStarLeftSVG from 'public/circles-star-left.svg'
 
 const items = [
   'Digital Experience',
@@ -57,9 +58,9 @@ const ContactPage: NextPage = () => {
   }
   return (
     <>
-      <div className="pointer-events-none absolute inset-0 hidden md:block lg:inset-y-0">
-        <CirclesSVG className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px] rotate-180  stroke-dark md:h-[642px]" />
-        <CirclesSVG className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px] stroke-dark md:block md:h-[642px]" />
+      <div className="pointer-events-none absolute inset-x-0 inset-y-20 lg:inset-y-0">
+        <CirclesStarRightSVG className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
+        <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
       </div>
       <FlexSection
         col

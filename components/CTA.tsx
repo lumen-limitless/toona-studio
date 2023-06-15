@@ -12,7 +12,7 @@ export default function CTA() {
         <h1 className="text-center text-4xl font-kindabold md:text-6xl">
           Get Connected
         </h1>
-        <p className="text-center text-xl font-kindabold md:text-2xl">
+        <p className="pb-6 text-center text-xl font-kindabold md:text-2xl">
           Do you have a project idea or want to keep in touch?
         </p>
         <Link

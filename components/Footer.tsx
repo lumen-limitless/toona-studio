@@ -13,11 +13,15 @@ export default function Footer() {
         <LogoSVG className="h-[18px] fill-current stroke-current" />
         <div className="flex flex-col items-center gap-3 md:flex-row md:gap-12 ">
           {/* <Link href="">Idea Generator</Link> */}
-          <Link href="/services">Services</Link>
-          <Link href="/about">About</Link>
+          <Link href="/services" className="nav-link relative font-kindabold">
+            Services
+          </Link>
+          <Link href="/about" className="nav-link relative font-kindabold">
+            About
+          </Link>
           <Link
             href="/contact"
-            className="rounded-full bg-light px-9 py-2 text-[15px]/[24px] font-kindabold text-dark duration-300 ease-in-out hover:bg-opacity-60 "
+            className="rounded-full bg-light px-9 py-2 text-[15px]/[24px] font-kindabold text-dark duration-300 ease-in-out hover:bg-opacity-60"
           >
             Let&apos;s chat
           </Link>

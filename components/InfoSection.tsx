@@ -26,12 +26,12 @@ export default function InfoSection({
           reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
         )}
       >
-        <div className="flex flex-col justify-center gap-6 md:gap-12">
+        <div className="flex max-w-[631px] flex-col justify-center gap-6 md:gap-12">
           <h1 className="text-4xl font-kindabold md:text-[64px]/[87px]">
             {title}
           </h1>
 
-          <div className="max-w-[700px]">
+          <div>
             {description.map((desc, i) => (
               <div key={i}>
                 <p className="text-lg font-kindabold md:text-xl">{desc}</p>
@@ -49,7 +49,7 @@ export default function InfoSection({
           )}
         </div>
 
-        <div className="relative h-[400px] w-full shrink-0 md:h-[525px] lg:max-w-[480px] xl:h-[719px] xl:max-w-[631px]">
+        <div className="relative h-[400px] w-full max-w-[631px] shrink-0 rounded-sm md:h-[525px] xl:h-[719px]">
           <Image
             src={image}
             alt=""
