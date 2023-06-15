@@ -33,11 +33,11 @@ collection and eating chicken.`,
       },
       {
         name: 'LinkedIn',
-        url: LINKEDIN_URL,
+        url: 'https://www.linkedin.com/in/christoona/',
       },
       {
         name: 'Website',
-        url: WEBSITE_URL,
+        url: 'https://christoona.com/',
       },
     ],
   },

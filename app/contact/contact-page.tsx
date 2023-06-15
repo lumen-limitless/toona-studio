@@ -37,8 +37,6 @@ const ContactPage: NextPage = () => {
     formState: { errors },
   } = useForm<ContactForm>()
 
-  const { push } = useRouter()
-
   const onSubmit: SubmitHandler<ContactForm> = (data) => {
     console.debug(data)
     fetch('/api/email', {
