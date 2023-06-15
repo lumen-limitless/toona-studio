@@ -22,7 +22,7 @@ export default function InfoSection({
     <FlexSection id={id} className="px-5 md:px-20 xl:px-[269px]">
       <div
         className={cn(
-          'mx-auto flex w-full max-w-container flex-col justify-between gap-[120px]',
+          'mx-auto flex w-full max-w-container flex-col justify-between gap-12',
           reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
         )}
       >
