@@ -17,7 +17,7 @@ export const HeroImage: React.FC = () => {
         <object
           type="image/svg+xml"
           data="/orbit.svg"
-          className="absolute top-10 -mr-1 w-[380px] md:top-14 md:w-[540px] xl:top-[113.5px] xl:-mr-3 xl:w-[750px]"
+          className="absolute top-10 -mr-[6px] w-[380px] md:top-14 md:w-[540px] xl:top-[113.5px] xl:w-[750px]"
         />
       </div>
     </div>

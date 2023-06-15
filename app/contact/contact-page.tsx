@@ -103,8 +103,10 @@ const ContactPage: NextPage = () => {
               placeholder="pparker@gmail.com"
             />{' '}
           </label>
-          <label htmlFor="work" className="flex flex-col gap-3">
-            What type of work are you looking for?
+          <div>
+            <label htmlFor="work" className="mb-3 flex flex-col">
+              What type of work are you looking for?
+            </label>
             <Menu as="div">
               <Menu.Button
                 id="work"
@@ -131,7 +133,8 @@ const ContactPage: NextPage = () => {
                 ))}
               </Menu.Items>
             </Menu>
-          </label>
+          </div>
+
           <label htmlFor="details" className="flex flex-col gap-3">
             Tell us about your project
             <textarea
@@ -142,7 +145,6 @@ const ContactPage: NextPage = () => {
               placeholder="I want to make an app about lemons & machine learning for the elderly"
             />
           </label>
-
           <button
             type="submit"
             className="mx-auto h-[64px] w-[203px] bg-indigo text-light transition-colors ease-out hover:bg-indigo-600"
