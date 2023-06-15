@@ -50,7 +50,7 @@ const ContactPage: NextPage = () => {
     }).then((res) => {
       console.debug(res)
       if (res.status === 200) {
-        push('/success')
+        console.log('success')
       } else {
         alert('Something went wrong. Please try again later.')
       }
