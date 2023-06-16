@@ -21,10 +21,7 @@ export default function InfoSection({
   reverse?: boolean
 }) {
   return (
-    <FlexSection
-      id={id}
-      className="overflow-hidden px-5 md:px-20 xl:px-[269px]"
-    >
+    <FlexSection id={id} className="px-5 md:px-20 xl:px-[269px]">
       <div
         className={cn(
           'mx-auto flex w-full max-w-container flex-col justify-between gap-12',
@@ -33,8 +30,8 @@ export default function InfoSection({
       >
         <motion.div
           className="flex max-w-[631px] flex-col justify-center gap-6 md:gap-12"
-          initial={{ opacity: 0, translateX: reverse ? 50 : -50 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
+          initial={{ opacity: 0, translateY: 50 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
         >
@@ -62,8 +59,8 @@ export default function InfoSection({
 
         <motion.div
           className="relative h-[400px] w-full max-w-[631px] shrink-0 rounded-sm md:h-[525px] xl:h-[719px]"
-          initial={{ opacity: 0, translateX: reverse ? -50 : 50 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
+          initial={{ opacity: 0, translateY: 50 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
         >

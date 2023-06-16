@@ -9,9 +9,9 @@ export default function Landing() {
   return (
     <FlexSection
       id="landing"
-      className="min-h-[calc(100vh-100px)] gap-6 px-5 pb-12 md:px-20 xl:px-[269px]"
+      className="min-h-[calc(100vh-100px)] gap-6 overflow-x-hidden px-5 pb-12 md:px-20 xl:px-[269px]"
     >
-      <div className="mx-auto flex w-full max-w-container">
+      <div className="mx-auto flex w-full max-w-container flex-col-reverse gap-12 lg:flex-row lg:gap-0">
         <motion.div
           className="flex flex-col justify-center gap-12"
           initial={{ opacity: 0 }}
