@@ -1,4 +1,4 @@
-// components/FlexSection.tsx
+'use client'
 import React from 'react'
 
 interface FlexSectionProps {

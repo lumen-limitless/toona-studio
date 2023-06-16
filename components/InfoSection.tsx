@@ -1,7 +1,9 @@
+'use client'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import FlexSection from './FlexSection'
 import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
 
 export default function InfoSection({
   id,
@@ -19,14 +21,23 @@ export default function InfoSection({
   reverse?: boolean
 }) {
   return (
-    <FlexSection id={id} className="px-5 md:px-20 xl:px-[269px]">
+    <FlexSection
+      id={id}
+      className="overflow-hidden px-5 md:px-20 xl:px-[269px]"
+    >
       <div
         className={cn(
           'mx-auto flex w-full max-w-container flex-col justify-between gap-12',
           reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
         )}
       >
-        <div className="flex max-w-[631px] flex-col justify-center gap-6 md:gap-12">
+        <motion.div
+          className="flex max-w-[631px] flex-col justify-center gap-6 md:gap-12"
+          initial={{ opacity: 0, translateX: reverse ? 50 : -50 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+        >
           <h1 className="text-4xl font-kindabold md:text-[64px]/[87px]">
             {title}
           </h1>
@@ -47,9 +58,15 @@ export default function InfoSection({
               </button>
             </Link>
           )}
-        </div>
+        </motion.div>
 
-        <div className="relative h-[400px] w-full max-w-[631px] shrink-0 rounded-sm md:h-[525px] xl:h-[719px]">
+        <motion.div
+          className="relative h-[400px] w-full max-w-[631px] shrink-0 rounded-sm md:h-[525px] xl:h-[719px]"
+          initial={{ opacity: 0, translateX: reverse ? -50 : 50 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+        >
           <Image
             src={image}
             alt=""
@@ -59,7 +76,7 @@ export default function InfoSection({
               objectPosition: 'center',
             }}
           />
-        </div>
+        </motion.div>
       </div>
     </FlexSection>
   )

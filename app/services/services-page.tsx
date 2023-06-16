@@ -12,6 +12,7 @@ import CTA from '@/components/CTA'
 import FlexSection from '@/components/FlexSection'
 import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import CirclesStarLeftSVG from 'public/circles-star-left.svg'
+import { motion } from 'framer-motion'
 
 const info = [
   {
@@ -57,16 +58,27 @@ const ServicesPage: NextPage = () => {
         centered
         className="z-20 min-h-[calc(100lvh-100px)] gap-12 px-5 py-32"
       >
-        <h1 className="text-center text-4xl font-kindabold md:text-7xl">
+        <motion.h1
+          className="text-center text-4xl font-kindabold md:text-7xl"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
           We build catered <br className="md:hidden" /> experiences to <br />{' '}
           grow your <br className="md:hidden" /> business.
-        </h1>
+        </motion.h1>
 
-        <Link
-          href="/contact"
-          className="full z-10 inline-flex h-16 w-full max-w-[306px] items-center justify-center rounded-full bg-indigo-500 text-lg text-white transition-colors ease-out hover:bg-indigo-600"
-        >
-          Let&apos;s make some magic <MagicSVG className="ml-1 h-5 w-5" />
+        <Link href="/contact" legacyBehavior passHref>
+          <motion.a
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="full z-10 inline-flex h-16 w-full max-w-[306px]
+                  items-center justify-center rounded-full bg-indigo-500 text-lg
+                  text-white transition-colors ease-out hover:bg-indigo-600"
+          >
+            Let&apos;s make some magic <MagicSVG className="ml-1 h-5 w-5" />
+          </motion.a>
         </Link>
       </FlexSection>
 
@@ -82,11 +94,21 @@ const ServicesPage: NextPage = () => {
         col
         className="mb-[128px] px-5 pt-[120px] md:px-20 xl:px-[269px]"
       >
-        <h1 className="mb-20 text-center text-4xl font-kindabold  md:text-7xl">
+        <motion.h1
+          className="mb-20 text-center text-4xl font-kindabold  md:text-7xl"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
           Customize your workflow
-        </h1>
+        </motion.h1>
 
-        <div className="mx-auto flex max-w-container flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
+        <motion.div
+          className="mx-auto flex max-w-container flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
           <div className="flex w-full flex-col gap-6">
             <h2 className="text-2xl/[49px] font-kindabold">Plan</h2>
             <p>
@@ -120,7 +142,7 @@ const ServicesPage: NextPage = () => {
               standards. Guided by user feedback, analytics, and more.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <h2 className="absolute -bottom-12 hidden text-center text-2xl font-kindabold xl:block">
           Repeat
@@ -131,10 +153,20 @@ const ServicesPage: NextPage = () => {
       <ServicesSection />
 
       <FlexSection col className="px-5 pb-60 md:px-20 xl:px-[269px]">
-        <h1 className="text-center text-4xl font-kindabold md:text-5xl lg:text-6xl">
+        <motion.h1
+          className="text-center text-4xl font-kindabold md:text-5xl lg:text-6xl"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
           Where We Can <br className="md:hidden" /> Help
-        </h1>
-        <div className="mx-auto mt-12 flex max-w-container flex-col justify-evenly gap-6 md:mt-16 lg:flex-row">
+        </motion.h1>
+        <motion.div
+          className="mx-auto mt-12 flex max-w-container flex-col justify-evenly gap-6 md:mt-16 lg:flex-row"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
           <div className="flex w-full flex-col gap-6 ">
             <h2 className="text-2xl font-kindabold">Startups</h2>
             <p>
@@ -164,7 +196,7 @@ const ServicesPage: NextPage = () => {
               your ecosystem.{' '}
             </p>
           </div>
-        </div>
+        </motion.div>
       </FlexSection>
       <CTA />
     </>

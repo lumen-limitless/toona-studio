@@ -10,6 +10,7 @@ import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import CirclesStarLeftSVG from 'public/circles-star-left.svg'
 import { useBoolean } from 'react-use'
 import { Loader2 } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const items = [
   'Digital Experience',
@@ -40,7 +41,9 @@ const ContactPage: NextPage = () => {
 
   const onSubmit: SubmitHandler<ContactForm> = (data) => {
     console.debug(data)
+
     toggleLoading(true)
+
     fetch('/api/email', {
       method: 'POST',
       headers: {
@@ -69,7 +72,12 @@ const ContactPage: NextPage = () => {
         id="contact"
         className="z-20 px-5 pb-[44px] md:px-20 md:pb-[140px] xl:px-[269px]"
       >
-        <div className=" mb-12 space-y-12 pt-[100px] text-center">
+        <motion.div
+          className=" mb-12 space-y-12 pt-[100px] text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
           <h1 className="text-4xl font-kindabold md:text-[52px]/[71px] lg:text-7xl">
             Let&apos;s chat
           </h1>
@@ -77,7 +85,7 @@ const ContactPage: NextPage = () => {
             Let us know what you need and we can <br /> provide a brief cost &
             time estimate.
           </p>
-        </div>
+        </motion.div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -176,9 +184,21 @@ const ContactPage: NextPage = () => {
         centered
         className="gap-12 bg-indigo-600 px-5 py-32 text-light"
       >
-        <h1 className="text-center text-4xl md:text-6xl">Get connected</h1>
+        <motion.h1
+          className="text-center text-4xl md:text-6xl"
+          initial={{ opacity: 0, y: 5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.1, ease: 'easeInOut' }}
+        >
+          Get connected
+        </motion.h1>
 
-        <div className="flex flex-col items-center gap-3">
+        <motion.div
+          className="flex flex-col items-center gap-3"
+          initial={{ opacity: 0, y: 5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.2, ease: 'easeInOut' }}
+        >
           <span className="text-xl opacity-50">General</span>
           <a
             href="mailto:hello@toona.studio"
@@ -186,7 +206,7 @@ const ContactPage: NextPage = () => {
           >
             hello@toona.studio
           </a>
-        </div>
+        </motion.div>
       </FlexSection>
     </>
   )

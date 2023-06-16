@@ -8,7 +8,7 @@ import Star25SVG from 'public/star-25.svg'
 import MagicSVG from 'public/magic.svg'
 import Link from 'next/link'
 import FlexSection from '@/components/FlexSection'
-import { INSTAGRAM_URL, LINKEDIN_URL, WEBSITE_URL } from '@/lib/constants'
+import { motion } from 'framer-motion'
 
 const aboutInfo = [
   {
@@ -29,7 +29,7 @@ collection and eating chicken.`,
     socials: [
       {
         name: 'Instagram',
-        url: INSTAGRAM_URL,
+        url: 'https://www.instagram.com/toona.studio/',
       },
       {
         name: 'LinkedIn',
@@ -63,12 +63,40 @@ const AboutPage: NextPage = () => {
         <CirclesRightSVG className="pointer-events-none absolute -right-[15%] -top-[20%] h-[335px] stroke-light md:h-[640px] md:w-[630px]" />
         <CirclesLeftSVG className="pointer-events-none absolute -left-[15%] top-[50%] h-[335px]  stroke-light md:top-[20%]  md:h-[640px] md:w-[630px]" />
         <div id="star-container" className="relative">
-          <Star23SVG className="absolute -left-16 -top-8 h-10 w-10 md:-left-24" />
-          <Star24SVG className="absolute -bottom-0 -right-16 h-10 w-10 md:-right-24" />
-          <Star25SVG className="absolute -bottom-16 -right-6 h-[28px] md:-right-12" />
-          <h1 className="text-center text-4xl font-kindabold md:text-7xl">
+          <motion.div
+            className=""
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <Star23SVG className="absolute -left-16 -top-8 h-10 w-10 md:-left-24" />
+          </motion.div>
+
+          <motion.div
+            className=""
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <Star24SVG className="absolute -bottom-0 -right-16 h-10 w-10 md:-right-24" />
+          </motion.div>
+
+          <motion.div
+            className=""
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <Star25SVG className="absolute -bottom-16 -right-6 h-[28px] md:-right-12" />
+          </motion.div>
+          <motion.h1
+            className="text-center text-4xl font-kindabold md:text-7xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
             Small teams, <br /> big dreams.
-          </h1>
+          </motion.h1>
         </div>
       </FlexSection>
       <FlexSection
@@ -78,7 +106,13 @@ const AboutPage: NextPage = () => {
         className=" mt-20 gap-20 px-5 md:px-20 lg:mt-[120px] lg:px-16 xl:px-[269px]"
       >
         {aboutInfo.map((info, i) => (
-          <div className="max-w-[538px]" key={i}>
+          <motion.div
+            className="max-w-[538px]"
+            key={i}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
             <h1 className="pb-6 text-4xl font-kindabold">{info.name}</h1>
             <h2 className="pb-6 text-xl font-kindabold text-indigo/50">
               {info.role}
@@ -92,7 +126,12 @@ const AboutPage: NextPage = () => {
               ))}
             </div>
 
-            <div className="flex gap-3">
+            <motion.div
+              className="flex gap-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
               {info.socials.map((social, i) => (
                 <a
                   key={i}
@@ -104,8 +143,8 @@ const AboutPage: NextPage = () => {
                   {social.name}
                 </a>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </FlexSection>
       <FlexSection centered className="my-20">
