@@ -63,6 +63,7 @@ const ServicesPage: NextPage = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
+          viewport={{ once: true }}
         >
           We build catered <br className="md:hidden" /> experiences to <br />{' '}
           grow your <br className="md:hidden" /> business.
