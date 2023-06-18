@@ -52,6 +52,7 @@ const ServicesPage: NextPage = () => {
         <CirclesStarRightSVG className="pointer-events-none absolute -top-24 right-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
         <CirclesStarLeftSVG className="pointer-events-none absolute -bottom-36 left-0 z-0 h-[335px]  stroke-dark md:h-[642px]" />
       </div>
+
       <FlexSection
         id="services"
         col
@@ -74,6 +75,7 @@ const ServicesPage: NextPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
+            viewport={{ once: true }}
             className="full z-10 inline-flex h-16 w-full max-w-[306px]
                   items-center justify-center rounded-full bg-indigo-500 text-lg
                   text-white transition-colors ease-out hover:bg-indigo-600"
