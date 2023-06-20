@@ -9,7 +9,7 @@ export const HeroImage: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, translateX: 20 }}
         animate={{ opacity: 1, translateX: 0 }}
-        transition={{ duration: 0.3, ease: 'easeInOut', delay: 0 }}
+        transition={{ duration: 0.6, ease: 'easeInOut', delay: 0 }}
         className="relative flex h-[399.57px] w-[209px] items-center justify-center rounded-b-[400px] rounded-t-[400px] md:h-[558.5px] md:w-[292.13px] xl:h-[759px] xl:w-[397px]"
       >
         <Image
