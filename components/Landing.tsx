@@ -17,7 +17,7 @@ export default function Landing() {
             className="text-4xl font-kindabold md:text-[52px]/[71px] lg:text-7xl"
             initial={{ opacity: 0, translateX: -20 }}
             animate={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
           >
             Crafting joy <br className="md:hidden" /> through{' '}
             <br className="hidden md:block" /> digital{' '}
@@ -27,7 +27,7 @@ export default function Landing() {
             className="text-lg font-kindabold lg:text-2xl"
             initial={{ opacity: 0, translateX: -20 }}
             animate={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.1 }}
+            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.1 }}
           >
             We are a digital product studio based in Rochester, NY{' '}
             <br className="hidden lg:inline-block" /> that designs & develops
@@ -37,7 +37,7 @@ export default function Landing() {
           <motion.div
             initial={{ opacity: 0, translateX: -20 }}
             animate={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
           >
             <Link
               href="/contact"
