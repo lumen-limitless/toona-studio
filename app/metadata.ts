@@ -65,13 +65,5 @@ export const defaultMetadata: Metadata = {
     address: false,
   },
 
-  manifest: '/manifest.json',
-
-  other: {
-    'mobile-web-app-capable': 'yes',
-    'msapplication-TileColor': '#f9f9f9',
-    'msapplication-TileImage': '/ms-icon-144x144.png',
-    'msapplication-config': '/browserconfig.xml',
-    'msapplication-tap-highlight': 'no',
-  },
+  manifest: 'https://toona.studio/manifest.json',
 }
