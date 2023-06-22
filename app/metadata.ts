@@ -13,7 +13,7 @@ export const defaultMetadata: Metadata = {
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
   themeColor: '#f9f9f9',
-  metadataBase: new URL(APP_URL),
+  metadataBase: null,
   generator: 'Next.js',
   keywords: [
     'studio',
@@ -27,10 +27,17 @@ export const defaultMetadata: Metadata = {
     'web developer company',
     'UX design company',
     'UI design company',
+    'web development agency',
+    'software development',
+    'software development company',
+    'software development agency',
+    'Next.js',
+    'Next.js development',
+    'Next.js development company',
+    'react',
+    'react development',
+    'react js',
   ],
-
-  viewport:
-    'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
 
   openGraph: {
     type: 'website',
@@ -43,7 +50,7 @@ export const defaultMetadata: Metadata = {
   twitter: {
     title: APP_NAME,
     site: APP_URL,
-    creator: '@lumenlimitless',
+    creator: '@LumenLimitless',
     description: APP_DESCRIPTION,
     card: 'summary_large_image',
   },
@@ -65,5 +72,5 @@ export const defaultMetadata: Metadata = {
     address: false,
   },
 
-  manifest: 'https://www.toona.studio/manifest.json',
+  manifest: null,
 }
