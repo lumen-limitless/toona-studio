@@ -65,5 +65,5 @@ export const defaultMetadata: Metadata = {
     address: false,
   },
 
-  manifest: 'https://toona.studio/manifest.json',
+  manifest: 'https://www.toona.studio/manifest.json',
 }
