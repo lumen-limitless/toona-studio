@@ -1,21 +1,23 @@
 import { MetadataRoute } from 'next'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://toona.studio',
+      url: `${APP_URL}`,
       lastModified: new Date(),
     },
     {
-      url: 'https://toona.studio/services',
+      url: `${APP_URL}/services`,
       lastModified: new Date(),
     },
     {
-      url: 'https://toona.studio/about',
+      url: `${APP_URL}/about`,
       lastModified: new Date(),
     },
     {
-      url: 'https://toona.studio/contact',
+      url: `${APP_URL}/contact`,
       lastModified: new Date(),
     },
   ]
