@@ -23,9 +23,9 @@ const items = [
 ]
 
 const schema = z.object({
-  name: z.string().min(1),
+  name: z.string().min(2),
   email: z.string().email(),
-  message: z.string().min(1),
+  message: z.string().min(2),
 })
 
 export type ContactForm = z.infer<typeof schema>
@@ -103,6 +103,9 @@ const ContactPage: NextPage = () => {
               placeholder="Peter Parker at Amazon"
             />
           </label>
+          {errors.name && (
+            <span className="text-red-500">{errors.name.message}</span>
+          )}
           <label htmlFor="email" className="flex flex-col gap-3">
             Email address
             <input
@@ -113,6 +116,10 @@ const ContactPage: NextPage = () => {
               placeholder="pparker@gmail.com"
             />{' '}
           </label>
+          {errors.email && (
+            <span className="text-red-500">{errors.email.message}</span>
+          )}
+
           <div>
             <label htmlFor="work" className="mb-3 flex flex-col">
               What type of work are you looking for?
@@ -155,6 +162,10 @@ const ContactPage: NextPage = () => {
               placeholder="I want to make an app about lemons & machine learning for the elderly"
             />
           </label>
+          {errors.message && (
+            <span className="text-red-500">{errors.message.message}</span>
+          )}
+
           <button
             type="submit"
             disabled={loading}
