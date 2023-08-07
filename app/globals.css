@@ -6,7 +6,9 @@
   body {
     @apply box-border flex min-h-screen touch-manipulation flex-col bg-light p-0 text-dark antialiased;
     text-rendering: optimizeLegibility;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    font-feature-settings:
+      'pnum' on,
+      'lnum' on;
   }
 
   main {

@@ -1,6 +1,6 @@
-import nodemailer from 'nodemailer'
 import { ContactForm } from '@/app/contact/contact-page'
 import { NextRequest, NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
 
 export async function POST(req: NextRequest) {
   const { name, email, message, work }: ContactForm & { work: string } =

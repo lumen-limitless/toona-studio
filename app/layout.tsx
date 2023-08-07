@@ -1,8 +1,8 @@
-import './globals.css'
-import { Manrope } from 'next/font/google'
-import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Nav from '@/components/Nav'
+import { Manrope } from 'next/font/google'
 import Analytics from './analytics'
+import './globals.css'
 import { defaultMetadata } from './metadata'
 
 const manrope = Manrope({

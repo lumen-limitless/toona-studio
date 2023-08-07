@@ -1,10 +1,10 @@
 'use client'
-import Link from 'next/link'
-import LogoSVG from 'public/logo.svg'
-import LinkedInSVG from 'public/linkedin.svg'
-import InstaSVG from 'public/insta.svg'
-import DribbbleSVG from 'public/dribbble.svg'
 import { DRIBBBLE_URL, INSTAGRAM_URL, LINKEDIN_URL } from '@/lib/constants'
+import Link from 'next/link'
+import DribbbleSVG from 'public/dribbble.svg'
+import InstaSVG from 'public/insta.svg'
+import LinkedInSVG from 'public/linkedin.svg'
+import LogoSVG from 'public/logo.svg'
 
 export default function Footer() {
   return (

@@ -1,14 +1,14 @@
 'use client'
+import FlexSection from '@/components/FlexSection'
+import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import CirclesLeftSVG from 'public/about-circles-left.svg'
 import CirclesRightSVG from 'public/about-circles-right.svg'
+import MagicSVG from 'public/magic.svg'
 import Star23SVG from 'public/star-23.svg'
 import Star24SVG from 'public/star-24.svg'
 import Star25SVG from 'public/star-25.svg'
-import MagicSVG from 'public/magic.svg'
-import Link from 'next/link'
-import FlexSection from '@/components/FlexSection'
-import { motion } from 'framer-motion'
 
 const aboutInfo = [
   {
@@ -48,7 +48,16 @@ collection and eating chicken.`,
       'An impassioned Full-Stack Developer, Zach specializes in utilizing TypeScript, Rust, and Solidity to architect, build, and enhance dynamic, user-focused websites and applications. With a particular interest in fostering the growth of small businesses and startups, Zach applies his expertise in blockchain technologies and modern web development to optimize their online presence.',
       'Through innovative solutions and keen understanding of industry trends, Zach enables businesses to streamline operations, increase engagement, and expand their digital footprint. As a technophile, Zach strives to be at the cutting edge, exploring new programming paradigms and tools to offer unique, transformative digital experiences to his clients.',
     ],
-    socials: [],
+    socials: [
+      {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/zachary-lippa-2b04a6285/',
+      },
+      {
+        name: 'Website',
+        url: 'https://zachlippa.dev/',
+      },
+    ],
   },
 ]
 

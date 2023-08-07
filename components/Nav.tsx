@@ -1,13 +1,13 @@
 'use client'
+import { cn } from '@/lib/utils'
+import { Popover } from '@headlessui/react'
 import Link from 'next/link'
-import LogoSVG from 'public/logo.svg'
+import { usePathname } from 'next/navigation'
 import BurgerSVG from 'public/burger.svg'
 import CloseSVG from 'public/close.svg'
-import { Popover } from '@headlessui/react'
+import LogoSVG from 'public/logo.svg'
 import { Fragment } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
-import { usePathname } from 'next/navigation'
-import { cn } from '@/lib/utils'
 
 const links = [
   // { href: '/idea-generator', label: 'Idea Generator' },
@@ -26,7 +26,7 @@ export default function Nav() {
         'relative flex h-[100px] w-full items-center justify-between',
         pathname === '/about'
           ? 'bg-light text-dark md:bg-indigo-600 md:text-light'
-          : ' text-dark'
+          : ' text-dark',
       )}
     >
       <Link
@@ -42,7 +42,7 @@ export default function Nav() {
             'h-[18px]',
             popoverOpen
               ? 'fill-light stroke-light'
-              : 'fill-current stroke-current'
+              : 'fill-current stroke-current',
           )}
         />
       </Link>
@@ -54,7 +54,7 @@ export default function Nav() {
             key={href}
             className={cn(
               'nav-link relative font-kindabold',
-              pathname === '/about' ? 'text-light' : 'text-dark'
+              pathname === '/about' ? 'text-light' : 'text-dark',
             )}
           >
             {label}
@@ -62,7 +62,7 @@ export default function Nav() {
               className={cn(
                 'nav-underline absolute -bottom-2 left-1/2 block -translate-x-1/2 transform',
                 pathname === '/about' ? 'bg-light' : 'bg-indigo-500',
-                pathname === href ? 'w-full' : ''
+                pathname === href ? 'w-full' : '',
               )}
             ></span>
           </Link>
@@ -73,7 +73,7 @@ export default function Nav() {
             'inline-flex h-10 min-w-[141px] items-center justify-center rounded-full  text-[15px]/[24px] font-kindabold transition-colors duration-300 ease-in-out',
             pathname === '/about'
               ? 'bg-light text-dark hover:bg-opacity-60'
-              : 'bg-indigo text-light hover:bg-indigo-600'
+              : 'bg-indigo text-light hover:bg-indigo-600',
           )}
         >
           Let&apos;s chat

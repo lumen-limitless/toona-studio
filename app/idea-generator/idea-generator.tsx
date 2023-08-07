@@ -3,9 +3,9 @@ import FlexSection from '@/components/FlexSection'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useSessionStorage } from 'react-use'
-import technologies from './technology.json'
-import nouns from './nouns.json'
 import demographics from './demographics.json'
+import nouns from './nouns.json'
+import technologies from './technology.json'
 
 function generateWordFromList(list: string[]) {
   const randomIndex = Math.floor(Math.random() * list.length)
@@ -18,7 +18,7 @@ const IdeaGeneratorPage: NextPage = () => {
   const [topic2, setTopic2] = useSessionStorage('topic-2', 'machine-learning')
   const [demographic, setDemographic] = useSessionStorage(
     'demographic',
-    'the elderly'
+    'the elderly',
   )
 
   const handleGenerate = () => {

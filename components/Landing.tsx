@@ -1,9 +1,9 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import FlexSection from './FlexSection'
 import { HeroImage } from './HeroImage'
-import { motion } from 'framer-motion'
 
 export default function Landing() {
   return (

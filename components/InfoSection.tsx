@@ -1,9 +1,9 @@
 'use client'
+import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import FlexSection from './FlexSection'
-import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
 
 export default function InfoSection({
   id,
@@ -25,7 +25,7 @@ export default function InfoSection({
       <div
         className={cn(
           'mx-auto flex w-full max-w-container flex-col justify-between gap-12',
-          reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
+          reverse ? 'lg:flex-row-reverse' : 'lg:flex-row',
         )}
       >
         <motion.div
