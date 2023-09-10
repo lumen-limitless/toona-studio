@@ -53,10 +53,10 @@ collection and eating chicken.`,
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/zachary-lippa-2b04a6285/',
       },
-      {
-        name: 'Website',
-        url: 'https://zachlippa.dev/',
-      },
+      // {
+      //   name: 'Website',
+      //   url: 'https://zachlippa.dev/',
+      // },
     ],
   },
 ]
