@@ -14,6 +14,7 @@ export default function CTA() {
         className="text-center text-4xl font-kindabold md:text-6xl"
         initial={{ opacity: 0, y: 5 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.3, delay: 0.1, ease: 'easeInOut' }}
       >
         Get Connected
@@ -22,6 +23,7 @@ export default function CTA() {
         className="pb-6 text-center text-xl font-kindabold md:text-2xl"
         initial={{ opacity: 0, y: 5 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.3, delay: 0.2, ease: 'easeInOut' }}
       >
         Do you have a project idea or want to keep in touch?
@@ -31,6 +33,7 @@ export default function CTA() {
           className="inline-flex h-16 w-full max-w-[280px] items-center justify-center rounded-full text-xl font-kindabold ring-2 ring-white duration-300 ease-in-out hover:bg-light/30"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }}
         >
           Let&apos;s chat

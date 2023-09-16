@@ -53,10 +53,10 @@ collection and eating chicken.`,
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/zachary-lippa-2b04a6285/',
       },
-      // {
-      //   name: 'Website',
-      //   url: 'https://zachlippa.dev/',
-      // },
+      {
+        name: 'Website',
+        url: 'https://zachlippa.dev/',
+      },
     ],
   },
 ]
@@ -120,6 +120,7 @@ const AboutPage: NextPage = () => {
             key={i}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             <h1 className="pb-6 text-4xl font-kindabold">{info.name}</h1>
@@ -139,6 +140,7 @@ const AboutPage: NextPage = () => {
               className="flex gap-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
               {info.socials.map((social, i) => (
