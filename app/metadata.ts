@@ -1,8 +1,5 @@
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/lib/constants'
 import { Metadata } from 'next'
-
-const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || ''
-const APP_DESCRIPTION = process.env.NEXT_PUBLIC_APP_DESCRIPTION || ''
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -38,6 +35,7 @@ export const defaultMetadata: Metadata = {
     'react development',
     'react js',
   ],
+  manifest: null,
 
   openGraph: {
     type: 'website',
@@ -58,7 +56,7 @@ export const defaultMetadata: Metadata = {
   appleWebApp: {
     statusBarStyle: 'default',
     title: APP_NAME,
-    capable: true,
+    capable: false,
   },
 
   robots: {
@@ -71,6 +69,4 @@ export const defaultMetadata: Metadata = {
     email: false,
     address: false,
   },
-
-  manifest: null,
 }
