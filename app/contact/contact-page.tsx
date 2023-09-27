@@ -199,6 +199,7 @@ const ContactPage: NextPage = () => {
           className="text-center text-4xl md:text-6xl"
           initial={{ opacity: 0, y: 5 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.1, ease: 'easeInOut' }}
         >
           Get connected
@@ -208,6 +209,7 @@ const ContactPage: NextPage = () => {
           className="flex flex-col items-center gap-3"
           initial={{ opacity: 0, y: 5 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.2, ease: 'easeInOut' }}
         >
           <span className="text-xl opacity-50">General</span>
