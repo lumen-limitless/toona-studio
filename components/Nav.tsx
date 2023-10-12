@@ -8,6 +8,7 @@ import CloseSVG from 'public/close.svg'
 import LogoSVG from 'public/logo.svg'
 import { Fragment, useEffect } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
+
 const links = [
   // { href: '/idea-generator', label: 'Idea Generator' },
   { href: '/services', label: 'Services' },
@@ -107,7 +108,7 @@ export default function Nav() {
             </Popover.Button>
             <Popover.Panel
               as={'div'}
-              className="fixed inset-0 z-40 flex w-full flex-col items-center justify-start gap-6 bg-indigo-500 px-6 pt-[100px] text-white"
+              className="fixed inset-0 z-40 flex w-full flex-col items-center justify-start gap-6 bg-indigo-500 bg-[url(/nav.png)] bg-cover bg-center px-6 pt-[100px] text-white md:hidden"
             >
               {links.map(({ href, label }) => (
                 <Link
