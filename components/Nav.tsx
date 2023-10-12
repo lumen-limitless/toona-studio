@@ -1,6 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { Popover } from '@headlessui/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BurgerSVG from 'public/burger.svg'
@@ -8,7 +9,7 @@ import CloseSVG from 'public/close.svg'
 import LogoSVG from 'public/logo.svg'
 import { Fragment } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
-
+import navImg from '../public/nav.png'
 const links = [
   // { href: '/idea-generator', label: 'Idea Generator' },
   { href: '/services', label: 'Services' },
@@ -31,7 +32,7 @@ export default function Nav() {
     >
       <Link
         href="/"
-        className="absolute inset-y-auto left-6 z-30 md:left-12"
+        className="absolute inset-y-auto left-6 z-50 md:left-12"
         onClick={() => {
           togglePopoverOpen(false)
         }}
@@ -70,7 +71,7 @@ export default function Nav() {
         <Link
           href="contact"
           className={cn(
-            'inline-flex h-10 min-w-[141px] items-center justify-center rounded-full  text-[15px]/[24px] font-kindabold transition-colors duration-300 ease-in-out',
+            'inline-flex h-10 min-w-[141px] items-center justify-center rounded-full text-[15px]/[24px] font-kindabold transition-colors duration-300 ease-in-out',
             pathname === '/about'
               ? 'bg-light text-dark hover:bg-opacity-60'
               : 'bg-indigo text-light hover:bg-indigo-600',
@@ -99,26 +100,21 @@ export default function Nav() {
             </Popover.Button>
             <Popover.Panel
               as={'div'}
-              className="fixed inset-0 z-40 flex w-full flex-col items-center justify-center gap-6 bg-indigo-500 bg-[url('/nav.png')] bg-cover bg-center px-6 text-left text-white"
+              className="fixed inset-0 z-40 flex w-full flex-col items-center justify-start gap-6 bg-indigo-500 px-6 pt-[100px] text-white"
             >
-              {/* <Link
-                href="idea-generator"
-                onClick={() => {
-                  close()
-                  togglePopoverOpen(false)
-                }}
-                className="w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
-              >
-                Idea Generator ✦
-              </Link> */}
-
+              <Image
+                src={navImg}
+                fill
+                alt=""
+                className="-z-10 object-cover object-center"
+              />
               <Link
                 href="services"
                 onClick={() => {
                   close()
                   togglePopoverOpen(false)
                 }}
-                className="mt-3 w-full text-left text-[32px]/[44px] font-bold tracking-[0.1em]"
+                className="mt-3 w-full text-left text-[32px]/[44px] font-bold tracking-[0.5%]"
               >
                 Services
               </Link>
