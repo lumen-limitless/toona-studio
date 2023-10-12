@@ -24,7 +24,7 @@ export default function Nav() {
     if (popoverOpen) {
       metaTag?.setAttribute('content', 'rgb(105 120 255)')
     } else {
-      metaTag?.setAttribute('content', '#ffffff')
+      metaTag?.setAttribute('content', '#f9f9f9')
     }
   })
 
