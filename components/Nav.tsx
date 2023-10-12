@@ -117,7 +117,7 @@ export default function Nav() {
                     close()
                     togglePopoverOpen(false)
                   }}
-                  className="mt-3 w-full text-left text-[32px]/[44px] font-bold tracking-[0.5%]"
+                  className="mt-3 w-full text-left text-[32px]/[44px] font-semibold tracking-[0.32px]"
                 >
                   {label}
                 </Link>
