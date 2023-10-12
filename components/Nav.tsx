@@ -23,7 +23,7 @@ export default function Nav() {
   useEffect(() => {
     const metaTag = document.querySelector('meta[name="theme-color"]')
     if (popoverOpen) {
-      metaTag?.setAttribute('content', '#8b9ef2')
+      metaTag?.setAttribute('content', '#8198E9')
     } else {
       metaTag?.setAttribute('content', '#f9f9f9')
     }
