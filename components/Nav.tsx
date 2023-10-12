@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import BurgerSVG from 'public/burger.svg'
 import CloseSVG from 'public/close.svg'
 import LogoSVG from 'public/logo.svg'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
 const links = [
   // { href: '/idea-generator', label: 'Idea Generator' },
@@ -18,6 +18,18 @@ export default function Nav() {
   const pathname = usePathname()
   const [popoverOpen, togglePopoverOpen] = useBoolean(false)
   useLockBodyScroll(popoverOpen)
+
+  useEffect(() => {
+    const metaTag = document.querySelector('meta[name="theme-color"]')
+    if (popoverOpen) {
+      metaTag?.setAttribute(
+        'content',
+        'rgb(105 120 255 / var(--tw-bg-opacity))',
+      )
+    } else {
+      metaTag?.setAttribute('content', '#ffffff')
+    }
+  })
 
   return (
     <nav
