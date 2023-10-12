@@ -112,7 +112,7 @@ export default function Nav() {
               {links.map(({ href, label }) => (
                 <Link
                   key={href}
-                  href="services"
+                  href={href}
                   onClick={() => {
                     close()
                     togglePopoverOpen(false)
