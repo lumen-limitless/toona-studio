@@ -1,7 +1,6 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { Popover } from '@headlessui/react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BurgerSVG from 'public/burger.svg'
@@ -9,7 +8,6 @@ import CloseSVG from 'public/close.svg'
 import LogoSVG from 'public/logo.svg'
 import { Fragment } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
-import navImg from '../public/nav.png'
 const links = [
   // { href: '/idea-generator', label: 'Idea Generator' },
   { href: '/services', label: 'Services' },
@@ -102,13 +100,6 @@ export default function Nav() {
               as={'div'}
               className="fixed inset-0 z-40 flex w-full flex-col items-center justify-start gap-6 bg-indigo-500 px-6 pt-[100px] text-white"
             >
-              <Image
-                src={navImg}
-                fill
-                alt=""
-                className="-z-10 object-cover object-center"
-              />
-
               {links.map(({ href, label }) => (
                 <Link
                   key={href}
