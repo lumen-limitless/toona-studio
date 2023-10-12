@@ -108,26 +108,21 @@ export default function Nav() {
                 alt=""
                 className="-z-10 object-cover object-center"
               />
-              <Link
-                href="services"
-                onClick={() => {
-                  close()
-                  togglePopoverOpen(false)
-                }}
-                className="mt-3 w-full text-left text-[32px]/[44px] font-bold tracking-[0.5%]"
-              >
-                Services
-              </Link>
-              <Link
-                href="about"
-                onClick={() => {
-                  close()
-                  togglePopoverOpen(false)
-                }}
-                className="mt-3 w-full text-left text-[32px]/[44px] font-bold tracking-[0.5%]"
-              >
-                About
-              </Link>
+
+              {links.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href="services"
+                  onClick={() => {
+                    close()
+                    togglePopoverOpen(false)
+                  }}
+                  className="mt-3 w-full text-left text-[32px]/[44px] font-bold tracking-[0.5%]"
+                >
+                  {label}
+                </Link>
+              ))}
+
               <Link
                 href="contact"
                 passHref
