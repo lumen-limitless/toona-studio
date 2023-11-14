@@ -8,7 +8,7 @@ import ChevronDownSVG from 'public/chevron-down.svg'
 import CirclesStarLeftSVG from 'public/circles-star-left.svg'
 import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import { useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm, type SubmitHandler } from 'react-hook-form'
 import { useBoolean } from 'react-use'
 import { z } from 'zod'
 
@@ -54,7 +54,7 @@ const ContactPage: NextPage = () => {
       console.debug(res)
       toggleLoading(false)
 
-      if (res.status === 200) {
+      if (res.ok) {
         alert('Message sent!')
       } else {
         alert('Something went wrong. Please try again later.')

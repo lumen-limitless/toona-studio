@@ -27,15 +27,13 @@ export default function Nav() {
     } else {
       metaTag?.setAttribute('content', '#f9f9f9')
     }
-  })
+  }, [popoverOpen])
 
   return (
     <nav
       className={cn(
-        'relative flex h-[100px] w-full items-center justify-between',
-        pathname === '/about'
-          ? 'bg-light text-dark md:bg-indigo-600 md:text-light'
-          : ' text-dark',
+        'relative flex h-[100px] w-full items-center justify-between bg-light text-dark',
+        pathname === '/about' ? ' md:bg-indigo-600 md:text-light' : '',
       )}
     >
       <Link
