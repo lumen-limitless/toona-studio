@@ -30,12 +30,7 @@ export default function Nav() {
   }, [popoverOpen])
 
   return (
-    <nav
-      className={cn(
-        'relative flex h-[100px] w-full items-center justify-between bg-light text-dark',
-        pathname === '/about' ? ' md:bg-indigo-600 md:text-light' : '',
-      )}
-    >
+    <nav className="relative flex h-[100px] w-full items-center justify-between">
       <Link
         href="/"
         className="absolute inset-y-auto left-6 z-50 md:left-12"

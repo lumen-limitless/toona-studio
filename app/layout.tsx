@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer'
-import Nav from '@/components/Nav'
+import Header from '@/components/Header'
 import { Viewport } from 'next'
 import { Manrope } from 'next/font/google'
 import Analytics from './analytics'
@@ -33,9 +33,7 @@ export default function RootLayout({
           skip to main content
         </a>
 
-        <header id="header" className="sticky top-0 z-30">
-          <Nav />
-        </header>
+        <Header />
 
         <main id="main">{children}</main>
         <footer id="footer">
