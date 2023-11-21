@@ -98,6 +98,7 @@ export default function Nav() {
               ) : (
                 <BurgerSVG className="h-6 w-6 fill-current stroke-current" />
               )}
+              <span className="sr-only">menu</span>
             </Popover.Button>
             <Popover.Panel
               as={'div'}
