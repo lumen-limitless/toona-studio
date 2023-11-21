@@ -1,5 +1,13 @@
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/lib/constants'
+import { APP_DESCRIPTION } from '@/lib/constants'
 import { type Metadata } from 'next'
+
+const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Toona Studio'
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL
+  ? `https://${process.env.NEXT_PUBLIC_APP_URL}`
+  : process.env.NEXT_PUBLIC_VERCEL_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : 'http://localhost:3000'
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -9,7 +17,7 @@ export const defaultMetadata: Metadata = {
   },
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
-  metadataBase: new URL(APP_URL),
+  metadataBase: new URL(baseUrl),
   generator: 'Next.js',
   keywords: [
     'studio',
@@ -38,7 +46,7 @@ export const defaultMetadata: Metadata = {
 
   openGraph: {
     type: 'website',
-    url: APP_URL,
+    url: baseUrl,
     title: APP_NAME,
     description: APP_DESCRIPTION,
     locale: 'en_US',
@@ -46,7 +54,7 @@ export const defaultMetadata: Metadata = {
 
   twitter: {
     title: APP_NAME,
-    site: APP_URL,
+    site: baseUrl,
     creator: '@LumenLimitless',
     description: APP_DESCRIPTION,
     card: 'summary_large_image',
@@ -61,6 +69,10 @@ export const defaultMetadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 
   formatDetection: {
