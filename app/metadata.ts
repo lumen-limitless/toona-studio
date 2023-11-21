@@ -42,7 +42,7 @@ export const defaultMetadata: Metadata = {
     'react development',
     'react js',
   ],
-  manifest: null,
+  manifest: '/manifest.json',
 
   openGraph: {
     type: 'website',
