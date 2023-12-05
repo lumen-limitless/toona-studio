@@ -1,9 +1,4 @@
 {
-  "cSpell.words": [
-    "headlessui",
-    "postbuild",
-    "tailwindcss"
-  ],
-  "typescript.tsdk": "node_modules/typescript/lib",
-
+  "cSpell.words": ["headlessui", "postbuild", "tailwindcss"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
