@@ -8,7 +8,10 @@ export async function POST(req: NextRequest) {
 
   // Validate the form data
   if (!name || !email || !message || !work) {
-    return NextResponse.json({ message: 'One or more fields are missing.' })
+    return NextResponse.json(
+      { message: 'One or more fields are missing.' },
+      { status: 400 },
+    )
   }
 
   // Configure the email transport using the SMTP server of your choice
