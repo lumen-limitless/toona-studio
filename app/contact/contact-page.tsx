@@ -20,7 +20,7 @@ const items = [
   'Software Engineering',
   'Early Startup Strategy',
   'Other',
-]
+] as const
 
 const schema = z.object({
   name: z.string().min(2),
@@ -31,7 +31,7 @@ const schema = z.object({
 export type ContactForm = z.infer<typeof schema>
 
 const ContactPage: NextPage = () => {
-  const [work, setWork] = useState('Digital Experience')
+  const [work, setWork] = useState<(typeof items)[number]>('Digital Experience')
   const [loading, toggleLoading] = useBoolean(false)
   const {
     register,
@@ -100,6 +100,7 @@ const ContactPage: NextPage = () => {
               className="rounded-full border-2 border-dark bg-transparent px-5 py-3 text-dark"
               id="name"
               type="text"
+              autoComplete="name"
               placeholder="Peter Parker at Amazon"
             />
           </label>
@@ -112,7 +113,8 @@ const ContactPage: NextPage = () => {
               {...register('email')}
               className="rounded-full border-2 border-dark bg-transparent px-5 py-3 text-dark"
               id="email"
-              type="text"
+              type="email"
+              autoComplete="email"
               placeholder="pparker@gmail.com"
             />{' '}
           </label>
