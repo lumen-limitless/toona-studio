@@ -1,7 +1,14 @@
 'use client'
 
-import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
-import { GoogleAnalytics } from 'nextjs-google-analytics'
+import dynamic from 'next/dynamic'
+
+const VercelAnalytics = dynamic(() =>
+  import('@vercel/analytics/react').then((mod) => mod.Analytics),
+)
+
+const GoogleAnalytics = dynamic(() =>
+  import('nextjs-google-analytics').then((mod) => mod.GoogleAnalytics),
+)
 
 export default function Analytics() {
   return (

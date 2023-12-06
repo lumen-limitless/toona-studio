@@ -113,7 +113,7 @@ export default function Nav() {
       <nav
         id="mobile-nav"
         className={cn(
-          'fixed inset-0 z-40 flex w-full flex-col items-center justify-start gap-6 bg-indigo-500 bg-[url(/nav.png)] bg-cover bg-center px-6 pt-[100px] text-white transition-opacity duration-300 ease-in-out md:hidden',
+          'fixed inset-0 z-40 flex w-full flex-col items-center justify-start gap-6 bg-indigo-500 bg-[url(/nav.webp)] bg-cover bg-center px-6 pt-[100px] text-white transition-opacity duration-300 ease-in-out md:hidden',
           opened ? 'opacity-100' : 'pointer-events-none opacity-0',
         )}
       >

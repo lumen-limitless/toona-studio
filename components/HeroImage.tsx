@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import heroPhoto from 'public/hero.png'
+import heroPhoto from 'public/hero.webp'
 
 export const HeroImage = () => {
   return (
