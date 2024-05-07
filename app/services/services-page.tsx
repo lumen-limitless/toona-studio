@@ -1,18 +1,18 @@
-'use client'
-import CTA from '@/components/CTA'
-import FlexSection from '@/components/FlexSection'
-import InfoSection from '@/components/InfoSection'
-import ServicesSection from '@/components/ServicesSection'
-import CirclesStarLeftSVG from '@/public/circles-star-left.svg'
-import CirclesStarRightSVG from '@/public/circles-star-right.svg'
-import collaborationImg from '@/public/collaboration.jpg'
-import creativityImg from '@/public/creativity.jpg'
-import growthImg from '@/public/growth.jpg'
-import MagicSVG from '@/public/magic.svg'
-import RepeatSVG from '@/public/repeat.svg'
-import { motion } from 'framer-motion'
-import type { NextPage } from 'next'
-import Link from 'next/link'
+'use client';
+import CTA from '@/components/CTA';
+import FlexSection from '@/components/FlexSection';
+import InfoSection from '@/components/InfoSection';
+import ServicesSection from '@/components/ServicesSection';
+import CirclesStarLeftSVG from '@/public/circles-star-left.svg';
+import CirclesStarRightSVG from '@/public/circles-star-right.svg';
+import collaborationImg from '@/public/collaboration.jpg';
+import creativityImg from '@/public/creativity.jpg';
+import growthImg from '@/public/growth.jpg';
+import MagicSVG from '@/public/magic.svg';
+import RepeatSVG from '@/public/repeat.svg';
+import { motion } from 'framer-motion';
+import type { NextPage } from 'next';
+import Link from 'next/link';
 
 const info = [
   {
@@ -43,7 +43,7 @@ const info = [
     image: growthImg,
     reverse: false,
   },
-]
+];
 
 const ServicesPage: NextPage = () => {
   return (
@@ -203,6 +203,6 @@ const ServicesPage: NextPage = () => {
       </FlexSection>
       <CTA />
     </>
-  )
-}
-export default ServicesPage
+  );
+};
+export default ServicesPage;

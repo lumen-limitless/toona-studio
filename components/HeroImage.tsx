@@ -1,7 +1,7 @@
-'use client'
-import heroPhoto from '@/public/hero.webp'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+'use client';
+import heroPhoto from '@/public/hero.webp';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export const HeroImage = () => {
   return (
@@ -24,5 +24,5 @@ export const HeroImage = () => {
         />
       </div>
     </motion.div>
-  )
-}
+  );
+};

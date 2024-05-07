@@ -1,8 +1,8 @@
 interface SectionProps
   extends React.DetailedHTMLProps<React.HTMLProps<HTMLElement>, HTMLElement> {
-  fullscreen?: boolean
-  centered?: boolean
-  col?: boolean
+  fullscreen?: boolean;
+  centered?: boolean;
+  col?: boolean;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -28,9 +28,9 @@ const Section: React.FC<SectionProps> = ({
     >
       {children}
     </section>
-  )
-}
+  );
+};
 
-Section.displayName = 'Section'
+Section.displayName = 'Section';
 
-export default Section
+export default Section;

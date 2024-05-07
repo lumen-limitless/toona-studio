@@ -1,7 +1,7 @@
-'use client'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import FlexSection from './FlexSection'
+'use client';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import FlexSection from './FlexSection';
 
 export default function CTA() {
   return (
@@ -40,5 +40,5 @@ export default function CTA() {
         </motion.a>
       </Link>
     </FlexSection>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-'use client'
-import brandImg from '@/public/brand.jpg'
-import contentImg from '@/public/content.jpg'
-import designImg from '@/public/design.jpg'
-import engineeringImg from '@/public/engineering.jpg'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import FlexSection from './FlexSection'
+'use client';
+import brandImg from '@/public/brand.jpg';
+import contentImg from '@/public/content.jpg';
+import designImg from '@/public/design.jpg';
+import engineeringImg from '@/public/engineering.jpg';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import FlexSection from './FlexSection';
 
 const services = [
   {
@@ -52,7 +52,7 @@ const services = [
       'Animation',
     ],
   },
-]
+];
 
 export default function ServicesSection() {
   return (
@@ -135,5 +135,5 @@ export default function ServicesSection() {
         </div>
       </FlexSection>
     </>
-  )
+  );
 }

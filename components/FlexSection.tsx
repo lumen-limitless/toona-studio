@@ -1,22 +1,22 @@
-'use client'
-import React from 'react'
+'use client';
+import React from 'react';
 
 interface FlexSectionProps {
-  children: React.ReactNode
-  centered?: boolean
-  col?: boolean
-  id?: string
-  className?: string
+  children: React.ReactNode;
+  centered?: boolean;
+  col?: boolean;
+  id?: string;
+  className?: string;
 }
 
 interface ContainerProps {
-  children: React.ReactNode
-  col?: boolean
-  className?: string
+  children: React.ReactNode;
+  col?: boolean;
+  className?: string;
 }
 
 const FlexSection: React.FC<FlexSectionProps> & {
-  Container: React.FC<ContainerProps>
+  Container: React.FC<ContainerProps>;
 } = ({ children, className, centered, col, id, ...props }) => {
   const sectionClasses = [
     'relative flex h-full w-full flex-grow items-center',
@@ -25,14 +25,14 @@ const FlexSection: React.FC<FlexSectionProps> & {
     className,
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(' ');
 
   return (
     <section className={sectionClasses} {...props} id={id}>
       {children}
     </section>
-  )
-}
+  );
+};
 
 const Container: React.FC<ContainerProps> = ({
   children,
@@ -46,16 +46,16 @@ const Container: React.FC<ContainerProps> = ({
     className,
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(' ');
 
   return (
     <div className={containerClasses} {...props}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-FlexSection.Container = Container
-FlexSection.displayName = 'FlexSection'
+FlexSection.Container = Container;
+FlexSection.displayName = 'FlexSection';
 
-export default FlexSection
+export default FlexSection;

@@ -1,32 +1,32 @@
-'use client'
-import FlexSection from '@/components/FlexSection'
-import type { NextPage } from 'next'
-import Link from 'next/link'
-import { useSessionStorage } from 'react-use'
-import demographics from './demographics.json'
-import nouns from './nouns.json'
-import technologies from './technology.json'
+'use client';
+import FlexSection from '@/components/FlexSection';
+import type { NextPage } from 'next';
+import Link from 'next/link';
+import { useSessionStorage } from 'react-use';
+import demographics from './demographics.json';
+import nouns from './nouns.json';
+import technologies from './technology.json';
 
 function generateWordFromList(list: string[]) {
-  const randomIndex = Math.floor(Math.random() * list.length)
-  return list[randomIndex]
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
 }
 
 const IdeaGeneratorPage: NextPage = () => {
-  const [tech, setTech] = useSessionStorage('tech', 'an app')
-  const [topic1, setTopic1] = useSessionStorage('topic-1', 'lemons')
-  const [topic2, setTopic2] = useSessionStorage('topic-2', 'machine-learning')
+  const [tech, setTech] = useSessionStorage('tech', 'an app');
+  const [topic1, setTopic1] = useSessionStorage('topic-1', 'lemons');
+  const [topic2, setTopic2] = useSessionStorage('topic-2', 'machine-learning');
   const [demographic, setDemographic] = useSessionStorage(
     'demographic',
     'the elderly',
-  )
+  );
 
   const handleGenerate = () => {
-    setTech(generateWordFromList(technologies))
-    setTopic1(generateWordFromList(nouns))
-    setTopic2(generateWordFromList(nouns))
-    setDemographic(generateWordFromList(demographics))
-  }
+    setTech(generateWordFromList(technologies));
+    setTopic1(generateWordFromList(nouns));
+    setTopic2(generateWordFromList(nouns));
+    setDemographic(generateWordFromList(demographics));
+  };
   return (
     <FlexSection centered col className="px-6">
       <div className="mx-auto  max-w-container space-y-6">
@@ -76,6 +76,6 @@ const IdeaGeneratorPage: NextPage = () => {
         </Link>
       </div>
     </FlexSection>
-  )
-}
-export default IdeaGeneratorPage
+  );
+};
+export default IdeaGeneratorPage;

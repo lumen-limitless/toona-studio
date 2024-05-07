@@ -1,30 +1,30 @@
-'use client'
-import { cn } from '@/lib/utils'
-import LogoSVG from '@/public/logo.svg'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
-import { useBoolean, useLockBodyScroll } from 'react-use'
+'use client';
+import { cn } from '@/lib/utils';
+import LogoSVG from '@/public/logo.svg';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { useBoolean, useLockBodyScroll } from 'react-use';
 
 const routes = [
   // { href: '/idea-generator', label: 'Idea Generator' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
-]
+];
 
 export default function Nav() {
-  const pathname = usePathname()
-  const [opened, toggleOpened] = useBoolean(false)
-  useLockBodyScroll(opened)
+  const pathname = usePathname();
+  const [opened, toggleOpened] = useBoolean(false);
+  useLockBodyScroll(opened);
 
   useEffect(() => {
-    const metaTag = document.querySelector('meta[name="theme-color"]')
+    const metaTag = document.querySelector('meta[name="theme-color"]');
     if (opened) {
-      metaTag?.setAttribute('content', '#8198E9')
+      metaTag?.setAttribute('content', '#8198E9');
     } else {
-      metaTag?.setAttribute('content', '#f9f9f9')
+      metaTag?.setAttribute('content', '#f9f9f9');
     }
-  }, [opened])
+  }, [opened]);
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Nav() {
           href="/"
           className="absolute inset-y-auto left-6 z-50 md:left-12"
           onClick={() => {
-            toggleOpened(false)
+            toggleOpened(false);
           }}
         >
           <span className="sr-only">Toona Studio Home</span>
@@ -131,7 +131,7 @@ export default function Nav() {
           href="contact"
           passHref
           onClick={() => {
-            toggleOpened(false)
+            toggleOpened(false);
           }}
           className="mt-3 w-full"
         >
@@ -141,5 +141,5 @@ export default function Nav() {
         </Link>
       </nav>
     </>
-  )
+  );
 }

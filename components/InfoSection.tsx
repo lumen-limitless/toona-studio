@@ -1,9 +1,9 @@
-'use client'
-import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
-import Image, { StaticImageData } from 'next/image'
-import Link from 'next/link'
-import FlexSection from './FlexSection'
+'use client';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import FlexSection from './FlexSection';
 
 export default function InfoSection({
   id,
@@ -13,12 +13,12 @@ export default function InfoSection({
   button,
   reverse,
 }: {
-  id: string
-  title: string
-  description: string[]
-  image: StaticImageData
-  button?: { name: string; link: string }
-  reverse?: boolean
+  id: string;
+  title: string;
+  description: string[];
+  image: StaticImageData;
+  button?: { name: string; link: string };
+  reverse?: boolean;
 }) {
   return (
     <FlexSection id={id} className="px-5 md:px-20 xl:px-[269px]">
@@ -76,5 +76,5 @@ export default function InfoSection({
         </motion.div>
       </div>
     </FlexSection>
-  )
+  );
 }

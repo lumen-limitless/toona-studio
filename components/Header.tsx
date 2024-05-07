@@ -1,14 +1,14 @@
-'use client'
-import { cn } from '@/lib/utils'
-import { usePathname } from 'next/navigation'
-import { useWindowScroll } from 'react-use'
-import Nav from './Nav'
+'use client';
+import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
+import { useWindowScroll } from 'react-use';
+import Nav from './Nav';
 
-type HeaderProps = {}
+type HeaderProps = {};
 
 const Header: React.FC<HeaderProps> = ({}) => {
-  const { y } = useWindowScroll()
-  const pathname = usePathname()
+  const { y } = useWindowScroll();
+  const pathname = usePathname();
   return (
     <>
       <header
@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <Nav />
       </header>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

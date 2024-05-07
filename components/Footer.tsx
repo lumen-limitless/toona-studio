@@ -1,10 +1,10 @@
-'use client'
-import { DRIBBBLE_URL, INSTAGRAM_URL, LINKEDIN_URL } from '@/lib/constants'
-import DribbbleSVG from '@/public/dribbble.svg'
-import InstaSVG from '@/public/insta.svg'
-import LinkedInSVG from '@/public/linkedin.svg'
-import LogoSVG from '@/public/logo.svg'
-import Link from 'next/link'
+'use client';
+import { DRIBBBLE_URL, INSTAGRAM_URL, LINKEDIN_URL } from '@/lib/constants';
+import DribbbleSVG from '@/public/dribbble.svg';
+import InstaSVG from '@/public/insta.svg';
+import LinkedInSVG from '@/public/linkedin.svg';
+import LogoSVG from '@/public/logo.svg';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -55,5 +55,5 @@ export default function Footer() {
         </div>
       </nav>
     </footer>
-  )
+  );
 }

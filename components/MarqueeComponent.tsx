@@ -1,4 +1,4 @@
-import Marquee from 'react-fast-marquee'
+import Marquee from 'react-fast-marquee';
 
 const headings = [
   'strategy',
@@ -35,7 +35,7 @@ const headings = [
   '✦',
   'consulting',
   '✦',
-]
+];
 
 export default function MarqueeComponent() {
   return (
@@ -50,5 +50,5 @@ export default function MarqueeComponent() {
         </span>
       ))}
     </Marquee>
-  )
+  );
 }

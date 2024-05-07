@@ -2,7 +2,6 @@
 module.exports = {
   tabWidth: 2,
   useTabs: false,
-  semi: false,
   singleQuote: true,
   plugins: [
     'prettier-plugin-organize-imports',
@@ -10,5 +9,4 @@ module.exports = {
     'prettier-plugin-tailwindcss',
   ],
   tailwindFunctions: ['clsx', 'cn', 'cva'],
-  pluginSearchDirs: false,
-}
+};

@@ -1,9 +1,9 @@
-'use client'
-import FlexSection from '@/components/FlexSection'
-import { contactFormAction } from '@/lib/actions'
-import ChevronDownSVG from '@/public/chevron-down.svg'
-import CirclesStarLeftSVG from '@/public/circles-star-left.svg'
-import CirclesStarRightSVG from '@/public/circles-star-right.svg'
+'use client';
+import FlexSection from '@/components/FlexSection';
+import { contactFormAction } from '@/lib/actions';
+import ChevronDownSVG from '@/public/chevron-down.svg';
+import CirclesStarLeftSVG from '@/public/circles-star-left.svg';
+import CirclesStarRightSVG from '@/public/circles-star-right.svg';
 import {
   Button,
   Dialog,
@@ -15,13 +15,13 @@ import {
   MenuItems,
   Transition,
   TransitionChild,
-} from '@headlessui/react'
-import { motion } from 'framer-motion'
-import { Loader2 } from 'lucide-react'
-import type { NextPage } from 'next'
-import { useState } from 'react'
-import { useFormStatus } from 'react-dom'
-import { useBoolean } from 'react-use'
+} from '@headlessui/react';
+import { motion } from 'framer-motion';
+import { Loader2 } from 'lucide-react';
+import type { NextPage } from 'next';
+import { useState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { useBoolean } from 'react-use';
 
 const items = [
   'Digital Experience',
@@ -31,7 +31,7 @@ const items = [
   'Software Engineering',
   'Early Startup Strategy',
   'Other',
-] as const
+] as const;
 
 // const schema = z.object({
 //   name: z.string().min(2),
@@ -42,7 +42,7 @@ const items = [
 // export type ContactForm = z.infer<typeof schema>
 
 const SubmitButton: React.FC = ({}) => {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
   return (
     <>
       <button
@@ -59,23 +59,24 @@ const SubmitButton: React.FC = ({}) => {
         )}
       </button>
     </>
-  )
-}
+  );
+};
 
 const ContactPage: NextPage = () => {
-  const [work, setWork] = useState<(typeof items)[number]>('Digital Experience')
-  const [isOpen, toggleIsOpen] = useBoolean(false)
+  const [work, setWork] =
+    useState<(typeof items)[number]>('Digital Experience');
+  const [isOpen, toggleIsOpen] = useBoolean(false);
 
   const handleSubmit = (formData: FormData) => {
-    formData.append('work', work)
+    formData.append('work', work);
     contactFormAction(formData).then(({ success }) => {
       if (success) {
-        toggleIsOpen(true)
+        toggleIsOpen(true);
       } else {
-        alert('Something went wrong. Please try again later.')
+        alert('Something went wrong. Please try again later.');
       }
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -152,8 +153,8 @@ const ContactPage: NextPage = () => {
                     {({ close }) => (
                       <button
                         onClick={() => {
-                          setWork(item)
-                          close()
+                          setWork(item);
+                          close();
                         }}
                         disabled={item === work}
                         className={`group inline-flex w-full items-center justify-start rounded-md px-2 py-2 text-gray-900`}
@@ -259,7 +260,7 @@ const ContactPage: NextPage = () => {
         </Dialog>
       </Transition>
     </>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;
