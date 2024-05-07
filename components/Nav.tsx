@@ -1,8 +1,8 @@
 'use client'
 import { cn } from '@/lib/utils'
+import LogoSVG from '@/public/logo.svg'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import LogoSVG from 'public/logo.svg'
 import { useEffect } from 'react'
 import { useBoolean, useLockBodyScroll } from 'react-use'
 

@@ -1,10 +1,10 @@
 'use client'
+import brandImg from '@/public/brand.jpg'
+import contentImg from '@/public/content.jpg'
+import designImg from '@/public/design.jpg'
+import engineeringImg from '@/public/engineering.jpg'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import brandImg from 'public/brand.jpg'
-import contentImg from 'public/content.jpg'
-import designImg from 'public/design.jpg'
-import engineeringImg from 'public/engineering.jpg'
 import FlexSection from './FlexSection'
 
 const services = [

@@ -1,16 +1,27 @@
 'use client'
 import FlexSection from '@/components/FlexSection'
-import { Menu } from '@headlessui/react'
+import { contactFormAction } from '@/lib/actions'
+import ChevronDownSVG from '@/public/chevron-down.svg'
+import CirclesStarLeftSVG from '@/public/circles-star-left.svg'
+import CirclesStarRightSVG from '@/public/circles-star-right.svg'
+import {
+  Button,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+  TransitionChild,
+} from '@headlessui/react'
 import { motion } from 'framer-motion'
 import { Loader2 } from 'lucide-react'
 import type { NextPage } from 'next'
-import ChevronDownSVG from 'public/chevron-down.svg'
-import CirclesStarLeftSVG from 'public/circles-star-left.svg'
-import CirclesStarRightSVG from 'public/circles-star-right.svg'
 import { useState } from 'react'
-import { useForm, type SubmitHandler } from 'react-hook-form'
+import { useFormStatus } from 'react-dom'
 import { useBoolean } from 'react-use'
-import { z } from 'zod'
 
 const items = [
   'Digital Experience',
@@ -22,45 +33,50 @@ const items = [
   'Other',
 ] as const
 
-const schema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(2),
-})
+// const schema = z.object({
+//   name: z.string().min(2),
+//   email: z.string().email(),
+//   message: z.string().min(2),
+// })
 
-export type ContactForm = z.infer<typeof schema>
+// export type ContactForm = z.infer<typeof schema>
+
+const SubmitButton: React.FC = ({}) => {
+  const { pending } = useFormStatus()
+  return (
+    <>
+      <button
+        type="submit"
+        disabled={pending}
+        className="mx-auto h-[64px] w-[203px] bg-indigo text-light transition-colors ease-out hover:bg-indigo-600 disabled:bg-opacity-50"
+      >
+        {pending ? (
+          <>
+            <Loader2 className="animate-spin" />
+          </>
+        ) : (
+          'Send message'
+        )}
+      </button>
+    </>
+  )
+}
 
 const ContactPage: NextPage = () => {
   const [work, setWork] = useState<(typeof items)[number]>('Digital Experience')
-  const [loading, toggleLoading] = useBoolean(false)
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ContactForm>()
+  const [isOpen, toggleIsOpen] = useBoolean(false)
 
-  const onSubmit: SubmitHandler<ContactForm> = (data) => {
-    console.debug(data)
-
-    toggleLoading(true)
-
-    fetch('/api/email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ ...data, work }),
-    }).then((res) => {
-      console.debug(res)
-      toggleLoading(false)
-
-      if (res.ok) {
-        alert('Message sent!')
+  const handleSubmit = (formData: FormData) => {
+    formData.append('work', work)
+    contactFormAction(formData).then(({ success }) => {
+      if (success) {
+        toggleIsOpen(true)
       } else {
         alert('Something went wrong. Please try again later.')
       }
     })
   }
+
   return (
     <>
       <div className="pointer-events-none absolute inset-x-0 inset-y-20 hidden lg:inset-y-0 lg:block">
@@ -88,54 +104,51 @@ const ContactPage: NextPage = () => {
         </motion.div>
 
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          action={handleSubmit}
           className=" relative z-10 flex w-full max-w-[538px] flex-col gap-10"
         >
           <label htmlFor="name" className="flex flex-col gap-3">
             Your name or company
             <input
-              {...register('name', {
-                required: 'This field is required',
-              })}
               className="rounded-full border-2 border-dark bg-transparent px-5 py-3 text-dark"
               id="name"
               type="text"
+              name="name"
               autoComplete="name"
               placeholder="Peter Parker at Amazon"
+              required
+              minLength={2}
             />
           </label>
-          {errors.name && (
-            <span className="text-red-500">{errors.name.message}</span>
-          )}
+
           <label htmlFor="email" className="flex flex-col gap-3">
             Email address
             <input
-              {...register('email')}
+              // {...register('email')}
               className="rounded-full border-2 border-dark bg-transparent px-5 py-3 text-dark"
               id="email"
+              name="email"
               type="email"
               autoComplete="email"
               placeholder="pparker@gmail.com"
+              required
             />{' '}
           </label>
-          {errors.email && (
-            <span className="text-red-500">{errors.email.message}</span>
-          )}
 
           <div>
             <label htmlFor="work" className="mb-3 flex flex-col">
               What type of work are you looking for?
             </label>
             <Menu as="div">
-              <Menu.Button
+              <MenuButton
                 id="work"
                 className="w-full items-center justify-start rounded-full border-2 border-dark px-5 py-3 text-dark"
               >
                 {work} <ChevronDownSVG className="ml-auto h-[7px] w-3" />
-              </Menu.Button>
-              <Menu.Items className="absolute z-40 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
+              </MenuButton>
+              <MenuItems className="absolute z-40 mt-3 w-full origin-bottom rounded-xl border-2 border-dark bg-white shadow-lg ring ring-black ring-opacity-5 drop-shadow-lg focus:outline-none">
                 {items.map((item, i) => (
-                  <Menu.Item key={i}>
+                  <MenuItem key={i}>
                     {({ close }) => (
                       <button
                         onClick={() => {
@@ -148,39 +161,25 @@ const ContactPage: NextPage = () => {
                         {item}
                       </button>
                     )}
-                  </Menu.Item>
+                  </MenuItem>
                 ))}
-              </Menu.Items>
+              </MenuItems>
             </Menu>
           </div>
 
-          <label htmlFor="details" className="flex flex-col gap-3">
+          <label htmlFor="message" className="flex flex-col gap-3">
             Tell us about your project
             <textarea
-              {...register('message')}
               rows={5}
               className="rounded-xl border-2 border-dark bg-transparent px-5 py-3 text-dark"
-              id="details"
+              name="message"
+              id="message"
               placeholder="I want to make an app about lemons & machine learning for the elderly"
+              required
             />
           </label>
-          {errors.message && (
-            <span className="text-red-500">{errors.message.message}</span>
-          )}
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="mx-auto h-[64px] w-[203px] bg-indigo text-light transition-colors ease-out hover:bg-indigo-600 disabled:bg-opacity-50"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="animate-spin" />
-              </>
-            ) : (
-              'Send message'
-            )}
-          </button>
+          <SubmitButton />
         </form>
         {/*
         <Link
@@ -223,7 +222,44 @@ const ContactPage: NextPage = () => {
           </a>
         </motion.div>
       </FlexSection>
+
+      <Transition appear show={isOpen}>
+        <Dialog as="div" className="relative z-40" onClose={toggleIsOpen}>
+          <div className="fixed inset-0 z-40 w-screen overflow-y-auto bg-black/50 backdrop-blur-lg">
+            <div className="flex min-h-full items-center justify-center p-4">
+              <TransitionChild
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <DialogPanel className="w-full max-w-md rounded-xl border-2 border-dark bg-light p-6 backdrop-blur-2xl">
+                  <DialogTitle as="h3" className="text-base/7 font-medium">
+                    Message Sent 🎉
+                  </DialogTitle>
+
+                  <p className="mt-2 text-sm/6 ">
+                    Thank you for reaching out to us. We will get back to you as
+                    soon as possible.
+                  </p>
+                  <div className="mt-4">
+                    <Button
+                      className="h-[32px] w-[160px] bg-indigo text-light transition-colors ease-out hover:bg-indigo-600 disabled:bg-opacity-50"
+                      onClick={toggleIsOpen}
+                    >
+                      Got it, thanks!
+                    </Button>
+                  </div>
+                </DialogPanel>
+              </TransitionChild>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </>
   )
 }
+
 export default ContactPage

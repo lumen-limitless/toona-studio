@@ -1,14 +1,14 @@
 'use client'
 import FlexSection from '@/components/FlexSection'
+import CirclesLeftSVG from '@/public/about-circles-left.svg'
+import CirclesRightSVG from '@/public/about-circles-right.svg'
+import MagicSVG from '@/public/magic.svg'
+import Star23SVG from '@/public/star-23.svg'
+import Star24SVG from '@/public/star-24.svg'
+import Star25SVG from '@/public/star-25.svg'
 import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import CirclesLeftSVG from 'public/about-circles-left.svg'
-import CirclesRightSVG from 'public/about-circles-right.svg'
-import MagicSVG from 'public/magic.svg'
-import Star23SVG from 'public/star-23.svg'
-import Star24SVG from 'public/star-24.svg'
-import Star25SVG from 'public/star-25.svg'
 
 const aboutInfo = [
   {

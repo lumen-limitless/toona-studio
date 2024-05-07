@@ -3,9 +3,9 @@ import InfoSection from '@/components/InfoSection'
 import Landing from '@/components/Landing'
 import MarqueeComponent from '@/components/MarqueeComponent'
 import ServicesSection from '@/components/ServicesSection'
-import whatImg from 'public/what.jpg'
-import whoImg from 'public/who.jpg'
-import whyImg from 'public/why.jpg'
+import whatImg from '@/public/what.jpg'
+import whoImg from '@/public/who.jpg'
+import whyImg from '@/public/why.jpg'
 
 const info = [
   {
